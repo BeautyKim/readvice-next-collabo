@@ -27,13 +27,11 @@ export function Login() {
                 <button
                     className="w-100 py-2 mb-2 btn btn-outline-dark rounded-3"
                     type="submit">
-                    <svg className="bi me-1" width="16" height="16"><use xlinkHref="#twitter"/></svg>
-                    Sign up with Twitter
+                    Sign up with GitHub
                 </button>
                 <button
                     className="w-100 py-2 mb-2 btn btn-outline-primary rounded-3"
                     type="submit">
-                    <svg className="bi me-1" width="16" height="16"><use xlinkHref="#facebook"/></svg>
                     Sign up with Google
                 </button>
             </form>
