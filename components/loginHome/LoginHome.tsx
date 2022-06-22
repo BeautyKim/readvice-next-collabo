@@ -1,5 +1,6 @@
 import Link from "next/link"
 import { HeadTitle } from "../common/HeadTitle"
+import HomeClock from "@/components/loginHome/HomeClock"
 
 export function LoginHome(){
     return(
@@ -9,9 +10,9 @@ export function LoginHome(){
                 <article className="mainBook">
                     <div className="dayItem">
                         <div className="mainDateTime">
-                            <div className="mainTime"><h1>12:20 PM</h1></div>
-                            <div className="mainDay"><h2>월요일</h2></div>
-                            <div className="mainDate"><h2>June 20, 2022</h2></div>
+                            <div className="mainTime">
+                                <HomeClock />
+                            </div>
                         </div>
                         <div className="weather">
                             <img src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png" alt="날씨" style={{width: 100}}/>
