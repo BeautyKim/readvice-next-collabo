@@ -9,13 +9,11 @@ export function LoginHome(){
             <section className="section1">
                 <article className="mainBook">
                     <div className="dayItem">
-                        <div className="mainDateTime">
-                            <div className="mainTime">
-                                <HomeClock />
-                            </div>
-                        </div>
                         <div className="weather">
                             <img src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png" alt="날씨" style={{width: 100}}/>
+                        </div>
+                        <div className="mainTime">
+                                <HomeClock />
                         </div>
                     </div>
                     <div className="todayBook">
@@ -48,6 +46,9 @@ export function LoginHome(){
                     height: 100%;
                     margin-bottom: 20px;
                 }
+                .mainTime {
+
+                }            
                 .mainBook {
                     background-color : #ffffffb9;
                     border-radius: 15px;
@@ -60,6 +61,7 @@ export function LoginHome(){
                 }
                 .dayItem{
                     display: flex;
+                    flex-direction: column;
                 }
                 .weather {
                     margin: 0 20px;
@@ -74,6 +76,9 @@ export function LoginHome(){
                 .link {
                     bottom: 0;
                     right: 0;
+                }
+                .weather {
+                    text-align: center;
                 }
             `}</style>
         </div>
