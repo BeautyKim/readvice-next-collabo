@@ -23,6 +23,7 @@ yarn dev
 
 ## Front-end
 1. 사용기술
-Next.js, Typescript, Redux-Toolkit, Redux-Saga
+- Next.js, Typescript, Redux-Toolkit, Redux-Saga
 
 2. 주요 서비스
+- 작성 중입니다.
