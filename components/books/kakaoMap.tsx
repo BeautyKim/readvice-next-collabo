@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import {Map, MapMarker} from "react-kakao-maps-sdk"
 
-interface IPrev{
+export interface IPrev{
   center: {lat: number; lng: number}
   errMsg?: null | string
   isLoading: boolean
@@ -58,32 +58,31 @@ export default function KakaoMap(){
 
     return( 
         <Map
-      center={state.center}
-      style={{ width: "35%", height: "300px", margin: 0}}
-      level={3}
-    >
-      {!state.isLoading && (
-          <MapMarker position={state.center}>
-            <div style={{ padding: "5px", color: "#000" }}>
-              {state.errMsg ? state.errMsg : "시용자 위치"}
-            </div>
-          </MapMarker>
-        )}
-        {positions.map((position, index) => (
-        <MapMarker
-          key={`${position.title}-${position.latlng}`}
-          position={position.latlng} // 마커를 표시할 위치
-          image={{
-            src: "https://img.icons8.com/color/48/undefined/library-building.png", // 마커이미지의 주소입니다
-            size: {
-              width: 35,
-              height: 40
-            }, // 마커이미지의 크기입니다
-          }}
-          title={position.title} // 마커의 타이틀, 마커에 마우스를 올리면 타이틀이 표시됩니다
-        />
-      ))}
-
+        center={state.center}
+        style={{ width: "35%", height: "300px", margin: 0}}
+        level={3}
+        >
+          {!state.isLoading && (
+              <MapMarker position={state.center}>
+                <div style={{ padding: "5px", color: "#000" }}>
+                  {state.errMsg ? state.errMsg : "시용자 위치"}
+                </div>
+              </MapMarker>
+          )}
+          {positions.map((position, index) => (
+          <MapMarker
+            key={`${position.title}-${position.latlng}`}
+            position={position.latlng} // 마커를 표시할 위치
+            image={{
+              src: "https://img.icons8.com/color/48/undefined/library-building.png", // 마커이미지의 주소입니다
+              size: {
+                width: 35,
+                height: 40
+              }, // 마커이미지의 크기입니다
+            }}
+            title={position.title} // 마커의 타이틀, 마커에 마우스를 올리면 타이틀이 표시됩니다
+          />
+        ))}
       </Map>
     )
 }

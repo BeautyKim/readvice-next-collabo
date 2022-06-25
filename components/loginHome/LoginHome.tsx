@@ -1,6 +1,7 @@
 import Link from "next/link"
 import { HeadTitle } from "../common/HeadTitle"
 import HomeClock from "@/components/loginHome/HomeClock"
+import HomeWeather from "./HomeWeather"
 
 export function LoginHome(){
     return(
@@ -10,7 +11,7 @@ export function LoginHome(){
                 <article className="mainBook">
                     <div className="dayItem">
                         <div className="weather">
-                            <img src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png" alt="날씨" style={{width: 100}}/>
+                            <HomeWeather />
                         </div>
                         <div className="mainTime">
                                 <HomeClock />
