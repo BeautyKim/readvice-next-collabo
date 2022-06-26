@@ -1,7 +1,5 @@
 import Link from "next/link"
-import { HeadTitle } from "../common/HeadTitle"
-import HomeClock from "@/components/loginHome/HomeClock"
-import HomeWeather from "./HomeWeather"
+import { HeadTitle, HomeClock, HomeWeather } from "@/components"
 
 export function LoginHome(){
     return(

@@ -1,4 +1,4 @@
-import { HeadTitle, Product } from "@/components";
+import { Product } from "@/components";
 import { NextPage } from "next";
 /**
  * choi test
@@ -7,7 +7,6 @@ import { NextPage } from "next";
 const Home: NextPage = () => {
   return (
     <>
-      <HeadTitle title="Home"/>
       <Product />
     </>
     )

@@ -1,20 +1,18 @@
-import { GetStaticProps } from "next"
+import { GetServerSideProps } from "next"
 
-export const getStaticPaths: GetStaticProps  = async () => {
-    const res = await fetch(`http://data4library.kr/api/loanItemSrch?authKey=${process.env.NEXT_PUBLIC_DATALIBRARY}&startDt=2022-06-01&endDt=2022-06-21&region=11`)
+export const getServerSidePaths: GetServerSideProps  = async () => {
+    const xml2js = require('xml2js')
+    const fs = require('fs')
+
+    const url = await fetch(`http://data4library.kr/api/loanItemSrch?authKey=${process.env.NEXT_PUBLIC_DATALIBRARY}&startDt=2022-06-01&endDt=2022-06-25&age=30`)
     
-    const data = await res.text()
-    let pareXML = new DOMParser()
-    let xmlDoc = pareXML.parseFromString(data, "text/xml")
     
-    // const paths = data.map((card: any) => {
-    //     return{
-    //         params: {}
-    //     }
-    // })
+   console.log(url)
 
     return(
         <div>
         </div>
     )
 }
+// bookname : 도서명 authors: 저자명 publisher: 출판사 isbn13: ISBN
+// bookImageURL : 책표지 URL

@@ -1,13 +1,13 @@
 import useGeolocation from "@/hooks/useGeolocation"
+import { useEffect, useState } from "react"
 
 
-const HomeWeather: React.FC = () => {
+
+export function HomeWeather(){
     const location = useGeolocation()
-    const lat = location.coordinates?.lat
-    const lon = location.coordinates?.lng
-    const req = fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${process.env.NEXT_PUBLIC_WEATHER_API_KEY}`)
+    const [weather, setWeather] = useState()
 
-    console.log(req)
+    console.log()
 
 
     return(
@@ -18,4 +18,3 @@ const HomeWeather: React.FC = () => {
         </div>
     )
 }
-export default HomeWeather

@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 html,
 body {
   background-image:url(/images/blob.svg),url(/images/back2_1.svg);

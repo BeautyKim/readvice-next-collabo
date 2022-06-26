@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 
-const HomeClock = () => {
+export function HomeClock(){
     const [time, setTime] = useState(new Date())
 
     useEffect(() => {
@@ -33,4 +33,3 @@ const HomeClock = () => {
         </>
     )
 }
-export default HomeClock

@@ -65,6 +65,12 @@ const style = css`
 `
 
 export const Header = () => {
+
+    const navMyPage = [
+        { label: '회원정보', path: '/users/information'},
+        { label: '읽은책', path: '/comments/readingBooks'},
+        { label: '찜한책', path: '/comments/likeBooks'},
+    ]
     return(
         <div>
             <header>
@@ -77,9 +83,9 @@ export const Header = () => {
                         </li>
                         <li className="dropdown"> <Link href="#" className="dropbtn"><a>My Page</a></Link>
                             <ul className="dropdown-content">
-                                <li><Link href="/users/information"><a>회원정보</a></Link></li>
-                                <li><Link href="/comments/readingBooks"><a>읽은 책</a></Link></li>
-                                <li><Link href="/comments/likeBooks"><a>찜한 책</a></Link></li>
+                                {navMyPage.map(nav => (
+                                    <Link href={nav.path}><a>{nav.label}</a></Link>
+                                ))}
                             </ul>
                         </li>
                     </ul>

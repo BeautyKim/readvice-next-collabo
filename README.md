@@ -2,7 +2,7 @@
 - 팀명: 북적북적
 - Front-end : 김아름
 - AI Developer : 노홍주, 최민서, 하진희
-[https://readvice.kr/](https://readvice.kr/)
+- [http://readvice.kr/](https://readvice.kr/)
 
 ## 실행 방법
 ```ts
