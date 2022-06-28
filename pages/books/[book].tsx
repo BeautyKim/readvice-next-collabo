@@ -1,13 +1,14 @@
-import { GetServerSideProps } from "next"
+import axios from "axios"
+import { GetStaticProps } from "next"
+import { useState } from "react"
+import X2JS from "x2js"
 
-export const getServerSidePaths: GetServerSideProps  = async () => {
-    const xml2js = require('xml2js')
-    const fs = require('fs')
+export const getStaticProps: GetStaticProps  = async () => {
+    const x2js = new X2JS()
+    const req = await axios.get(`http://data4library.kr/api/loanItemSrch?authKey=${process.env.NEXT_PUBLIC_DATALIBRARY}&startDt=2022-06-01&endDt=2022-06-25&age=30`)
+    const jsonObj = x2js.js2xml(req)
 
-    const url = await fetch(`http://data4library.kr/api/loanItemSrch?authKey=${process.env.NEXT_PUBLIC_DATALIBRARY}&startDt=2022-06-01&endDt=2022-06-25&age=30`)
-    
-    
-   console.log(url)
+   console.log(jsonObj)
 
     return(
         <div>

@@ -1,65 +1,66 @@
+import Image from "next/image"
 import Link from "next/link"
-import css from "styled-jsx/css"
+import bookWoman from '@/public/images/bookWoman.svg'
 
-const styled = css`
-    .contents {
-        height: 100%;
-        margin: 10% 15%;
-    }
-    .wrapper {
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-    }
-    .wrapper h1 {
-        font-size: 40px;
-    }
-    .wrapper p {
-        font-size: 20px;
-    }
-    .product0, .product1, .product2, .product3, .product4 {
-        height: 500px;
-        width: 100%;
-        background-size: cover;
-        background-repeat: no-repeat;
-    }
-    .product0 {
-        background-image: url(/images/bookWoman.svg);
-        background-size: 600px;
-        background-position: 80% center;
-        text-align: 40%;
-    }
-    .product1, .product3{
-        text-align: right;
-    }
-    .product5 {
-        text-align: center;
-        margin: auto;
-        margin-bottom: 10%;
-    }
-    .divButton {
-        align-items: center;
-    }
-    .btn {
-        font-size: 20px;
-        padding: 15px 30px;
-        background-color: white;
-        color: rgb(51, 18, 110);
-        border: 1px solid rgb(121, 91, 177);
-        border-radius: 10px;
-        letter-spacing: 4px;
-        font-family: sans-serif;
-        transition: all 0.4s;
-    }
-    .btn:focus {
-        outline: none;
-    }
-    .btn:hover {
-        border: rgb(121, 91, 177);
-        background-color: rgb(121, 91, 177);
-        color: white;
-    }
-`
+// const styled = css`
+//     .contents {
+//         height: 100%;
+//         margin: 10% 15%;
+//     }
+//     .wrapper {
+//         display: flex;
+//         justify-content: center;
+//         flex-direction: column;
+//     }
+//     .wrapper h1 {
+//         font-size: 40px;
+//     }
+//     .wrapper p {
+//         font-size: 20px;
+//     }
+//     .product0, .product1, .product2, .product3, .product4 {
+//         height: 500px;
+//         width: 100%;
+//         background-size: cover;
+//         background-repeat: no-repeat;
+//     }
+//     .product0 {
+//         background-image: url(/images/bookWoman.svg);
+//         background-size: 600px;
+//         background-position: 80% center;
+//         text-align: 40%;
+//     }
+//     .product1, .product3{
+//         text-align: right;
+//     }
+//     .product5 {
+//         text-align: center;
+//         margin: auto;
+//         margin-bottom: 10%;
+//     }
+//     .divButton {
+//         align-items: center;
+//     }
+//     .btn {
+//         font-size: 20px;
+//         padding: 15px 30px;
+//         background-color: white;
+//         color: rgb(51, 18, 110);
+//         border: 1px solid rgb(121, 91, 177);
+//         border-radius: 10px;
+//         letter-spacing: 4px;
+//         font-family: sans-serif;
+//         transition: all 0.4s;
+//     }
+//     .btn:focus {
+//         outline: none;
+//     }
+//     .btn:hover {
+//         border: rgb(121, 91, 177);
+//         background-color: rgb(121, 91, 177);
+//         color: white;
+//     }
+// `
 
 export function Product(){
     return(
@@ -68,6 +69,7 @@ export function Product(){
                 <article className="product0">
                     <h1>Your read advice</h1>
                     <p>나만을 위한 사서 리드바이스</p>
+                    <Image src={bookWoman} width={300} height={300}/>
                 </article>
                 <article className="product1">
                     <h1>읽고 싶은 책을 검색하면</h1>
@@ -92,7 +94,6 @@ export function Product(){
                     </div>
                 </article>
             </section>
-            <style jsx>{styled}</style>
         </div>
     )
 }

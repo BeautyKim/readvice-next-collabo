@@ -8,6 +8,6 @@ type ProfileProps = {
     errors?: string
 }
 
-const Profile = ({}) => {
+const Profile = () => {
     return
 }

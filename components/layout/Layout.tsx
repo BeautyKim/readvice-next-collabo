@@ -12,6 +12,7 @@ const Layout = ({ children } : LayoutProps) => {
   return (
     <>
       <Head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>Readvice</title>
       </Head>
       <div>
