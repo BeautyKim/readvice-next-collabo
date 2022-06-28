@@ -4,7 +4,7 @@ import { userActions, UserType } from '@/modules/users'
 
 const Join: React.FC = () => {
     const [user, setUser] =useState<UserType>({
-        email:'', password:'', userName:'', birth:'', gender:''
+        email:'', password:'', username:'', birth:'', gender:''
     })
     const dispatch = useDispatch()
     const handleChange = (e: { preventDefault: () => void; target: { name: any; value: any } }) =>{
@@ -18,10 +18,10 @@ const Join: React.FC = () => {
             e=> {
                 e.preventDefault()
                 dispatch(userActions.joinRequest(user))
-                setUser({ email:'', password:'', userName:'', birth:'', gender:'' })
+                setUser({ email:'', password:'', username:'', birth:'', gender:'' })
             }
         }>
-            <div className="form-floating mb-3">
+            <div className="mb-3 form-floating">
                 <input
                     type="email"
                     className="form-control rounded-3"
@@ -31,7 +31,7 @@ const Join: React.FC = () => {
                     onChange={handleChange}/>
                 <label htmlFor="email">이메일</label>
             </div>
-            <div className="form-floating mb-3">
+            <div className="mb-3 form-floating">
                 <input
                     type="password"
                     className="form-control rounded-3"
@@ -41,7 +41,7 @@ const Join: React.FC = () => {
                     onChange={handleChange}/>
                 <label htmlFor="password">비밀번호</label>
             </div>
-            <div className="form-floating mb-3">
+            <div className="mb-3 form-floating">
                 <input
                     type="password"
                     className="form-control rounded-3"
@@ -50,17 +50,17 @@ const Join: React.FC = () => {
                     placeholder="Password"/>
                 <label htmlFor="RePassword">비밀번호 재확인</label>
             </div>
-            <div className="form-floating mb-3">
+            <div className="mb-3 form-floating">
                 <input
                     type="text"
                     className="form-control rounded-3"
-                    id="userName"
-                    name="userName"
+                    id="username"
+                    name="username"
                     placeholder="사용자 이름"
                     onChange={handleChange}/>
-                <label htmlFor="userName">사용자 이름</label>
+                <label htmlFor="username">사용자 이름</label>
             </div>
-            <div className="form-floating mb-3">
+            <div className="mb-3 form-floating">
                 <input
                     type="date"
                     className="form-control rounded-3"
@@ -83,13 +83,13 @@ const Join: React.FC = () => {
             <input type="checkbox" className="custom-control-input" id="aggrement" required />
             <label className="custom-control-label" htmlFor="aggrement">개인정보 수집 및 이용에 동의합니다.</label>
           </div>
-            <button className="w-100 mb-2 btn btn-lg rounded-3 btn-primary" type="submit">회원가입</button>
+            <button className="mb-2 w-100 btn btn-lg rounded-3 btn-primary" type="submit">회원가입</button>
             <hr className="my-4"/>
-            <h2 className="fs-5 fw-bold mb-3">Or use a third-party</h2>
-            <button className="w-100 py-2 mb-2 btn btn-outline-dark rounded-3" type="submit">
+            <h2 className="mb-3 fs-5 fw-bold">Or use a third-party</h2>
+            <button className="py-2 mb-2 w-100 btn btn-outline-dark rounded-3" type="submit">
                 Sign up with Twitter
             </button>
-            <button className="w-100 py-2 mb-2 btn btn-outline-primary rounded-3" type="submit">
+            <button className="py-2 mb-2 w-100 btn btn-outline-primary rounded-3" type="submit">
                 Sign up with Google
             </button>
         </form>

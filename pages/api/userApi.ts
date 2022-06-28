@@ -1,13 +1,13 @@
 import { UserType } from "@/types/users/join";
 import axios, {AxiosResponse} from "axios";
-const SERVER = 'http://127.0.0.1:8080'
+const SERVER = 'http://127.0.0.1:8000'
 const headers = {
     "Content-Type" : "application/json",
     Authorization: "JWT fefege...",
 }
 
 export const userJoinApi = async (
-    payload: {email: string, password: string, userName: string, birth: number, gender: string}) => {
+    payload: {email: string, password: string, username: string, birth: number, gender: string}) => {
         try{
             const response : AxiosResponse<unknown, UserType[]> =
             await axios.post(`${SERVER}/user/join`, payload, { headers })
