@@ -3,15 +3,13 @@ import {AnyAction, CombinedState, configureStore, combineReducers} from '@reduxj
 import {createWrapper, HYDRATE} from 'next-redux-wrapper'
 import logger from 'redux-logger';
 import createSagaMiddleware from 'redux-saga'
-import { IBookState } from './books';
 import { UserState } from './users';
-
+import userReducer from './users'
 
 const isDev = process.env.NODE_ENV ==='development'
 const sagaMiddleware = createSagaMiddleware()
 
 interface RootStates {
-	book: IBookState;
     user: UserState;
 }
 const rootReducer = (
@@ -24,6 +22,7 @@ const rootReducer = (
         }
     }
     return combineReducers({
+        user: userReducer,
     })(state, action)
 }
 
