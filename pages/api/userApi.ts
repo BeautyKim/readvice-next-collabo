@@ -7,7 +7,7 @@ const headers = {
 }
 
 export const userJoinApi = async (
-    payload: {email: string, password: string, username: string, birth: number, gender: string}) => {
+    payload: {email: string, password: string, username: string, birth: string, gender: string}) => {
         try{
             const response : AxiosResponse<unknown, UserType[]> =
             await axios.post(`${SERVER}/user/join`, payload, { headers })
