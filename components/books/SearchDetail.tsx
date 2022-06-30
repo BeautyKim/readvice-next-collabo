@@ -1,10 +1,10 @@
-import { HeadTitle } from "@/components";
+import { SEO } from "@/components";
 import KakaoMap from "@/components/books/kakaoMap"
 
 export function SearchDetail(){
     return(
         <>
-        <HeadTitle title="검색상세" />
+        <SEO title="검색상세" />
         <div className= "center">
         </div>
         <p className= "box">

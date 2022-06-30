@@ -1,5 +1,5 @@
 export * from "./layout/Footer"
-export * from "./common/HeadTitle"
+export * from "./common/SEO"
 export * from "./layout/Header"
 export * from "./layout/Layout"
 export * from "./books/Search"

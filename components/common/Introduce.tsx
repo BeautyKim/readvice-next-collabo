@@ -1,5 +1,5 @@
 import css from "styled-jsx/css";
-import { HeadTitle } from "@/components";
+import { SEO } from "@/components";
 
 export function Introduce() {
 
@@ -11,7 +11,7 @@ export function Introduce() {
     `
     return (
         <form>
-            <HeadTitle title="Introduce"/>
+            <SEO title="Introduce"/>
             <div >
                 <h1>팀 북적북적</h1>
                 <p>팀원들의 깃허브에서 개인 프로젝트를 보실 수 있습니다.</p>

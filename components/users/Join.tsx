@@ -4,6 +4,7 @@ import { userActions, UserType } from '@/modules/users'
 import FormLayout from "../layout/FormLayout"
 import Link from "next/link"
 import tw from "tailwind-styled-components"
+import { SEO } from "../common/SEO"
 
 const Join: React.FC = () => {
     const [user, setUser] =useState<UserType>({
@@ -22,6 +23,7 @@ const Join: React.FC = () => {
     
   return (
     <FormLayout>
+        <SEO title="회원가입" />
         <form onSubmit={
             e=> {
                 e.preventDefault()

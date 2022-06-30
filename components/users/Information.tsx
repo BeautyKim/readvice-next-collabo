@@ -1,11 +1,11 @@
-import { HeadTitle } from "@/components";
+import { SEO } from "@/components";
 
 export function Information() {
 
     return (
         <>
             <form>
-            <HeadTitle title="내정보" />
+            <SEO title="내정보" />
                 <div className="information">
                     <h1>내 정보 관리</h1>
                     <h6 >SNS 연결계정</h6>

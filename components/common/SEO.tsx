@@ -4,7 +4,7 @@ type TitleProps = {
   title: string
 }
 
-export const HeadTitle = ({ title }: TitleProps ) => {
+export const SEO = ({ title }: TitleProps ) => {
   return (
     <Head>
         <title>{title} | Readvice</title>

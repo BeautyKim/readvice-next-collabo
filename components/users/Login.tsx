@@ -3,6 +3,7 @@ import { useState } from "react"
 import { useDispatch } from "react-redux"
 import FormLayout from "../layout/FormLayout"
 import tw from "tailwind-styled-components"
+import { SEO } from "../common/SEO"
 
 const Login: React.FC = () => {
     const [ Userlogin, setUserLogin ] = useState({
@@ -34,6 +35,7 @@ const Login: React.FC = () => {
     
     return (
         <FormLayout>
+            <SEO title="로그인"/>
             <form>
                 <div className="flex items-center justify-center min-h-screen ">
                     <div className="z-20 px-12 py-12 bg-white shadow-xl rounded-2xl">

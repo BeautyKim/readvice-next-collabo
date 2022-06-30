@@ -1,10 +1,10 @@
 import Link from "next/link"
-import { HeadTitle, HomeClock, HomeWeather } from "@/components"
+import { SEO, HomeClock, HomeWeather } from "@/components"
 
 export function LoginHome(){
     return(
         <div className="container">
-            <HeadTitle title="Home"/>
+            <SEO title="Home"/>
             <section className="section1">
                 <article className="mainBook">
                     <div className="dayItem">

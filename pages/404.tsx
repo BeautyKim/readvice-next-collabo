@@ -1,10 +1,10 @@
-import { HeadTitle } from "@/components";
+import { SEO } from "@/components";
 
 export default function Custom404() {
     return(
     <div id="main">
     	<div className="fof">
-            <HeadTitle title="404"/>
+            <SEO title="404"/>
             <h1>잘못된 경로입니다</h1>
     	</div>
         <style jsx>{`

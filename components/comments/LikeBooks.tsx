@@ -1,9 +1,9 @@
-import { HeadTitle } from "@/components";
+import { SEO } from "@/components";
 
 export function LikeBooks() {
     return (
       <div>
-        <HeadTitle title="찜한 책" />
+        <SEO title="찜한 책" />
         <form>
             <h1>내 서재 관리</h1>
             <div>
