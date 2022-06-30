@@ -1,7 +1,7 @@
 import { call, delay, put, takeLatest } from 'redux-saga/effects'
 import { userActions } from '@/modules/users';
 import { UserJoinType } from '@/types/users/join';
-import { userJoinApi } from '@/api/userApi';
+import { userJoinApi } from '@/apis/userApi';
 
 function* join(user: UserJoinType){
     try{

@@ -1,4 +1,4 @@
-import { Login } from "@/components"
+import Login from "@/components/users/Login"
 import { NextPage } from "next"
 import { memo } from "react"
 

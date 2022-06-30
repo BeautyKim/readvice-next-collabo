@@ -1,8 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import css from "styled-jsx/css";
-import Join from "@/components/users/Join";
-import { Login } from "../users/Login";
 
 const style = css`
     header {
@@ -93,32 +91,6 @@ export const Header = () => {
                     </ul>
                 </nav>
             </header>
-            <div className="modal fade" id="loginBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabIndex={-1} aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                <div className="modal-dialog" role = "document">
-                    <div className="shadow modal-content rounded-4">
-                        <div className="p-5 pb-4 modal-header border-bottom-0">
-                            <h4 className="mb-0 fw-bold" id="staticBackdropLabel">안녕하세요 Readvice 입니다</h4>
-                            <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div className="modal-body">
-                            <Login />
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div className="modal fade" id="signupBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabIndex={-1} aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                <div className="modal-dialog" role = "document">
-                    <div className="shadow modal-content rounded-4">
-                        <div className="p-5 pb-4 modal-header border-bottom-0">
-                            <h4 className="mb-0 fw-bold" id="staticBackdropLabel">Readvice 함께하기</h4>
-                            <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div className="modal-body">
-                            <Join />
-                        </div>
-                    </div>
-                </div>
-            </div>
             <style jsx>{style}</style>
         </div>
     )
