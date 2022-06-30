@@ -1,7 +1,9 @@
+import Join from "@/components/users/Join"
+import { NextPage } from "next"
 
-const JoinPage = () => {
+const JoinPage: NextPage = () => {
   return (
-    <div>join</div>
+    <Join />
   )
 }
 

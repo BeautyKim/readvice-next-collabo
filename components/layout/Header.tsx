@@ -1,8 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import css from "styled-jsx/css";
-import { Login } from "@/components";
 import Join from "@/components/users/Join";
+import { Login } from "../users/Login";
 
 const style = css`
     header {
@@ -78,7 +78,7 @@ export const Header = () => {
                 <nav>
                     <ul>
                         <li className="dropdown">
-                        <button type="button" className="btn btn-F2F2F0 btn-sm" data-bs-toggle="modal" data-bs-target="#loginBackdrop">Login</button>
+                        <Link href="/users/login"><a>Login</a></Link>
                         <button type="button" className="btn btn-F2F2F0 btn-sm" data-bs-toggle="modal" data-bs-target="#signupBackdrop">Signup</button>
                         </li>
                         <li className="dropdown"> <Link href="#" className="dropbtn"><a>My Page</a></Link>

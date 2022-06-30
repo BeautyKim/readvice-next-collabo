@@ -1,10 +1,13 @@
-import { BookNav, LikeBooks } from "@/components";
+import {BookNav, LikeBooks} from "@/components";
+import { NextPage } from "next";
 
-export default function LikeBooksPage(){
-    return(
-        <>
-            <BookNav />
-            <LikeBooks />
-        </>
-    )
+const LikeBooksPage: NextPage = () => {
+    return (
+    <>
+        <BookNav />
+        <LikeBooks/>
+    </>
+)
 }
+
+export default LikeBooksPage

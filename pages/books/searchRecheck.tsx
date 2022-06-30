@@ -1,7 +1,9 @@
 import { SearchRecheck } from "@/components";
+import { NextPage } from "next";
 
-export default function SearchRecheckPage(){
-    return(
-        <SearchRecheck />
-    )
+const SearchRecheckPage: NextPage = () => {
+  return (
+    <SearchRecheck />
+  )
 }
+export default SearchRecheckPage

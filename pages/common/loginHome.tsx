@@ -1,7 +1,10 @@
 import { LoginHome } from "@/components";
+import { NextPage } from "next";
 
-export default function LoginHomePage(){
-    return(
-       <LoginHome /> 
-    )
+const LoginHomePage: NextPage = () => {
+  return (
+    <LoginHome /> 
+  )
 }
+
+export default LoginHomePage

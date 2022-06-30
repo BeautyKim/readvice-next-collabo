@@ -1,7 +1,10 @@
 import { Information } from "@/components";
+import { NextPage } from "next";
 
-export default function InformationPage(){
-    return(
-        <Information />
-    )
+const InformationPage: NextPage = () => {
+  return (
+    <Information />
+  )
 }
+
+export default InformationPage

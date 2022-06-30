@@ -1,7 +1,11 @@
 import { Introduce } from "@/components";
+import { NextPage } from "next";
 
-export default function IntroducePage(){
-    return(
-        <Introduce />
-    )
+
+const IntroducePage: NextPage = () => {
+  return (
+    <Introduce />
+  )
 }
+
+export default IntroducePage

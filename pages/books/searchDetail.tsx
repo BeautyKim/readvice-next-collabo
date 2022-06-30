@@ -1,7 +1,9 @@
 import { SearchDetail } from "@/components";
+import { NextPage } from "next";
 
-export default function SearchDetailPage(){
-    return(
-        <SearchDetail />
-    )
+const SearchDetailPage: NextPage = () => {
+  return (
+    <SearchDetail />
+  )
 }
+export default SearchDetailPage

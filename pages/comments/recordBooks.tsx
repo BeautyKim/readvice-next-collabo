@@ -1,10 +1,14 @@
 import { BookNav, RecordBooks } from "@/components";
+import { NextPage } from "next";
 
-export default function RecordBooksPage(){
-    return(
-        <>
-            <BookNav />
-            <RecordBooks />
-        </>
-    )
+
+const RecordBooksPage: NextPage = () => {
+  return (
+    <>
+        <BookNav />
+        <RecordBooks />
+    </>
+  )
 }
+
+export default RecordBooksPage
