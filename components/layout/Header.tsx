@@ -78,8 +78,10 @@ export const Header = () => {
                 <nav>
                     <ul>
                         <li className="dropdown">
-                        <Link href="/users/login"><a>Login</a></Link>
-                        <button type="button" className="btn btn-F2F2F0 btn-sm" data-bs-toggle="modal" data-bs-target="#signupBackdrop">Signup</button>
+                            <Link href="/users/login"><a>Login</a></Link>
+                        </li>
+                        <li>
+                            <Link href="/users/join"><a>Signup</a></Link>
                         </li>
                         <li className="dropdown"> <Link href="#" className="dropbtn"><a>My Page</a></Link>
                             <ul className="dropdown-content">

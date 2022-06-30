@@ -4,7 +4,7 @@ import { Chatbot, Footer, Header, SearchBar } from '@/components';
 import Head from 'next/head';
 
 
-interface LayoutProps {
+export interface LayoutProps {
   children?: ReactNode
 }
 

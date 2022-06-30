@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import { useDispatch } from "react-redux"
 import { userActions, UserType } from '@/modules/users'
+import FormLayout from "../layout/FormLayout"
 
 const Join: React.FC = () => {
     const [user, setUser] =useState<UserType>({
@@ -13,7 +14,7 @@ const Join: React.FC = () => {
         setUser({...user, [name]: value})
     }
   return (
-    <>
+    <FormLayout>
         <form onSubmit={
             e=> {
                 e.preventDefault()
@@ -21,7 +22,9 @@ const Join: React.FC = () => {
                 setUser({ email:'', password:'', username:'', birth:'', gender:'' })
             }
         }>
-            <div className="mb-3 form-floating">
+            <div className="flex items-center justify-center min-h-screen">
+            <div className="z-20 px-12 py-12 bg-white shadow-xl rounded-2xl">
+            <div className="space-y-4">
                 <input
                     type="email"
                     className="form-control rounded-3"
@@ -92,8 +95,10 @@ const Join: React.FC = () => {
             <button className="py-2 mb-2 w-100 btn btn-outline-primary rounded-3" type="submit">
                 Sign up with Google
             </button>
+            </div>
+            </div>
         </form>
-    </>
+    </FormLayout>
   );
 }
 export default Join

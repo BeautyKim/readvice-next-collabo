@@ -1,9 +1,17 @@
 import { Login } from "@/components"
 import { NextPage } from "next"
+import { memo } from "react"
 
-const LoginPage: NextPage = () => {
+const LoginPage: NextPage = memo(() => {
   return (
-    <Login />
+      <Login />
   )
+})
+
+LoginPage.getInitialProps = async (ctx) => {
+  const pathname =ctx.pathname
+
+  return { pathname }
 }
+
 export default LoginPage

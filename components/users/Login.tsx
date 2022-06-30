@@ -1,38 +1,38 @@
+import Link from "next/link"
+import FormLayout from "../layout/FormLayout"
+
 export function Login() {
     return (
-        <form>
-            <div className="min-h-screen bg-purple-400 flex justify-center items-center">
-                <div className="absolute w-60 h-60 rounded-xl bg-purple-300 -top-5 -left-16 z-0 transform rotate-45 hidden md:block" />
-                <div className="absolute w-48 h-48 rounded-xl bg-purple-300 -bottom-6 -right-10 transform rotate-12 hidden md:block" />
-                <div className="py-12 px-12 bg-white rounded-2xl shadow-xl z-20">
-                    <div>
-                        <h1 className="text-3xl font-bold text-center mb-4 cursor-pointer">Create An Account</h1>
-                        <p
-                            className="w-80 text-center text-sm mb-8 font-semibold text-gray-700 tracking-wide cursor-pointer">Create an account to enjoy all the services without any ads for free!</p>
-                    </div>
-                    <div className="space-y-4">
-                        <input
-                            type="text"
-                            placeholder="Email Addres"
-                            className="block text-sm py-3 px-4 rounded-lg w-full border outline-none"/>
-                        <input
-                            type="text"
-                            placeholder="Password"
-                            className="block text-sm py-3 px-4 rounded-lg w-full border outline-none"/>
-                    </div>
-                    <div className="text-center mt-6">
-                        <button className="py-3 w-64 text-xl text-white bg-purple-400 rounded-2xl">Create Account</button>
-                        <p className="mt-4 text-sm">Already Have An Account?
-                            <span className="underline  cursor-pointer">
-                                Sign In</span>
-                        </p>
+        <FormLayout>
+            <form>
+                <div className="flex items-center justify-center min-h-screen ">
+                    <div className="z-20 px-12 py-12 bg-white shadow-xl rounded-2xl">
+                        <div>
+                            <h1 className="mb-4 text-3xl font-bold text-center cursor-pointer">Your read advice</h1>
+                            <p
+                                className="mb-8 text-sm font-semibold tracking-wide text-center text-gray-700 cursor-pointer w-80">안녕하세요! 리드바이스 입니다.😊</p>
+                        </div>
+                        <div className="space-y-4">
+                            <input
+                                type="text"
+                                placeholder="Email Addres"
+                                className="block w-full px-4 py-3 text-sm border rounded-lg outline-none"/>
+                            <input
+                                type="text"
+                                placeholder="Password"
+                                className="block w-full px-4 py-3 text-sm border rounded-lg outline-none"/>
+                        </div>
+                        <div className="mt-6 text-center">
+                            <Link href='/loginHome/loginHome'><button className="w-64 py-3 text-xl text-white bg-purple-400 rounded-2xl">Login</button></Link>
+                            <p className="mt-4 text-sm">Already Have An Account?
+                                <Link href='/users/join'><a className="underline cursor-pointer">
+                                    Sign In</a>
+                                </Link>
+                            </p>
+                        </div>
                     </div>
                 </div>
-                <div
-                    className="w-40 h-40 absolute bg-purple-300 rounded-full top-0 right-12 hidden md:block" />
-                <div
-                    className="w-20 h-40 absolute bg-purple-300 rounded-full bottom-20 left-10 transform rotate-45 hidden md:block" />
-            </div>
-        </form>
+            </form>
+        </FormLayout>
     )
 }
