@@ -3,11 +3,10 @@ import Layout from '@/components/layout/Layout'
 import '@/styles/globals.css'
 import type { AppProps } from 'next/app'
 import { wrapper } from "@/modules/store";
-import FormLayout from "@/components/layout/FormLayout";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (pageProps && pageProps.pathname) === '/users/login' || 
-  (pageProps && pageProps.pathname) === '/users/join' ? (
+    (pageProps && pageProps.pathname) === '/users/join' ? (
       <Component {...pageProps} />
   ) : (
       <Layout>

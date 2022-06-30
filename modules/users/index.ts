@@ -1,5 +1,6 @@
 import { createAsyncThunk, createSlice, PayloadAction} from '@reduxjs/toolkit'
 
+//사용자 타입
 export interface UserType {
     email: string, password: string, username: string, birth: string, gender: string
 }
@@ -12,6 +13,7 @@ const initialState: UserState = {
     data: [],
     status: 'idle'
 }
+
 
 export const userSlice = createSlice({
     name: 'userSlice',

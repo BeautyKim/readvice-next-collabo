@@ -1,8 +1,36 @@
 import Link from "next/link"
+import { useState } from "react"
+import { useDispatch } from "react-redux"
 import FormLayout from "../layout/FormLayout"
+import tw from "tailwind-styled-components"
 
 const Login: React.FC = () => {
-    
+    const [ Userlogin, setUserLogin ] = useState({
+        email:'', password: ''
+    })
+    const dispatch = useDispatch()
+    const handleChange = (e: { preventDefault: () => void; target: { name: any; value: any } }) =>{
+        e.preventDefault()
+        const{name, value} = e.target;
+        setUserLogin({...Userlogin, [name]: value})
+    }
+    const LoginInput = tw.input`
+        block
+        w-full
+        px-4
+        py-3
+        text-sm
+        border
+        rounded-lg
+        outline-none
+        peer
+    `
+    const LoginSpan = tw.span`
+        block
+        text-sm
+        font-medium
+        text-slate-700
+    `
     
     return (
         <FormLayout>
@@ -10,35 +38,37 @@ const Login: React.FC = () => {
                 <div className="flex items-center justify-center min-h-screen ">
                     <div className="z-20 px-12 py-12 bg-white shadow-xl rounded-2xl">
                         <div>
-                            <h1 className="mb-4 text-3xl font-bold text-center cursor-pointer">Your read advice</h1>
-                            <p
-                                className="mb-8 text-sm font-semibold tracking-wide text-center text-gray-700 cursor-pointer w-80">안녕하세요! 리드바이스 입니다.😊</p>
+                            <h1 className="mb-4 text-3xl font-bold text-center cursor-pointer">
+                                <Link href="/"><a>Your read advice</a></Link></h1>
+                            <p className="mb-8 text-sm font-semibold tracking-wide text-center text-gray-700 cursor-pointer w-80">
+                                안녕하세요! 리드바이스 입니다.😊</p>
                         </div>
-                        <div className="space-y-4">
+                        <div>
                             <label className="block">
-                                <span className="block text-sm font-medium text-slate-700">Email</span>
-                                <input
+                                <LoginSpan>Email</LoginSpan>
+                                <LoginInput
                                     type="email"
                                     placeholder="Email Addres"
-                                    className="block w-full px-4 py-3 text-sm border rounded-lg outline-none peer"/>
+                                    onChange={handleChange}/>
                                 <p className="invisible mt-2 text-sm text-pink-600 peer-invalid:visible">
                                 Please provide a valid email address.
                                 </p>
                             </label>
                             <label className="block">
-                                <span className="block text-sm font-medium text-slate-700">Password</span>
-                                <input
+                                <LoginSpan>Password</LoginSpan>
+                                <LoginInput
                                     type="Password"
                                     placeholder="Password"
-                                    className="block w-full px-4 py-3 text-sm border rounded-lg outline-none"/>
+                                    onChange={handleChange}/>
                             </label>
                         </div>
-                        <div className="mt-6 text-center">
-                            <Link href='/loginHome/loginHome'><button className="w-64 py-3 text-xl text-white bg-purple-400 rounded-2xl">Login</button></Link>
+                        <div className="mt-5 text-center">
+                            <button className="w-64 py-3 text-xl text-white bg-purple-400 rounded-2xl" type="submit">Login</button>
                             <p className="mt-4 text-sm">아직 회원이 아니신가요?  
                                 <Link href='/users/join'><a className="underline cursor-pointer">
                                     Sign Up</a>
-                                </Link>
+                                </Link><br/>
+                                <Link href='/loginHome/loginHome'><a>로그인 했다 치고 로그인 화면으로 가기</a></Link>
                             </p>
                         </div>
                     </div>
