@@ -16,10 +16,6 @@ const Join: React.FC = () => {
         const{name, value} = e.target;
         setUser({...user, [name]: value})
     }
-    const LoginInput = tw.input`
-        block w-full px-4 py-3 text-sm border rounded-lg outline-none
-    `
-
     
   return (
     <FormLayout>
@@ -40,35 +36,40 @@ const Join: React.FC = () => {
                             리드바이스와 함께하기</p>
                     </div>
                 <div className="space-y-4">
-                    <LoginInput
+                    <input
                         type="email"
                         placeholder="name@example.com"
                         id="email"
                         name="email"
-                        onChange={handleChange}/>
-                    <LoginInput
+                        onChange={handleChange}
+                        className="block w-full px-4 py-3 text-sm border rounded-lg outline-none"/>
+                    <input
                         type="Password"
                         placeholder="비밀번호"
                         id="password"
                         name="password"
-                        onChange={handleChange}/>
-                    <LoginInput
+                        onChange={handleChange}
+                        className="block w-full px-4 py-3 text-sm border rounded-lg outline-none"/>
+                    <input
                         type="Password"
                         placeholder="비밀번호 재확인"
                         id="RePassword"
-                        name="RePassword"/>
-                    <LoginInput
+                        name="RePassword"
+                        className="block w-full px-4 py-3 text-sm border rounded-lg outline-none"/>
+                    <input
                         type="text"
                         id="username"
                         name="username"
                         placeholder="사용자 이름"
-                        onChange={handleChange}/>
+                        onChange={handleChange}
+                        className="block w-full px-4 py-3 text-sm border rounded-lg outline-none"/>
                     <div className="mb-3 form-floating">
-                        <LoginInput
+                        <input
                             type="date"
                             id="birth"
                             name="birth"
-                            onChange={handleChange}/>
+                            onChange={handleChange}
+                            className="block w-full px-4 py-3 text-sm border rounded-lg outline-none"/>
                     </div>
                 </div>
                 <div className="mb-4 form-check form-check-inline">

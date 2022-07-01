@@ -15,17 +15,7 @@ const Login: React.FC = () => {
         const{name, value} = e.target;
         setUserLogin({...Userlogin, [name]: value})
     }
-    const LoginInput = tw.input`
-        block
-        w-full
-        px-4
-        py-3
-        text-sm
-        border
-        rounded-lg
-        outline-none
-        peer
-    `
+
     const LoginSpan = tw.span`
         block
         text-sm
@@ -48,20 +38,22 @@ const Login: React.FC = () => {
                         <div>
                             <label className="block">
                                 <LoginSpan>Email</LoginSpan>
-                                <LoginInput
+                                <input
                                     type="email"
                                     placeholder="Email Addres"
-                                    onChange={handleChange}/>
+                                    onChange={handleChange}
+                                    className="block w-full px-4 py-3 text-sm border rounded-lg outline-none"/>
                                 <p className="invisible mt-2 text-sm text-pink-600 peer-invalid:visible">
                                 Please provide a valid email address.
                                 </p>
                             </label>
                             <label className="block">
                                 <LoginSpan>Password</LoginSpan>
-                                <LoginInput
+                                <input
                                     type="Password"
                                     placeholder="Password"
-                                    onChange={handleChange}/>
+                                    onChange={handleChange}
+                                    className="block w-full px-4 py-3 text-sm border rounded-lg outline-none"/>
                             </label>
                         </div>
                         <div className="mt-5 text-center">
