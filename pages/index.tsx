@@ -1,8 +1,5 @@
-import { Product } from "@/components";
+import Product from "@/components/common/Product";
 import { NextPage } from "next";
-/**
- * choi test
- */
 
 const Home: NextPage = () => {
   return (
