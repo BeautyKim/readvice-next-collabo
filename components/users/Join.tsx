@@ -10,13 +10,14 @@ const Join: React.FC = () => {
     const [user, setUser] =useState<UserType>({
         email:'', password:'', username:'', birth:'', gender:''
     })
+    
     const dispatch = useDispatch()
     const handleChange = (e: { preventDefault: () => void; target: { name: any; value: any } }) =>{
         e.preventDefault()
         const{name, value} = e.target;
         setUser({...user, [name]: value})
     }
-    
+
   return (
     <FormLayout>
         <SEO title="회원가입" />
@@ -72,25 +73,27 @@ const Join: React.FC = () => {
                             className="block w-full px-4 py-3 text-sm border rounded-lg outline-none"/>
                     </div>
                 </div>
-                <div className="mb-4 form-check form-check-inline">
-                    <input className="form-check-input" 
-                        type="radio" 
-                        name="gender" 
-                        id="male" 
-                        value="option1" 
-                        onChange={handleChange}/>
-                    <label className="form-check-label" 
-                        htmlFor="male">남성</label>
-                </div>
-                <div className="mb-3 form-check form-check-inline">
-                    <input className="form-check-input" 
-                        type="radio" 
-                        name="gender" 
-                        id="female" 
-                        value="option2" 
-                        onChange={handleChange}/>
-                    <label className="form-check-label" 
-                        htmlFor="female">여성</label>
+                <div>
+                    <div className="form-check form-check-inline">
+                        <input type="checkbox" 
+                            name="gender" 
+                            id="male" 
+                            value="male"
+                            onChange={handleChange}
+                            className="float-left w-4 h-4 my-1 mr-2 align-top transition duration-200 bg-white bg-center bg-no-repeat bg-contain border border-gray-300 rounded-full appearance-none cursor-pointer form-check-input checked:bg-blue-600 checked:border-blue-600 focus:outline-none"/>
+                        <label className="inline-block text-gray-800 form-check-label" 
+                            htmlFor="male">남성</label>
+                    </div>
+                    <div className="form-check form-check-inline">
+                        <input type="checkbox" 
+                            name="gender" 
+                            id="female"
+                            value="female"
+                            onChange={handleChange}
+                            className="float-left w-4 h-4 my-1 mr-2 align-top transition duration-200 bg-white bg-center bg-no-repeat bg-contain border border-gray-300 rounded-full appearance-none cursor-pointer form-check-input checked:bg-blue-600 checked:border-blue-600 focus:outline-none" checked/>
+                        <label className="inline-block text-gray-800 form-check-label"
+                            htmlFor="female">여성</label>
+                    </div>
                 </div>
                 <hr className="mb-3" />
                 <div className="custom-control custom-checkbox">

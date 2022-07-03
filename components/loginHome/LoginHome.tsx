@@ -1,5 +1,6 @@
 import Link from "next/link"
 import { SEO, HomeClock, HomeWeather } from "@/components"
+import HomeWeatherPage from "@/pages/loginHome/homeWeather"
 
 export function LoginHome(){
     return(
@@ -9,7 +10,7 @@ export function LoginHome(){
                 <article className="mainBook">
                     <div className="dayItem">
                         <div className="weather">
-                            <HomeWeather />
+                            <HomeWeatherPage />
                         </div>
                         <div className="mainTime">
                                 <HomeClock />
