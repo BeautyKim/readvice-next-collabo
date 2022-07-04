@@ -75,22 +75,20 @@ const Join: React.FC = () => {
                 </div>
                 <div>
                     <div className="form-check form-check-inline">
-                        <input type="checkbox" 
+                        <input type="radio" 
                             name="gender" 
                             id="male" 
                             value="male"
-                            onChange={handleChange}
-                            className="float-left w-4 h-4 my-1 mr-2 align-top transition duration-200 bg-white bg-center bg-no-repeat bg-contain border border-gray-300 rounded-full appearance-none cursor-pointer form-check-input checked:bg-blue-600 checked:border-blue-600 focus:outline-none"/>
+                            onChange={handleChange}/>
                         <label className="inline-block text-gray-800 form-check-label" 
                             htmlFor="male">남성</label>
                     </div>
                     <div className="form-check form-check-inline">
-                        <input type="checkbox" 
+                        <input type="radio" 
                             name="gender" 
                             id="female"
                             value="female"
-                            onChange={handleChange}
-                            className="float-left w-4 h-4 my-1 mr-2 align-top transition duration-200 bg-white bg-center bg-no-repeat bg-contain border border-gray-300 rounded-full appearance-none cursor-pointer form-check-input checked:bg-blue-600 checked:border-blue-600 focus:outline-none" checked/>
+                            onChange={handleChange} />
                         <label className="inline-block text-gray-800 form-check-label"
                             htmlFor="female">여성</label>
                     </div>
