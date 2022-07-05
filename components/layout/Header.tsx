@@ -66,9 +66,10 @@ const style = css`
 export const Header = () => {
 
     const navMyPage = [
-        { label: '회원정보', path: '/users/information'},
-        { label: '읽은책', path: '/comments/readingBooks'},
-        { label: '찜한책', path: '/comments/likeBooks'},
+        { label: '회원정보', path: '/users/information' },
+        { label: '읽은책', path: '/comments/readingBooks' },
+        { label: '찜한책', path: '/comments/likeBooks' },
+        { label: '한줄평', path: '/comments/recordBooks' },
     ]
     return(
         <div>

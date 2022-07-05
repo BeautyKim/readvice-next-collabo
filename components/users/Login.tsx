@@ -74,13 +74,14 @@ const Login: React.FC = () => {
                             <button className="py-2 mb-2 w-100 btn btn-outline-primary rounded-3" type="submit">
                                 Login with Google
                             </button>
+                            <hr className="my-4"/>
+                            <Link href="#">
+                                <a className="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800">Forgot Password?</a></Link>
                             <p className="mt-4 text-sm">아직 회원이 아니신가요?  
                                 <Link href='/users/join'><a className="underline cursor-pointer">
-                                    Sign Up</a>
-                                </Link><br/>
+                                    Sign Up</a></Link><br/>
                                 <Link href='/loginHome/loginHome'><a>로그인 했다 치고 로그인 화면으로 가기</a></Link>
                             </p>
-                            <p className="mt-4 text-sm"><button>비밀번호</button> </p>
                         </div>
                     </div>
                 </div>

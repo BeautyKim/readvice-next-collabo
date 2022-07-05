@@ -31,12 +31,12 @@ const Product = () => {
         md:text-lg
     `
     return(
-        <section className="h-full mx-10 my-40 space-y-3 columns-1">
+        <section className="h-full m-44 space-y-3 columns-1">
             <article className="text-center">
                 <h1 className="text-3xl font-black leading-8 tracking-tight text-gray-900 md:text-4xl sm:text-4">Your read advice</h1>
                 <P>나만을 위한 사서 리드바이스</P>
             </article>
-            <article className="container flex flex-col items-center px-6 pt-24 pb-32 mx-auto md:flex-row md:space-x-16">
+            <article className="container flex flex-col items-center px-6 pt-24 pb-32 mx-auto md:flex-row md:space-x-22">
                 <LeftDiv>
                     <H1>
                         읽고 싶은 책을 검색하면
