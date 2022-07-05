@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export function Search(){
     return(
-        <div>
+        <>
         <SEO title="검색"/>
         <div className="center">
         </div>
@@ -32,6 +32,6 @@ export function Search(){
               background: #ffff;
               }
         `}</style>
-        </div>
+        </>
     )
 }

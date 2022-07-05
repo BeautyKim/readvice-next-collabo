@@ -1,3 +1,4 @@
+import { NextServer } from "next/dist/server/next";
 import Image from "next/image";
 import Link from "next/link";
 import css from "styled-jsx/css";
@@ -84,7 +85,7 @@ export const Header = () => {
                         <li className="dropdown"> <Link href="#" className="dropbtn"><a>My Page</a></Link>
                             <ul className="dropdown-content">
                                 {navMyPage.map(nav => (
-                                    <Link href={nav.path}><a>{nav.label}</a></Link>
+                                    <Link href={nav.path} key={nav.label}><a>{nav.label}</a></Link>
                                 ))}
                             </ul>
                         </li>

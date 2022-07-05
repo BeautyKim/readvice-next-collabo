@@ -12,7 +12,7 @@ const Join: React.FC = () => {
     })
     
     const dispatch = useDispatch()
-    const handleChange = (e: { preventDefault: () => void; target: { name: any; value: any } }) =>{
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) =>{
         e.preventDefault()
         const{name, value} = e.target;
         setUser({...user, [name]: value})
@@ -54,8 +54,8 @@ const Join: React.FC = () => {
                     <input
                         type="Password"
                         placeholder="비밀번호 재확인"
-                        id="RePassword"
-                        name="RePassword"
+                        id="cpassword"
+                        name="cpassword"
                         className="block w-full px-4 py-3 text-sm border rounded-lg outline-none"/>
                     <input
                         type="text"
@@ -79,7 +79,8 @@ const Join: React.FC = () => {
                             name="gender" 
                             id="male" 
                             value="male"
-                            onChange={handleChange}/>
+                            onChange={handleChange}
+                            className="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-600 dark:focus:bg-blue-600 dark:bg-gray-700 dark:border-gray-600" />
                         <label className="inline-block text-gray-800 form-check-label" 
                             htmlFor="male">남성</label>
                     </div>
@@ -88,7 +89,8 @@ const Join: React.FC = () => {
                             name="gender" 
                             id="female"
                             value="female"
-                            onChange={handleChange} />
+                            onChange={handleChange}
+                            className="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-600 dark:focus:bg-blue-600 dark:bg-gray-700 dark:border-gray-600" />
                         <label className="inline-block text-gray-800 form-check-label"
                             htmlFor="female">여성</label>
                     </div>
@@ -103,9 +105,9 @@ const Join: React.FC = () => {
                     </div>
                 </div>
                 <hr className="my-4"/>
-                <h2 className="mb-3 text-center fs-5 fw-bold">Or use a third-party</h2>
+                <h2 className="mb-3 text-center fs-5 fw-bold">or</h2>
                 <button className="py-2 mb-2 w-100 btn btn-outline-dark rounded-3" type="submit">
-                    Sign up with Twitter
+                    Sign up with GitHub
                 </button>
                 <button className="py-2 mb-2 w-100 btn btn-outline-primary rounded-3" type="submit">
                     Sign up with Google

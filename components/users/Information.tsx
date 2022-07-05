@@ -23,14 +23,7 @@ export function Information() {
                             <h3>이메일</h3>
                             <p>fifty@gmail.com</p>
                         </div>
-                        <div className="flex justify-start space-x-2">
-                            <h3>휴대폰 번호</h3>
-                            <input
-                                    type="text"
-                                    placeholder="010-xxxx-xxxx"
-                                    className="block w-full px-3 text-sm border rounded-lg outline-none"/>
-                            <button>변경</button>
-                        </div>
+                        
                         <div className="flex justify-start space-x-6">
                             <h3>비밀번호</h3>
                             <input
@@ -46,8 +39,6 @@ export function Information() {
                                     className="block w-full px-3 text-sm border rounded-lg outline-none"/>
                             <button >중복확인</button>
                         </div>
-                        
-                        
                     </div>
                     <div className="flex justify-center mt-6 space-x-6">
                         <button>수정하기</button>

@@ -30,7 +30,7 @@ const makeStore = () =>{
     const store = configureStore({
         reducer:{ rootReducer },
         middleware: (getDefaultMiddleware) =>
-        isDev? getDefaultMiddleware({serializableCheck: false}).concat(logger, sagaMiddleware) : getDefaultMiddleware(),
+        isDev? getDefaultMiddleware({ thunk: false }).concat(logger, sagaMiddleware) : getDefaultMiddleware(),
         devTools :isDev
     });
     sagaMiddleware.run(rootSaga)

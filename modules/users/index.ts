@@ -1,4 +1,4 @@
-import { createAsyncThunk, createSlice, PayloadAction} from '@reduxjs/toolkit'
+import { createSlice, PayloadAction} from '@reduxjs/toolkit'
 
 //사용자 타입
 export interface UserType {
@@ -32,11 +32,25 @@ export const userSlice = createSlice({
         joinFailure(state: UserState, {payload}){
             state.status = 'failed'
             state.data = payload
+        },
+        loginRequest(state: UserState, _payload){
+            state.status = 'loading';
+            alert('진행 2: 리듀서 내부 ')
+            
+        },
+        loginSuccess(state: UserState, {payload}){
+            state.status = 'idle'
+            state.data = [...state.data, payload]
+            alert(`진행 : 로그인 데이터 ${state.data}`)
+        },
+        loginFailure(state: UserState, {payload}){
+            state.status = 'failed'
+            state.data = payload
         }
     }
 })
 
-export const { joinRequest, joinSuccess, joinFailure } = userSlice.actions;
+export const { joinRequest, joinSuccess, joinFailure, loginRequest, loginSuccess, loginFailure } = userSlice.actions;
 
 const {reducer, actions} = userSlice
 export const userActions = actions
