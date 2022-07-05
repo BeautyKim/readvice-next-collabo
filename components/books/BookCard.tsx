@@ -1,18 +1,14 @@
 import Link from "next/link"
+const API_KEY = process.env.NEXT_PUBLIC_DATALIBRARY_API_KEY
 
 const BookCard = ({ photo }: any) => {
+    const url = `http://data4library.kr/api/loanItemSrch?authKey=${API_KEY}1&startDt=2022-07-01&endDt=2022-07-04&region=31&addCode=2&format=json`
+
+
     return(
-        <article className="wrap">
-            <Link href={"/books/"+photo.id} key={photo.id} scroll={false}>
-                <a className="a">
-                    <div className="imgWrap">
-                        <img src={photo.thumbnailUrl}/>
-                    </div>
-                    <div className="commentHead">
-                    </div>
-                </a>
-            </Link>
-        </article>
+        <>
+            
+        </>
     )
 }
 export default BookCard

@@ -5,13 +5,11 @@ import { SEO } from "@/components";
 export function ReadingBooks() {
 
     return (
-        <div>
+        <>
         <SEO title="읽은 책" />
             <form >
                 <h1>내 서재 관리</h1>
-                <button>읽은 책 목록</button>
-                <button>찜한 책 목록</button>
-                <Link href="/bookSearch/searchRecheck"><button>선택한 책 선택</button></Link>
+                <Link href="/bookSearch/searchRecheck"><button>책 선택</button></Link>
                 <div>
                     <img src='http://image.kyobobook.co.kr/images/book/large/225/l9791191114225.jpg' />
                     <img src='http://image.kyobobook.co.kr/images/book/large/188/l9791161571188.jpg' />
@@ -22,6 +20,6 @@ export function ReadingBooks() {
                     </label>
                 </div>
             </form>
-        </div>
+        </>
     );
 }
