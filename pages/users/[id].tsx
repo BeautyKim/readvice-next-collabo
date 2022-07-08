@@ -1,3 +1,4 @@
+import { useRouter } from "next/router"
 
 interface User{
     id: number
@@ -9,5 +10,10 @@ type ProfileProps = {
 }
 
 const Profile = () => {
-    return
+    const router = useRouter()
+    const { username } = router.query
+    return(
+        <h1>{ username }님 환영합니다</h1>
+    )
 }
+export default Profile

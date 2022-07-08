@@ -46,6 +46,7 @@ const Login: React.FC = () => {
                             <label className="block">
                                 <LoginSpan>Email</LoginSpan>
                                 <input
+                                    name="email"
                                     type="email"
                                     placeholder="Email Addres"
                                     onChange={handleChange}
@@ -57,7 +58,8 @@ const Login: React.FC = () => {
                             <label className="block">
                                 <LoginSpan>Password</LoginSpan>
                                 <input
-                                    type="Password"
+                                    name="password"
+                                    type="password"
                                     placeholder="Password"
                                     onChange={handleChange}
                                     className="block w-full px-4 py-3 text-sm border rounded-lg outline-none"/>
@@ -76,7 +78,7 @@ const Login: React.FC = () => {
                             </button>
                             <hr className="my-4"/>
                             <Link href="#">
-                                <a className="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800">Forgot Password?</a></Link>
+                                <a className="inline-block text-sm font-bold text-blue-500 align-baseline hover:text-blue-800">Forgot Password?</a></Link>
                             <p className="mt-4 text-sm">아직 회원이 아니신가요?  
                                 <Link href='/users/join'><a className="underline cursor-pointer">
                                     Sign Up</a></Link><br/>
