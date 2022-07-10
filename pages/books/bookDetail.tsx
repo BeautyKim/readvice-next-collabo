@@ -1,9 +1,9 @@
 import { SearchDetail } from "@/components";
 import { NextPage } from "next";
 
-const SearchDetailPage: NextPage = () => {
+const BookDetailPage: NextPage = () => {
   return (
     <SearchDetail />
   )
 }
-export default SearchDetailPage
+export default BookDetailPage

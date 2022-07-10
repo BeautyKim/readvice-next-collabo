@@ -1,7 +1,7 @@
 import { SEO } from "@/components";
 import Link from "next/link";
 
-export function Search(){
+export function BookList(){
     return(
         <>
         <SEO title="검색"/>

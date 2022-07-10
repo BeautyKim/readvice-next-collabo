@@ -6,16 +6,22 @@ import tw from "tailwind-styled-components"
 import { SEO } from "../common/SEO"
 import { userActions } from "@/modules/users"
 
-const Login: React.FC = () => {
-    const [ userLogin, setUserLogin ] = useState({
-        email:'', password: ''
-    })
-    const dispatch = useDispatch()
-    const handleChange = (e: { preventDefault: () => void; target: { name: any; value: any } }) =>{
-        e.preventDefault()
-        const{name, value} = e.target;
-        setUserLogin({...userLogin, [name]: value})
-    }
+interface LoginProps {
+    handleChange : (e : React.FormEvent<HTMLInputElement> ) => void;
+    handleSubmit : (e : React.FormEvent<HTMLFormElement>) => void;
+}
+
+
+const Login: React.FC<LoginProps> = ({handleChange, handleSubmit} : LoginProps) => {
+    // const [ userLogin, setUserLogin ] = useState({
+    //     email:'', password: ''
+    // })
+    // const dispatch = useDispatch()
+    // const handleChange = (e: { preventDefault: () => void; target: { name: any; value: any } }) =>{
+    //     e.preventDefault()
+    //     const{name, value} = e.target;
+    //     setUserLogin({...userLogin, [name]: value})
+    // }
 
     const LoginSpan = tw.span`
         block
@@ -27,13 +33,7 @@ const Login: React.FC = () => {
     return (
         <FormLayout>
             <SEO title="로그인"/>
-            <form onSubmit={
-                 e=> {
-                    e.preventDefault()
-                    dispatch(userActions.loginRequest(userLogin))
-                    setUserLogin({ email:'', password:''})
-                }
-            }>
+            <form onSubmit={handleSubmit}>
                 <div className="flex items-center justify-center min-h-screen ">
                     <div className="z-20 px-12 py-12 bg-white shadow-xl rounded-2xl">
                         <div>
