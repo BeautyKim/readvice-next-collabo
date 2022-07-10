@@ -1,0 +1,10 @@
+import UserList from "@/components/users/userList"
+import { NextPage } from "next"
+
+const UserListPage: NextPage = () => {
+  return (
+    <UserList />
+  )
+}
+
+export default UserListPage

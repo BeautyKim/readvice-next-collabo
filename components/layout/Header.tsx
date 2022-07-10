@@ -1,6 +1,6 @@
-import { NextServer } from "next/dist/server/next";
 import Image from "next/image";
 import Link from "next/link";
+import { ReactElement, JSXElementConstructor, ReactFragment, ReactPortal } from "react";
 import css from "styled-jsx/css";
 
 const style = css`
@@ -63,10 +63,9 @@ const style = css`
     }
 `
 
-export const Header = () => {
+export const Header = (props: { userId: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | ReactFragment | ReactPortal | null | undefined; }) => {
 
     const navMyPage = [
-        { label: '회원정보', path: '/users/information' },
         { label: '읽은책', path: '/comments/readingBooks' },
         { label: '찜한책', path: '/comments/likeBooks' },
         { label: '한줄평', path: '/comments/recordBooks' },
@@ -85,6 +84,7 @@ export const Header = () => {
                         </li>
                         <li className="dropdown"> <Link href="#" className="dropbtn"><a>My Page</a></Link>
                             <ul className="dropdown-content">
+                                <Link href="/users/[userId]" as={`/users/${props.userId}`}><a>회원정보</a></Link>
                                 {navMyPage.map(nav => (
                                     <Link href={nav.path} key={nav.label}><a>{nav.label}</a></Link>
                                 ))}

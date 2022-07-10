@@ -1,6 +1,6 @@
 import { SEO } from "@/components";
 
-export function Information() {
+export const Profile: React.FC = ({}) => {
 
     return (
         <>
@@ -11,6 +11,7 @@ export function Information() {
                         <img src="/svg/김오십.svg" className="block h-24 mx-auto rounded-full sm:mx-0 sm:shrink-0"/>
                         <h1 className="mb-4 text-3xl font-bold text-center cursor-pointer">
                             김오십
+                            {/* {userId.username} */}
                         </h1>
                         <p className="text-center">SNS계정 연결하기</p>
                         <div className="flex justify-center space-x-4">

@@ -1,9 +1,9 @@
 import { NextPage } from "next"
 
-const logoutPage: NextPage = () => {
+const LogoutPage: NextPage = () => {
   return (
     <div>logout</div>
   )
 }
 
-export default logoutPage
+export default LogoutPage
