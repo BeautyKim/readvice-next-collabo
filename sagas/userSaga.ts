@@ -8,6 +8,7 @@ function* join(user: UserJoinType){
         alert(' 진행 3: saga내부 join 성공  '+ JSON.stringify(user))
         const response: UserJoinType = yield userJoinApi(user.payload)
         yield put(userActions.joinSuccess(response))
+        window.location.href = '/'
     }catch(error){
          alert('진행 3: saga내부 join 실패  ') 
          yield put(userActions.joinFailure(error))
@@ -19,6 +20,8 @@ function* login(user: UserLoginType){
         alert('login 성공~^^' + JSON.stringify(user))
         const response: UserLoginType = yield userLoginApi(user.payload)
         yield put(userActions.loginSuccess(response))
+        window.location.href = '/loginHome/loginHome'
+        
     }catch(error){
         alert('진행 3: saga내부 join 실패  ') 
         yield put(userActions.loginFailure(error))
