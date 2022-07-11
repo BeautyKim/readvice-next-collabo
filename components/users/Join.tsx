@@ -17,6 +17,9 @@ const Join: React.FC = () => {
         const{name, value} = e.target;
         setUser({...user, [name]: value})
     }
+    const checkPasswordHandler = () => {
+        
+    }
 
   return (
     <FormLayout>
@@ -56,6 +59,7 @@ const Join: React.FC = () => {
                         placeholder="비밀번호 재확인"
                         id="cpassword"
                         name="cpassword"
+                        onChange={checkPasswordHandler}
                         className="block w-full px-4 py-3 text-sm border rounded-lg outline-none"/>
                     <input
                         type="text"
