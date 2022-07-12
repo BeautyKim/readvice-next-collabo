@@ -16,7 +16,7 @@ const Layout = ({ children } : LayoutProps) => {
         <title>Readvice</title>
       </Head>
       <div>
-        <Header />
+        <Header userId={undefined} />
         <SearchBar />
         <main>
           {children}

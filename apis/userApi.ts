@@ -1,4 +1,3 @@
-import { UserType } from "@/types/users";
 import axios, {AxiosResponse} from "axios";
 
 export const SERVER = 'http://127.0.0.1:8000'
@@ -11,6 +10,8 @@ interface AuthData {
     refresh_token?: string;
 }
 
+
+// 회원가입
 export const userJoinApi = async (
     payload: {email: string, password: string, username: string, birth: string, gender: string}) => {
         try{
@@ -23,6 +24,7 @@ export const userJoinApi = async (
         }
 }
 
+// 로그인
 export const userLoginApi = async (
     payload: {email: string, password: string}) => {
         try{
@@ -35,3 +37,12 @@ export const userLoginApi = async (
         }
     
 }
+
+// 로그아웃
+// export const userLogiOutApi =async (
+//     payload: { email: string, password: string }) => {
+//         try{
+//             const 
+//         }
+    
+// }

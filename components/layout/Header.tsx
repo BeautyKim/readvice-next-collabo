@@ -66,9 +66,12 @@ const style = css`
 export const Header = (props: { userId: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | ReactFragment | ReactPortal | null | undefined; }) => {
 
     const navMyPage = [
-        { label: '읽은책', path: '/comments/readingBooks' },
-        { label: '찜한책', path: '/comments/likeBooks' },
-        { label: '한줄평', path: '/comments/recordBooks' },
+        { label: '읽은책', path: '/books/readingBooks' },
+        { label: '찜한책', path: '/books/likeBooks' },
+        { label: '한줄평', path: '/comments/commentList' },
+        { label: '한줄평 수정', path: '/comments/commentModify' },
+        { label: '한줄평 삭제', path: '/comments/commentRemove' },
+        { label: '한줄평 작성', path: '/comments/commentWrite' },
     ]
     return(
         <div>

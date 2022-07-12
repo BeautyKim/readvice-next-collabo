@@ -1,10 +1,7 @@
 import Link from "next/link"
-import { useState } from "react"
-import { useDispatch } from "react-redux"
 import FormLayout from "../layout/FormLayout"
 import tw from "tailwind-styled-components"
 import { SEO } from "../common/SEO"
-import { userActions } from "@/modules/users"
 
 interface LoginProps {
     handleChange : (e : React.FormEvent<HTMLInputElement> ) => void;
@@ -13,16 +10,7 @@ interface LoginProps {
 
 
 const Login: React.FC<LoginProps> = ({handleChange, handleSubmit} : LoginProps) => {
-    // const [ userLogin, setUserLogin ] = useState({
-    //     email:'', password: ''
-    // })
-    // const dispatch = useDispatch()
-    // const handleChange = (e: { preventDefault: () => void; target: { name: any; value: any } }) =>{
-    //     e.preventDefault()
-    //     const{name, value} = e.target;
-    //     setUserLogin({...userLogin, [name]: value})
-    // }
-
+    
     const LoginSpan = tw.span`
         block
         text-sm
@@ -82,7 +70,6 @@ const Login: React.FC<LoginProps> = ({handleChange, handleSubmit} : LoginProps) 
                             <p className="mt-4 text-sm">아직 회원이 아니신가요?  
                                 <Link href='/users/join'><a className="underline cursor-pointer">
                                     Sign Up</a></Link><br/>
-                                <Link href='/loginHome/loginHome'><a>로그인 했다 치고 로그인 화면으로 가기</a></Link>
                             </p>
                         </div>
                     </div>

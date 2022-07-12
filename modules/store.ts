@@ -32,7 +32,7 @@ const makeStore = () =>{
         middleware: (getDefaultMiddleware) =>
         isDev? getDefaultMiddleware({ thunk: false }).concat(logger, sagaMiddleware) : getDefaultMiddleware(),
         devTools :isDev
-    });
+    }); //thunk: false -> thunk는 자동으로 실행되기 때문에 false를 해줘야한다
     sagaMiddleware.run(rootSaga)
     return store
 }

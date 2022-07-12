@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import React, { useState } from 'react'
 
-const RecordBookWrite = ({}) => {
+const CommentWrite = ({}) => {
 
     const [todos, setTodo] = useState([])
     const [input, setInput] = useState('')
@@ -12,6 +12,7 @@ const RecordBookWrite = ({}) => {
   return (
     <>
         <div className='flex place-content-center space-x-10 mx-36 mt-24'>
+            {/* 책카드 */}
             <div className="max-w-sm rounded overflow-hidden shadow-lg">
                         <Link href="/comments/recordBookWrite">
                             <img className="w-full" src='http://image.kyobobook.co.kr/images/book/large/225/l9791191114225.jpg' alt="Sunset in the mountains" /></Link>
@@ -31,6 +32,7 @@ const RecordBookWrite = ({}) => {
                                 className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#winter</span>
                         </div>
             </div>
+            {/* 한줄평 작성 */}
             <div className='w-full'>
                 <button>내보내기</button>
                 <div className=' h-96 rounded overflow-hidden shadow-lg mr-11'>
@@ -52,4 +54,4 @@ const RecordBookWrite = ({}) => {
     </>
   )
 }
-export default RecordBookWrite
+export default CommentWrite
