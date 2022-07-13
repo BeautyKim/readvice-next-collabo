@@ -19,7 +19,7 @@ const ProfilePage = () => {
     const router = useRouter()
     const [ user, setUser ] = useState({})
     useEffect(() => {
-        axios.get(`${SERVER}/api/user/login${userId}`)
+        axios.get(`${SERVER}/api/user/login${userid}`)
         .then(res => {
             setUser(res.data.user)
         }).catch(err => {
@@ -27,10 +27,10 @@ const ProfilePage = () => {
         })
     }, [])
 
-    const { userId } = router.query
+    const { userid } = router.query
     return(
         <>
-            {userId}
+            {userid}
             <Profile />
         </>
     )

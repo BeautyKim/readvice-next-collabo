@@ -1,8 +1,7 @@
+import { NextPage } from "next"
 import { useRouter } from "next/router"
 
-// 책 api를 받아오는 페이지 입니다.
-
-function BookPage() {
+const BookPage: NextPage = () => {
     const router = useRouter()
 
     console.log(router.query.book)

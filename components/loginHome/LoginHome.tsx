@@ -1,6 +1,6 @@
 import Link from "next/link"
 import { SEO, HomeClock, HomeWeather } from "@/components"
-import HomeWeatherPage from "@/pages/loginHome/homeWeather"
+import HomeWeatherPage from "@/pages/loginHome/homeItem/homeWeather"
 
 export function LoginHome(){
     return(

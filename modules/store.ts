@@ -3,45 +3,51 @@ import {AnyAction, CombinedState, configureStore, combineReducers} from '@reduxj
 import {createWrapper, HYDRATE} from 'next-redux-wrapper'
 import logger from 'redux-logger';
 import createSagaMiddleware from 'redux-saga'
-import { UserState } from './users';
+import { TypedUseSelectorHook, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import userReducer from './users'
 
 const isDev = process.env.NODE_ENV ==='development'
 const sagaMiddleware = createSagaMiddleware()
 
-interface RootStates {
-    user: UserState;
-}
+const combineReducer = combineReducers({
+    user: userReducer,
+})
+
 const rootReducer = (
-	state: RootStates,
-    action: AnyAction
+        state: ReturnType<typeof combineReducer>,
+        action: AnyAction
 ) => {
     if(action.type === HYDRATE) {
         return{
-            ...state, ...action.payload
+            ...state,
+            ...action.payload
         }
+    } else {
+    return combineReducer(state, action)
     }
-    return combineReducers({
-        user: userReducer,
-    })(state, action)
 }
 
 const makeStore = () =>{
     const store = configureStore({
         reducer:{ rootReducer },
         middleware: (getDefaultMiddleware) =>
-        isDev? getDefaultMiddleware({ thunk: false }).concat(logger, sagaMiddleware) : getDefaultMiddleware(),
+        getDefaultMiddleware({serializableCheck: false})
+        .prepend(sagaMiddleware)
+        .concat(logger),
         devTools :isDev
-    }); //thunk: false -> thunk는 자동으로 실행되기 때문에 false를 해줘야한다
+    });
     sagaMiddleware.run(rootSaga)
     return store
 }
-export const wrapper = createWrapper(makeStore, {
-    debug: isDev})
 
 const store = makeStore();
-export type RootState = ReturnType<typeof rootReducer>
+
+export type RootState = ReturnType<typeof store.getState>;
 export type AppState = ReturnType<typeof store.getState>;
 export type AppDispatch = typeof store.dispatch;
+export const useAppDispatch: () => AppDispatch = useDispatch
+export const useAppSelector: TypedUseSelectorHook<AppState> = useSelector;
+export const wrapper = createWrapper(makeStore, {debug: isDev})
 
 export default store;

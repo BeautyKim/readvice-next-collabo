@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import React, { useState } from 'react'
+import Card from '../UI/Card'
 
 const CommentWrite = ({}) => {
 

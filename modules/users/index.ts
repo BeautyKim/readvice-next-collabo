@@ -2,7 +2,7 @@ import { createSlice, PayloadAction} from '@reduxjs/toolkit'
 
 //사용자 타입
 export interface UserType {
-    email: string, password: string, username: string, birth: string, gender: string
+    email: string, password: string, username?: string, birth?: string, gender?: string
 }
 
 export interface UserState{
@@ -19,6 +19,7 @@ export const userSlice = createSlice({
     name: 'userSlice',
     initialState,
     reducers:{
+        // 회원가입
         joinRequest(state: UserState, _payload){
             state.status = 'loading';
             alert('진행 2: 리듀서 내부 ')
@@ -33,6 +34,7 @@ export const userSlice = createSlice({
             state.status = 'failed'
             state.data = payload
         },
+        // 로그인 및 로그아웃
         loginRequest(state: UserState, _payload){
             state.status = 'loading';
             alert('진행 2: 리듀서 내부 ')
@@ -46,12 +48,30 @@ export const userSlice = createSlice({
         loginFailure(state: UserState, {payload}){
             state.status = 'failed'
             state.data = payload
+        },
+        logOutSuccess(state: UserState ){
+            state.status = 'failed'
+            localStorage.clear()
+            window.location.href = '/loginHome'
+        },
+        // 회원리스트
+        fetchRequest(state: UserState){
+            state.status = 'loading'
+        },
+        fetchSuccess(state: UserState, {payload}){
+            state.status = 'idle'
+            state.data = [...state.data, payload]
+        },
+        fetchFailure(state: UserState, {payload}){
+            state.status = 'failed'
+            state.data = payload
         }
+
     }
 })
 
-export const { joinRequest, joinSuccess, joinFailure, loginRequest, loginSuccess, loginFailure } = userSlice.actions;
-
 const {reducer, actions} = userSlice
+export const { joinRequest, joinSuccess, joinFailure, loginRequest, loginSuccess, loginFailure,
+                logOutSuccess, fetchRequest, fetchSuccess, fetchFailure } = userSlice.actions;
 export const userActions = actions
 export default reducer
