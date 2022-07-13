@@ -1,6 +1,6 @@
 import { UserType } from "@/modules/users";
 import {AxiosResponse} from "axios";
-import axios from ".";
+import { axios } from ".";
 
 const headers = {
     "Content-Type" : "application/json",
@@ -10,7 +10,6 @@ interface AuthData {
     access_token?: string;
     refresh_token?: string;
 }
-
 
 // 회원가입
 export const userJoinApi = async (

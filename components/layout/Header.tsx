@@ -85,6 +85,9 @@ export const Header = (props: { userId: string | number | boolean | ReactElement
                         <li>
                             <Link href="/users/join"><a>Signup</a></Link>
                         </li>
+                        <li>
+                            <Link href="/books/bookList"><a>BookList 테스트</a></Link>
+                        </li>
                         <li className="dropdown"> <Link href="#" className="dropbtn"><a>My Page</a></Link>
                             <ul className="dropdown-content">
                                 <Link href="/users/[userId]" as={`/users/${props.userId}`}><a>회원정보</a></Link>

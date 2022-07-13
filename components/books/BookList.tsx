@@ -1,10 +1,24 @@
+import { dataBookApi } from "@/apis/bookApi";
 import { SEO } from "@/components";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
 export function BookList(){
+  const [ books, setBooks ] = useState([])
+  useEffect(() => {
+    dataBookApi().then((res: any) => {
+      setBooks(res.data)
+    })
+  }, [])
+  console.log(JSON.stringify(books))
     return(
         <>
         <SEO title="검색"/>
+
+
+
+
+        
         <div className="center">
         </div>
         <p><Link href="/books/searchDetail"><img src="http://image.kyobobook.co.kr/images/book/large/225/l9791191114225.jpg"/></Link>

@@ -1,18 +1,23 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-const bookSliceType = "slice/books";
 
-export interface IBookState {
-	value: number;
+export interface BookType {
+    
 }
 
-const initialState: IBookState = {
-	value: 0
+export interface BookState {
+	data: BookType[]
+    status: 'idle' | 'loading' | 'failed'
 }
 
-const bookSlice = createSlice({
+const initialState: BookState = {
+    data: [],
+    status: 'idle'
+}
+
+export const bookSlice = createSlice({
+    name: 'bookSlice',
 	initialState,
-    name: bookSliceType,
     reducers: {
     	increase: (state) => {
         	state.value += 1;
