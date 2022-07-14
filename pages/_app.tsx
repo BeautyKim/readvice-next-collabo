@@ -3,7 +3,6 @@ import Layout from '@/components/layout/Layout'
 import '@/styles/globals.css'
 import type { AppContext, AppProps } from 'next/app'
 import { wrapper } from "@/modules/store";
-import { axios } from "@/apis";
 import { getUserApi } from "@/apis/userApi";
 
 function MyApp({ Component, pageProps }: AppProps) {
