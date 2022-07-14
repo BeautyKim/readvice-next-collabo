@@ -6,12 +6,16 @@ import createSagaMiddleware from 'redux-saga'
 import { TypedUseSelectorHook, useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import userReducer from './users'
+import bookReducer from './books'
+import commentReducer from './comments'
 
 const isDev = process.env.NODE_ENV ==='development'
 const sagaMiddleware = createSagaMiddleware()
 
 const combineReducer = combineReducers({
     user: userReducer,
+    book: bookReducer,
+    comment: commentReducer,
 })
 
 const rootReducer = (
@@ -43,7 +47,7 @@ const makeStore = () =>{
 
 const store = makeStore();
 
-export type RootState = ReturnType<typeof store.getState>;
+export type RootState = ReturnType<typeof rootReducer>;
 export type AppState = ReturnType<typeof store.getState>;
 export type AppDispatch = typeof store.dispatch;
 export const useAppDispatch: () => AppDispatch = useDispatch

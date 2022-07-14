@@ -3,19 +3,21 @@ import { SEO } from "@/components";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
-export function BookList(){
-  const [ books, setBooks ] = useState(null)
+
+
+
+ const BookList:React.FC = () => {
+  const [ books, setBooks ] = useState([])
   useEffect(() => {
     dataBookApi().then((res: any) => {
-      setBooks(res.data)
+      setBooks(res.data) 
     })
   }, [])
+  console.log(books, setBooks)
     return(
         <>
         <SEO title="검색"/>
-        <div>
-          {}
-        </div>
+        <h1></h1>
 
         <div className="center">
         </div>
@@ -47,3 +49,4 @@ export function BookList(){
         </>
     )
 }
+export default BookList

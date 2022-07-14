@@ -1,4 +1,4 @@
-import { BookList } from "@/components";
+import BookList from "@/components/books/BookList";
 import { NextPage } from "next";
 
 

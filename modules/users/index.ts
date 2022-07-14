@@ -1,11 +1,8 @@
+import { UserType } from '@/types/users'
 import { createSlice, PayloadAction} from '@reduxjs/toolkit'
 
-//사용자 타입
-export interface UserType {
-    email: string, password: string, username?: string, birth?: string, gender?: string
-}
 
-export interface UserState{
+interface UserState{
     data: UserType[]
     status: 'idle' | 'loading' | 'failed'
 }

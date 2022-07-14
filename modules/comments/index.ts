@@ -1,28 +1,26 @@
+import { CommentType } from "@/types/comments";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 
-const commentSliceType = "slice/comments";
-
-export interface ICommentState {
-	value: number;
+interface CommentState {
+	comments: CommentType[]
 }
 
-const initialState: ICommentState = {
-	value: 0
+const initialState: CommentState = {
+	comments: []
 }
 
 const commentSlice = createSlice({
+    name: 'commentSlice',
 	initialState,
-    name: commentSliceType,
     reducers: {
-    	increase: (state) => {
-        	state.value += 1;
-        },
-        increaseByAmount: (state, action: PayloadAction<number>) => {
-        	state.value += action.payload;
+    	addComment(state: CommentState, action: PayloadAction<CommentType[]>){
+            state.comments = action.payload;
         }
     }
 })
 
-export const { increase, increaseByAmount } = commentSlice.actions;
-export default commentSlice.reducer;
+const {reducer, actions} = commentSlice
+export const { addComment } = commentSlice.actions;
+export const commentAction = actions
+export default reducer

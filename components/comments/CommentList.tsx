@@ -7,7 +7,7 @@ const CommentList:React.FC = () => {
         <>
         <SEO title="한줄평" />
         <Card>
-            <Link href="/comments/CommentList">
+            <Link href="/comments/commentWrite">
                 <img className="w-full" src='http://image.kyobobook.co.kr/images/book/large/225/l9791191114225.jpg' alt="Sunset in the mountains" /></Link>
             <div className="px-2 py-1">
                 <div className="font-bold text-xl mb-2">작별인사</div>

@@ -2,9 +2,9 @@ import "tailwindcss/tailwind.css";
 import Layout from '@/components/layout/Layout'
 import '@/styles/globals.css'
 import type { AppContext, AppProps } from 'next/app'
-import { RootState, wrapper } from "@/modules/store";
-import { useSelector } from "react-redux";
-import { UserState } from "@/modules/users";
+import { wrapper } from "@/modules/store";
+import { axios } from "@/apis";
+import { getUserApi } from "@/apis/userApi";
 
 function MyApp({ Component, pageProps }: AppProps) {
 
@@ -17,6 +17,19 @@ function MyApp({ Component, pageProps }: AppProps) {
       </Layout>
   )       
 }
+// MyApp.getInitialProps = async ( context: AppContext ) => {
+//   const appInitialProps:any = await MyApp.getInitialProps(context);
+//   const { store } = context.ctx;
+//   const { isLogged } = store.getState().user;
+//   try {
+//     if ( !isLogged && cookieObject..access_token) {
+//       axios.defaults.headers.cookie = cookieObject.access_token;
+//       const { data } = await getUserApi()
+//   } catch (err) {
+//     console.log(err);
+//   }
+//   return { ...appInitialProps }
+// }
 
 
 export default wrapper.withRedux(MyApp)

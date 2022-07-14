@@ -1,16 +1,15 @@
 import React, { useState } from "react"
 import { useDispatch } from "react-redux"
-import { userActions, UserType } from '@/modules/users'
+import { userActions } from '@/modules/users'
 import FormLayout from "../layout/FormLayout"
 import Link from "next/link"
-import tw from "tailwind-styled-components"
 import { SEO } from "../common/SEO"
+import { UserType } from "@/types/users"
 
 const Join: React.FC = () => {
     const [user, setUser] =useState<UserType>({
         email:'', password:'', username:'', birth:'', gender:''
     })
-    
     const dispatch = useDispatch()
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) =>{
         e.preventDefault()

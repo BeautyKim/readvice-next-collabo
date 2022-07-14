@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
-import { UserType } from "@/modules/users"
 import { fetchUserApi } from "@/apis/userApi"
+import { UserType } from "@/types/users"
 
 export const UserList:React.FC = () => {
   const [ users, setUsers ] = useState<Array<UserType>>([])
@@ -15,8 +15,7 @@ export const UserList:React.FC = () => {
   console.log(`setUser` + JSON.stringify(users))
 
     return (
-    <div>
-        <h1>회원 목록</h1>
+    <>
         <table className="min-w-full">
         <thead className="border-b">
             <tr>
@@ -24,28 +23,26 @@ export const UserList:React.FC = () => {
             </tr>
         </thead>
         <tbody>
-        {false && users.map((user: UserType) => 
-         <tr className="border-b">
-            <td key={user.email} 
-                className="px-6 py-4 text-sm font-medium text-gray-900 whitespace-nowrap">
-                    {user.username}
-            </td>
-            <td className="px-6 py-4 text-sm font-light text-gray-900 whitespace-nowrap">
-                {user.email}
-            </td>
-            <td className="px-6 py-4 text-sm font-light text-gray-900 whitespace-nowrap">
-                {user.password}
-            </td>
-            <td className="px-6 py-4 text-sm font-light text-gray-900 whitespace-nowrap">
-                {user.birth}
-            </td>
-            <td className="px-6 py-4 text-sm font-light text-gray-900 whitespace-nowrap">
-                {user.gender}
-            </td>
-         </tr>
-         )}
+        {users && 
+            <tr className="border-b">
+                {users.map((user: UserType) => 
+                    <><td key={user.email} className="px-6 py-4 text-sm font-medium text-gray-900 whitespace-nowrap">{user.username}</td><td className="px-6 py-4 text-sm font-light text-gray-900 whitespace-nowrap">
+                        {user.email}
+                    </td>
+                    <td className="px-6 py-4 text-sm font-light text-gray-900 whitespace-nowrap">
+                            {user.password}
+                        </td>
+                    <td className="px-6 py-4 text-sm font-light text-gray-900 whitespace-nowrap">
+                            {user.birth}
+                        </td>
+                    <td className="px-6 py-4 text-sm font-light text-gray-900 whitespace-nowrap">
+                            {user.gender}
+                        </td></>
+                )}
+            </tr>
+            }
          </tbody>
          </table>
-    </div>
+    </>
   )
 }

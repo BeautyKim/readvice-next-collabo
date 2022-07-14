@@ -2,11 +2,13 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 
 export interface BookType {
-    
+    isbn13: number,
+    bookname: string,
+    authors: string,
+    bookImageURL: string,
 }
-
-export interface BookState {
-	data: BookType[]
+export interface BookState{
+    data: BookType[]
     status: 'idle' | 'loading' | 'failed'
 }
 
@@ -19,14 +21,22 @@ export const bookSlice = createSlice({
     name: 'bookSlice',
 	initialState,
     reducers: {
-    	increase: (state) => {
-        	state.value += 1;
+    	fetchBookRequest(state: BookState){
+            state.status = 'loading'
         },
-        increaseByAmount: (state, action: PayloadAction<number>) => {
-        	state.value += action.payload;
+        fetchBookSuccess(state: BookState, {payload}){
+            state.status = 'idle'
+            state.data = [...state.data, payload]
+        },
+        fetchBookFailure(state: BookState, {payload}){
+            state.status = 'failed'
+            state.data = payload
         }
+
     }
 })
 
-export const { increase, increaseByAmount } = bookSlice.actions;
-export default bookSlice.reducer;
+const {reducer, actions} = bookSlice
+export const { fetchBookRequest, fetchBookSuccess, fetchBookFailure } = bookSlice.actions;
+export const bookActions = actions
+export default reducer;

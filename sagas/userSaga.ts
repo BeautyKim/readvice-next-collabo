@@ -4,6 +4,7 @@ import { UserJoinType, UserLoginType } from '@/types/users';
 import { fetchUserApi, userJoinApi, userLoginApi } from '@/apis/userApi';
 import { AxiosAdapter, AxiosResponse } from 'axios';
 
+
 function* join(user: UserJoinType){
     try{
         alert(' 진행 3: saga내부 join 성공  '+ JSON.stringify(user))

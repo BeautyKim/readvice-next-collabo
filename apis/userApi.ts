@@ -1,4 +1,4 @@
-import { UserType } from "@/modules/users";
+import { UserType } from "@/types/users";
 import {AxiosResponse} from "axios";
 import { axios } from ".";
 
@@ -29,8 +29,7 @@ export const userLoginApi = async (
     payload: {email: string, password: string}) => {
         try{
             const response : AxiosResponse<AuthData> =
-            await axios.post('/api/users/login', payload, { headers }
-            )
+            await axios.post('/api/users/login', payload, { headers })
             alert(`진행5 : 응답 성공 + ${JSON.stringify(response.data)}`)
             return response.data
         }catch(err){
@@ -38,24 +37,31 @@ export const userLoginApi = async (
         }
     
 }
+export const getUserApi = async () => {
+    try{
+        await axios.get<UserType>('/api/users/getUser')
+    } catch(err) {
+        console.log(err)
+        return err}
+}
 
 // 로그아웃
 export const userLogOutApi = async() => {
-        try{
-            const response : AxiosResponse<AuthData> =
-                await axios.get('/api/users/logout', { headers })
-        } catch(err){
-            console.log(err)
-            return err;
-        }
+    try{
+        const response : AxiosResponse<AuthData> =
+            await axios.get('/api/users/logout', { headers })
+    } catch(err){
+        console.log(err)
+        return err;
+    }
     
 }
 
 // 회원리스트
 export const fetchUserApi = async() => {
-    try  {
+    try{
         const response: AxiosResponse =
-            await axios.get<UserType[]>('/api/users')
+            await axios.get<UserType[]>('/api/users/getUsers')
     } catch (err){
         console.log(err)
         return err
