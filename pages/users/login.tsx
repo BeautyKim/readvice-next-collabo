@@ -11,12 +11,12 @@ const LoginPage: NextPage = memo(() => {
   })
   const dispatch = useDispatch()
 
-  const loginHandleChange = (e: React.FormEvent<HTMLInputElement> ) =>{
+  const loginHandleChange = (e: React.ChangeEvent<HTMLInputElement> ) =>{
     e.preventDefault()
     const { name, value } = e.currentTarget;
     setUserLogin({...userLogin, [name]: value})
   }
-  const loginHandleSubmit = (e: { preventDefault: () => void }) =>{
+  const loginHandleSubmit = (e: React.FormEvent<HTMLFormElement> ) =>{
     e.preventDefault()
     dispatch(loginRequest(userLogin))
   }

@@ -1,14 +1,18 @@
-import { UserType } from '@/types/users'
+import { LoginType, LoginUserType, UserType } from '@/types/users'
 import { createSlice, PayloadAction} from '@reduxjs/toolkit'
 
 
 interface UserState{
     data: UserType[]
     status: 'idle' | 'loading' | 'failed'
+    isLoggined: boolean
+    error: null
 }
 const initialState: UserState = {
     data: [],
-    status: 'idle'
+    status: 'idle',
+    isLoggined: false,
+    error: null
 }
 
 
@@ -17,14 +21,13 @@ export const userSlice = createSlice({
     initialState,
     reducers:{
         // 회원가입
-        joinRequest(state: UserState, _payload){
+        joinRequest(state: UserState, action: PayloadAction<UserType>){
+            alert(`진행 2: 리듀서 내부 ${action.payload}`)
             state.status = 'loading';
-            alert('진행 2: 리듀서 내부 ')
-            
         },
-        joinSuccess(state: UserState, {payload}){
+        joinSuccess(state: UserState, action: PayloadAction<UserType>){
             state.status = 'idle'
-            state.data = [...state.data, payload]
+            state.data = [...state.data, action.payload]
             alert(`진행 : 회원가입 데이터 ${state.data}`)
         },
         joinFailure(state: UserState, {payload}){
@@ -32,19 +35,20 @@ export const userSlice = createSlice({
             state.data = payload
         },
         // 로그인 및 로그아웃
-        loginRequest(state: UserState, _payload){
+        loginRequest(state, action: PayloadAction<LoginType>){
             state.status = 'loading';
             alert('진행 2: 리듀서 내부 ')
-            
         },
-        loginSuccess(state: UserState, {payload}){
+        loginSuccess(state, action: PayloadAction<LoginUserType>){
+            const newState = state.data.concat(action.payload)
+            state.data = newState
             state.status = 'idle'
-            state.data = [...state.data, payload]
+            state.isLoggined = true
             alert(`진행 : 로그인 데이터 ${state.data}`)
         },
-        loginFailure(state: UserState, {payload}){
+        loginFailure(state, {payload: error}){
             state.status = 'failed'
-            state.data = payload
+            state.error = error
         },
         logOutSuccess(state: UserState ){
             state.status = 'failed'

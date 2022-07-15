@@ -3,7 +3,7 @@ import Layout from '@/components/layout/Layout'
 import '@/styles/globals.css'
 import type { AppContext, AppProps } from 'next/app'
 import { wrapper } from "@/modules/store";
-import { getUserApi } from "@/apis/userApi";
+import { userInfoApi } from "@/apis/userApi";
 
 function MyApp({ Component, pageProps }: AppProps) {
 
@@ -23,7 +23,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 //   try {
 //     if ( !isLogged && cookieObject..access_token) {
 //       axios.defaults.headers.cookie = cookieObject.access_token;
-//       const { data } = await getUserApi()
+//       const { data } = await userInfoApi()
 //   } catch (err) {
 //     console.log(err);
 //   }

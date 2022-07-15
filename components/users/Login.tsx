@@ -4,20 +4,18 @@ import tw from "tailwind-styled-components"
 import { SEO } from "../common/SEO"
 
 interface LoginProps {
-    handleChange : (e : React.FormEvent<HTMLInputElement> ) => void;
+    handleChange : (e : React.ChangeEvent<HTMLInputElement> ) => void;
     handleSubmit : (e : React.FormEvent<HTMLFormElement>) => void;
 }
 
+const LoginSpan = tw.span`
+    block
+    text-sm
+    font-medium
+    text-slate-700
+`
 
-const Login: React.FC<LoginProps> = ({handleChange, handleSubmit} : LoginProps) => {
-    
-    const LoginSpan = tw.span`
-        block
-        text-sm
-        font-medium
-        text-slate-700
-    `
-    
+export default function Login({handleChange, handleSubmit} : LoginProps){
     return (
         <FormLayout>
             <SEO title="로그인"/>
@@ -78,4 +76,3 @@ const Login: React.FC<LoginProps> = ({handleChange, handleSubmit} : LoginProps) 
         </FormLayout>
     )
 }
-export default Login

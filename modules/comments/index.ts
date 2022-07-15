@@ -3,19 +3,22 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 
 interface CommentState {
-	comments: CommentType[]
+	data: CommentType[]
+    status: 'idle' | 'loading' | 'failed'
 }
 
 const initialState: CommentState = {
-	comments: []
+    data: [],
+	status: 'idle'
 }
 
 const commentSlice = createSlice({
     name: 'commentSlice',
 	initialState,
     reducers: {
-    	addComment(state: CommentState, action: PayloadAction<CommentType[]>){
-            state.comments = action.payload;
+    	addComment(state: CommentState, {payload}){
+            state.status = 'idle';
+            state.data.push(payload);
         }
     }
 })

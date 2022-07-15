@@ -22,7 +22,7 @@ const rootReducer = (
         state: ReturnType<typeof combineReducer>,
         action: AnyAction
 ) => {
-    if(action.type === HYDRATE) {
+    if(action.payload === HYDRATE) {
         return{
             ...state,
             ...action.payload
@@ -45,7 +45,7 @@ const makeStore = () =>{
     return store
 }
 
-const store = makeStore();
+const store = rootReducer;
 
 export type RootState = ReturnType<typeof rootReducer>;
 export type AppState = ReturnType<typeof store.getState>;

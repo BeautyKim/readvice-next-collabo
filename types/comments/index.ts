@@ -1,3 +1,4 @@
+import React from "react";
 
 export interface CommentType {
     id: string;
@@ -6,4 +7,9 @@ export interface CommentType {
     comment?: string;
     reg_date?: string;
     auto_recode?: string;
+}
+
+export interface addCommentProps {
+    handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+    handleSubmit: (e: React.FormEvent<HTMLFormElement>) => void;
 }

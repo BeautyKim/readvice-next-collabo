@@ -1,6 +1,6 @@
-import { call, delay, put, takeLatest } from 'redux-saga/effects'
-import { userActions } from '@/modules/users';
-import { UserJoinType, UserLoginType } from '@/types/users';
+import { call, delay, put, takeEvery, takeLatest } from 'redux-saga/effects'
+import { joinSuccess, loginFailure, loginSuccess, userActions } from '@/modules/users';
+import { LoginType, LoginUserType, UserJoinType } from '@/types/users';
 import { fetchUserApi, userJoinApi, userLoginApi } from '@/apis/userApi';
 import { AxiosAdapter, AxiosResponse } from 'axios';
 
@@ -8,8 +8,8 @@ import { AxiosAdapter, AxiosResponse } from 'axios';
 function* join(user: UserJoinType){
     try{
         alert(' 진행 3: saga내부 join 성공  '+ JSON.stringify(user))
-        const response: UserJoinType = yield userJoinApi(user.payload)
-        yield put(userActions.joinSuccess(response))
+        const response: any = userJoinApi(user.payload)
+        yield put(joinSuccess(response.payload))
         window.location.href = '/'
     }catch(error){
          alert('진행 3: saga내부 join 실패  ') 
@@ -17,15 +17,15 @@ function* join(user: UserJoinType){
     }
 }
 
-function* login(user: UserLoginType){
+function* login(action: {payload: LoginType}){
     try{
-        alert('login 성공~^^' + JSON.stringify(user))
-        const response: UserLoginType = yield userLoginApi(user.payload)
-        yield put(userActions.loginSuccess(response))
+        alert('login 성공~^^' + JSON.stringify(action.payload))
+        const response: LoginUserType =  yield call (userLoginApi, action.payload)
+        yield put(loginSuccess(response))
         window.location.href = '/loginHome'
     }catch(error){
         alert('진행 3: saga내부 join 실패  ') 
-        yield put(userActions.loginFailure(error))
+        yield put(loginFailure(error))
    }
 }
 // function* logOut(user: UserLoginType){
@@ -49,9 +49,8 @@ export function* fetchUser(){
 }
 
 export function* watchJoin(){
-    yield takeLatest(userActions.joinRequest, join)
+    yield takeEvery(userActions.joinRequest, join)
 }
-
 export function* watchLogin(){
     yield takeLatest(userActions.loginRequest, login)
 }

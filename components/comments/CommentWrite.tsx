@@ -1,14 +1,8 @@
+import { addCommentProps } from '@/types/comments'
 import Link from 'next/link'
-import React, { useState } from 'react'
-import Card from '../UI/Card'
 
-const CommentWrite = ({}) => {
 
-    const [todos, setTodo] = useState([])
-    const [input, setInput] = useState('')
-    const handleChange = (e: { target: { value: React.SetStateAction<string> } }) => {
-        setInput(e.target.value)
-    }
+export default function CommentWrite({handleSubmit, handleChange}: addCommentProps){
 
   return (
     <>
@@ -36,23 +30,14 @@ const CommentWrite = ({}) => {
             {/* 한줄평 작성 */}
             <div className='w-full'>
                 <button>내보내기</button>
-                <div className=' h-96 rounded overflow-hidden shadow-lg mr-11'>
-                    <h2>2022-07-05</h2>
-                    <p>김영하 최고</p>
-                    <p>엉엉 너무 슬프다</p>
-                    <h2>2022-07-06</h2>
-                    <p>ㅋㅋㅋㅋㅋㅋㅋ</p>
-                    <p>ㅠㅠㅠㅠㅠ</p>
-                    {todos.map((todo, idx) => {
-                        return <p key={idx}>{todo}<button>삭제</button></p>})}
-                    <form>
-                        <input type='text' value={input} onChange={handleChange}/>
-                    </form>
-                    <button>등록</button>
-                </div>
+                <form onSubmit={handleSubmit}>
+                    <div className=' h-96 rounded overflow-hidden shadow-lg mr-11'>
+                        <input type='text' placeholder='~~~~' onChange={handleChange}/>
+                        <button type='submit'>등록</button>
+                    </div>
+                </form>
             </div>
         </div>
     </>
   )
 }
-export default CommentWrite

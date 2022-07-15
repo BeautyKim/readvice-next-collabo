@@ -1,6 +1,6 @@
 import { UserType } from "@/types/users";
 import {AxiosResponse} from "axios";
-import { serverAxios } from ".";
+import { server } from ".";
 
 const headers = {
     "Content-Type" : "application/json",
@@ -10,13 +10,14 @@ interface AuthData {
     access_token?: string;
     refresh_token?: string;
 }
+const qs =require("qs");
 
 // 회원가입
 export const userJoinApi = async (
     payload: {email: string, password: string, username: string, birth: string, gender: string}) => {
         try{
-            const response : AxiosResponse<AuthData> =
-            await serverAxios.post('/api/users/join', payload, { headers })
+            const response: AxiosResponse<any, UserType[]> =
+            await server.post('/api/users/join', payload, { headers })
             alert(`진행5 : 응답 성공 + ${JSON.stringify(response.data)}`)
             return response.data
         }catch(err){
@@ -28,8 +29,8 @@ export const userJoinApi = async (
 export const userLoginApi = async (
     payload: {email: string, password: string}) => {
         try{
-            const response : AxiosResponse<AuthData> =
-            await serverAxios.post('/api/users/login', payload, { headers })
+            const response : AxiosResponse<any, UserType[]> =
+            await server.post('/api/users/login', payload, { headers })
             alert(`진행5 : 응답 성공 + ${JSON.stringify(response.data)}`)
             return response.data
         }catch(err){
@@ -41,7 +42,7 @@ export const userLoginApi = async (
 export const userLogOutApi = async() => {
     try{
         const response : AxiosResponse<AuthData> =
-            await serverAxios.get('/api/users/logout', { headers })
+            await server.get('/api/users/logout', { headers })
     } catch(err){
         console.log(err)
         return err;
@@ -49,9 +50,9 @@ export const userLogOutApi = async() => {
     
 }
 
-export const getUserApi = async () => {
+export const userInfoApi = async () => {
     try{
-        await serverAxios.get<UserType>('/api/users/getUser')
+        await server.get<UserType>('/api/users/getUser')
     } catch(err) {
         console.log(err)
         return err}
@@ -61,7 +62,7 @@ export const getUserApi = async () => {
 // 회원리스트
 export const fetchUserApi = async() => {
     try{
-        await serverAxios.get<UserType[]>('/api/users/userList')
+        await server.get<UserType[]>('/api/users/userList')
     } catch (err){
         console.log(err)
         return err
