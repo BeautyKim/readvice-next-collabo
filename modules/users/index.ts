@@ -1,12 +1,12 @@
-import { LoginType, LoginUserType, UserType } from '@/types/users'
+import { UserType } from '@/types/users'
 import { createSlice, PayloadAction} from '@reduxjs/toolkit'
 
 
 interface UserState{
-    data: UserType[]
+    data: any
     status: 'idle' | 'loading' | 'failed'
     isLoggined: boolean
-    error: null
+    error: any
 }
 const initialState: UserState = {
     data: [],
@@ -22,8 +22,9 @@ export const userSlice = createSlice({
     reducers:{
         // 회원가입
         joinRequest(state: UserState, action: PayloadAction<UserType>){
-            alert(`진행 2: 리듀서 내부 ${action.payload}`)
             state.status = 'loading';
+            state.error = null;
+            alert(`진행 2: 리듀서 내부 ${action.payload}`)
         },
         joinSuccess(state: UserState, action: PayloadAction<UserType>){
             state.status = 'idle'
@@ -34,27 +35,38 @@ export const userSlice = createSlice({
             state.status = 'failed'
             state.data = payload
         },
-        // 로그인 및 로그아웃
-        loginRequest(state, action: PayloadAction<LoginType>){
+
+        // 로그인
+        loginRequest(state: UserState, _action: PayloadAction<UserType>){
             state.status = 'loading';
             alert('진행 2: 리듀서 내부 ')
         },
-        loginSuccess(state, action: PayloadAction<LoginUserType>){
-            const newState = state.data.concat(action.payload)
-            state.data = newState
+        loginSuccess(state: UserState, action: PayloadAction<UserType>){
             state.status = 'idle'
+            state.data = action.payload;
             state.isLoggined = true
             alert(`진행 : 로그인 데이터 ${state.data}`)
         },
-        loginFailure(state, {payload: error}){
+        loginFailure(state, action: PayloadAction<{error: any}>){
             state.status = 'failed'
-            state.error = error
+            state.error = action.payload
+        },
+        
+        // 로그아웃
+        logoutRequest(state: UserState) {
+            state.status = 'loading';
+            state.error = null;
         },
         logOutSuccess(state: UserState ){
-            state.status = 'failed'
-            localStorage.clear()
+            state.status = 'idle'
+            state.data = null;
             window.location.href = '/loginHome'
         },
+        logoutFailure(state: UserState, action: PayloadAction<{ error: any }>) {
+            state.status = 'failed';
+            state.error = action.payload;
+          },
+          
         // 회원리스트
         fetchRequest(state: UserState){
             state.status = 'loading'
@@ -72,7 +84,9 @@ export const userSlice = createSlice({
 })
 
 const {reducer, actions} = userSlice
-export const { joinRequest, joinSuccess, joinFailure, loginRequest, loginSuccess, loginFailure,
-                logOutSuccess, fetchRequest, fetchSuccess, fetchFailure } = userSlice.actions;
+export const { joinRequest, joinSuccess, joinFailure,
+                loginRequest, loginSuccess, loginFailure,
+                logoutRequest, logOutSuccess, logoutFailure,
+                fetchRequest, fetchSuccess, fetchFailure } = userSlice.actions;
 export const userActions = actions
 export default reducer

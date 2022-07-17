@@ -16,16 +16,24 @@ const commentSlice = createSlice({
     name: 'commentSlice',
 	initialState,
     reducers: {
-    	addComment(state: CommentState, action: PayloadAction<CommentType>){
-            state.status = 'idle';
+    	addComment(state, action){
             state.data.push(action.payload);
         },
-        removeComment(state: CommentState, {payload}){
-            state.status = 'loading';
+        editComment(state, action){
+            const { id, text } = action.payload;
+            state.data = state.data.map(comment => comment.id === id
+                ? { ...comment,
+                    text} : comment);
+        },
+        removeComment(state, action){
+            const id = action.payload
+            state.data = state.data.filter( comment => comment.id !== id)
+        },
+
     }
 })
 
 const {reducer, actions} = commentSlice
-export const { addComment, removeComment } = commentSlice.actions;
+export const { addComment, editComment, removeComment } = commentSlice.actions;
 export const commentAction = actions
 export default reducer

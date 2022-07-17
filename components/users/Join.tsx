@@ -67,14 +67,18 @@ const Join: React.FC = () => {
                         placeholder="사용자 이름"
                         onChange={handleChange}
                         className="block w-full px-4 py-3 text-sm border rounded-lg outline-none"/>
-                    <div className="mb-3 form-floating">
-                        <input
-                            type="date"
-                            id="birth"
-                            name="birth"
-                            onChange={handleChange}
-                            className="block w-full px-4 py-3 text-sm border rounded-lg outline-none"/>
-                    </div>
+                    <input
+                        type="text"
+                        id="birth"
+                        name="birth"
+                        placeholder="생년월일 8자리(ex: 19991212)"
+                        pattern="[0-9]+"
+                        maxLength={8}
+                        onChange={handleChange}
+                        className="peer block w-full px-4 py-3 text-sm border rounded-lg outline-none"/>
+                    <span className="hidden peer-invalid:block peer-invalid:text-red">
+                        숫자만 입력해주세요
+                    </span>
                 </div>
                 <div>
                     <div className="form-check form-check-inline">

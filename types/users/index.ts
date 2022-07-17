@@ -10,14 +10,7 @@ export interface UserJoinType{
 }
 
 export interface LoginType {
-    email: string;
-    password: string;
-}
-
-export interface LoginUserType {
-    email: string,
-    password: string,
-    username?: string,
-    birth?: string,
-    gender?: string,
+    type: string;
+    payload: {
+        email: string, password: string}
 }
