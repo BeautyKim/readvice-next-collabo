@@ -1,12 +1,8 @@
 
-import React, { ReactNode } from 'react';
 import { Chatbot, Footer, Header, SearchBar } from '@/components';
+import { LayoutProps } from '@/types/common';
 import Head from 'next/head';
 
-
-export interface LayoutProps {
-  children?: ReactNode
-}
 
 const Layout = ({ children } : LayoutProps) => {
   return (

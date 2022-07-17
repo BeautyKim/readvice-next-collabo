@@ -10,7 +10,6 @@ interface AuthData {
     access_token?: string;
     refresh_token?: string;
 }
-const qs =require("qs");
 
 // 회원가입
 export const userJoinApi = async (
@@ -47,7 +46,6 @@ export const userLogOutApi = async() => {
         console.log(err)
         return err;
     }
-    
 }
 
 export const userInfoApi = async () => {

@@ -18,7 +18,7 @@ function CommentWritePage() {
   }
   
   return (
-    <CommentWrite handleSubmit={commentHandleSubmit} handleChange={commentHandleChange}/>
+    <></>
   )
 }
 export default CommentWritePage

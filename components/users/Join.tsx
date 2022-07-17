@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import { useDispatch } from "react-redux"
 import { userActions } from '@/modules/users'
-import FormLayout from "../layout/FormLayout"
+import LoginHomeLayout from "../loginHome/FormLayout"
 import Link from "next/link"
 import { SEO } from "../common/SEO"
 import { UserType } from "@/types/users"
@@ -21,7 +21,7 @@ const Join: React.FC = () => {
     }
 
   return (
-    <FormLayout>
+    <LoginHomeLayout>
         <SEO title="회원가입" />
         <form onSubmit={
             e=> {
@@ -118,7 +118,7 @@ const Join: React.FC = () => {
                 </div>
             </div>
         </form>
-    </FormLayout>
+    </LoginHomeLayout>
   );
 }
 export default Join

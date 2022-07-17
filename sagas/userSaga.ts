@@ -42,7 +42,6 @@ export function* fetchUser(){
     try{
         const response:AxiosResponse = yield call(fetchUserApi)
         yield put(fetchSuccess(response.data))
-
     }catch(error){
         yield put(fetchFailure(error))
     }

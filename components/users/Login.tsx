@@ -1,7 +1,7 @@
 import Link from "next/link"
-import FormLayout from "../layout/FormLayout"
 import tw from "tailwind-styled-components"
 import { SEO } from "../common/SEO"
+import LoginHomeLayout from "../loginHome/FormLayout";
 
 interface LoginProps {
     handleChange : (e : React.ChangeEvent<HTMLInputElement> ) => void;
@@ -17,7 +17,7 @@ const LoginSpan = tw.span`
 
 export default function Login({handleChange, handleSubmit} : LoginProps){
     return (
-        <FormLayout>
+        <LoginHomeLayout>
             <SEO title="로그인"/>
             <form onSubmit={handleSubmit}>
                 <div className="flex items-center justify-center min-h-screen ">
@@ -73,6 +73,6 @@ export default function Login({handleChange, handleSubmit} : LoginProps){
                     </div>
                 </div>
             </form>
-        </FormLayout>
+        </LoginHomeLayout>
     )
 }

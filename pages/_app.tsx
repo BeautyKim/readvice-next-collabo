@@ -1,5 +1,5 @@
 import "tailwindcss/tailwind.css";
-import Layout from '@/components/layout/Layout'
+import Layout from '@/components/common/Layout'
 import '@/styles/globals.css'
 import type { AppContext, AppProps } from 'next/app'
 import { wrapper } from "@/modules/store";

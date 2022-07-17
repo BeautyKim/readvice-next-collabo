@@ -63,7 +63,7 @@ const style = css`
     }
 `
 
-export const Header = (props: { userId: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | ReactFragment | ReactPortal | null | undefined; }) => {
+export const Header = (props: { id: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | ReactFragment | ReactPortal | null | undefined; }) => {
 
     const navMyPage = [
         { label: '읽은책', path: '/books/readingBooks' },
@@ -90,7 +90,7 @@ export const Header = (props: { userId: string | number | boolean | ReactElement
                         </li>
                         <li className="dropdown"> <Link href="#" className="dropbtn"><a>My Page</a></Link>
                             <ul className="dropdown-content">
-                                <Link href="/users/[userId]" as={`/users/${props.userId}`}><a>회원정보</a></Link>
+                                <Link href="/users/[id]" as={`/users/${props.id}`}><a>회원정보</a></Link>
                                 <Link href="/users/userList"><a>회원리스트(관리자용)</a></Link>
                                 {navMyPage.map(nav => (
                                     <Link href={nav.path} key={nav.label}><a>{nav.label}</a></Link>
