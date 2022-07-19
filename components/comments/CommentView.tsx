@@ -1,10 +1,9 @@
-import { CommentItem } from "./CommentItem"
+import CommentWrite from "./CommentWrite"
 
-export const commentView: React.FC = (props) => {
-    const { comments }: any = props
+export const CommentView: React.FC = () => {
   return (
-    <ul>
-        {comments.map((comment:any) => <CommentItem />)}
-    </ul>
+    <>
+      <CommentWrite />  
+    </>
   )
 }

@@ -9,7 +9,7 @@ import { UserType } from "@/types/users"
 const Join: React.FC = () => {
     const [user, setUser] =useState<UserType>({
         email:'', password:'', username:'', birth:'', gender:''
-    })
+    }) 
     const dispatch = useDispatch()
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) =>{
         e.preventDefault()
@@ -17,7 +17,6 @@ const Join: React.FC = () => {
         setUser({...user, [name]: value})
     }
     const checkPasswordHandler = () => {
-        
     }
 
   return (
@@ -51,6 +50,8 @@ const Join: React.FC = () => {
                         placeholder="비밀번호"
                         id="password"
                         name="password"
+                        maxLength={30}
+                        minLength={8}
                         onChange={handleChange}
                         className="block w-full px-4 py-3 text-sm border rounded-lg outline-none"/>
                     <input
@@ -58,7 +59,6 @@ const Join: React.FC = () => {
                         placeholder="비밀번호 재확인"
                         id="cpassword"
                         name="cpassword"
-                        onChange={checkPasswordHandler}
                         className="block w-full px-4 py-3 text-sm border rounded-lg outline-none"/>
                     <input
                         type="text"
@@ -75,7 +75,7 @@ const Join: React.FC = () => {
                         pattern="[0-9]+"
                         maxLength={8}
                         onChange={handleChange}
-                        className="peer block w-full px-4 py-3 text-sm border rounded-lg outline-none"/>
+                        className="block w-full px-4 py-3 text-sm border rounded-lg outline-none peer"/>
                     <span className="hidden peer-invalid:block peer-invalid:text-red">
                         숫자만 입력해주세요
                     </span>

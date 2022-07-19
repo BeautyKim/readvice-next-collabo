@@ -9,7 +9,7 @@ interface CommentProps {
   }
 }
 
-export const CommentItem = (props: CommentProps) => {
+export const CommentBook = (props: CommentProps) => {
   const { title, image, date } = props.comment
   const writeDate = new Date(date).toLocaleDateString('en-US', {
     day: 'numeric',

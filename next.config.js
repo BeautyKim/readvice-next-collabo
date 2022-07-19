@@ -4,13 +4,6 @@ const KAKAOMAP_API_KEY = process.env.NEXT_PUBLIC_KAKAOMAP_API_KEY
 
 const nextConfig = {
   reactStrictMode: true,
-  async rewrites(){
-    return [
-      {
-        source: '/api/:path*',
-        destination: 'http://data4library.kr/:path*',
-      },
-    ]
-  }
+  
 }
 module.exports = nextConfig

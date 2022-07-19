@@ -2,6 +2,7 @@ import Link from "next/link"
 import tw from "tailwind-styled-components"
 import { SEO } from "../common/SEO"
 import LoginHomeLayout from "../loginHome/FormLayout";
+import GoogleLogin from "./GoogleLogin";
 
 interface LoginProps {
     handleChange : (e : React.ChangeEvent<HTMLInputElement> ) => void;
@@ -56,9 +57,9 @@ export default function Login({handleChange, handleSubmit} : LoginProps){
                             <button className="w-64 py-3 text-xl text-white bg-purple-400 rounded-2xl" type="submit">Login</button>
                             <hr className="my-4"/>
                             <h2 className="mb-3 text-center fs-5 fw-bold">or</h2>
-                            <button className="py-2 mb-2 w-100 btn btn-outline-dark rounded-3" type="submit">
-                                Login with GitHub
-                            </button>
+                                <div className="text-center">
+                                    <GoogleLogin />
+                                </div>
                             <button className="py-2 mb-2 w-100 btn btn-outline-primary rounded-3" type="submit">
                                 Login with Google
                             </button>

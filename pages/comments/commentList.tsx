@@ -4,7 +4,7 @@ import { NextPage } from "next"
 const CommentPage: NextPage = () => {
   return (
     <>
-        <CommentList />
+      <CommentList />
     </>
   )
 }

@@ -3,7 +3,6 @@ import { joinSuccess, loginFailure, loginSuccess, userActions } from '@/modules/
 import { LoginType, UserJoinType, UserType } from '@/types/users';
 import { fetchUserApi, userJoinApi, userLoginApi } from '@/apis/userApi';
 import { AxiosResponse } from 'axios';
-import { PayloadAction } from '@reduxjs/toolkit';
 
 
 function* join(user: UserJoinType){
@@ -18,9 +17,9 @@ function* join(user: UserJoinType){
     }
 }
 
-function* login(user: PayloadAction<LoginType>){
+function* login(user: LoginType){
     try{
-        const response: LoginType = yield call(userLoginApi)
+        const response: AxiosResponse<any, UserType[]> = yield call(userLoginApi)
         yield put(loginSuccess(response))
         console.log('login 성공~^^' + JSON.stringify(user.payload))
         window.location.href = '/loginHome'

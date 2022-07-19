@@ -18,14 +18,10 @@ export default function CommentWrite(){
 
   return (
     <>
-    <section className='w-full'>
-        <form onSubmit={onSubmit} >
-            <div className=' h-96 rounded overflow-hidden shadow-lg mr-11'>
-                <input type='text' placeholder='한줄평 입력' onChange={onChange} value={input}/>
-                <button type='submit'>등록</button>
-            </div>
-        </form>
-    </section>
+      <form onSubmit={onSubmit} >
+        <input type='text' placeholder='한줄평 입력' onChange={onChange} value={input}/>
+        <button type='submit'>등록</button>
+      </form>
     </>
   )
 }

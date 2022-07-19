@@ -1,4 +1,4 @@
-import CommentWrite from "@/components/comments/CommentWrite"
+import { CommentView } from "@/components/comments/CommentView"
 import { addComment } from "@/modules/comments"
 import React, { useState } from "react"
 import { useDispatch } from "react-redux"
@@ -18,7 +18,9 @@ function CommentWritePage() {
   }
   
   return (
-    <></>
+    <>
+    <CommentView />
+    </>
   )
 }
 export default CommentWritePage

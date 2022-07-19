@@ -1,14 +1,11 @@
-import Link from "next/link"
-import { SEO } from "../common/SEO"
-import { CommentItem } from "./CommentItem"
+import { CommentBook } from "./CommentBook"
 
 const CommentList: React.FC = (props) => {
     const { comments }: any = props
     return(
         <>
-        <SEO title="한줄평" />
         <ul>
-            {comments.map((comment:any) => (<CommentItem key={comment.image} comment={comment}/>
+            {comments.map((comment:any) => (<CommentBook key={comment.image} comment={comment}/>
             ))}
         </ul>
 
