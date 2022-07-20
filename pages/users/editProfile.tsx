@@ -10,9 +10,9 @@ const editProfilePage: NextPage = () => {
   })
 
   useEffect(() => {
-    userInfoApi().then((res) => {
-      console.log(res)
-      setUserInfo(userInfo)
+    userInfoApi().then( (res) => {
+      setUserInfo(res.data)
+      console.log(res.data)
     })
   },[])
 

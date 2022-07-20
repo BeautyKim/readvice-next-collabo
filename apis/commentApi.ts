@@ -38,9 +38,9 @@ export const commentApi = {
     },
     fetch: async () => {
         try{
-            const response: AxiosResponse<CommentType[]> =
-            await server.get('/api/comment/fetchFetch')
+            const response: AxiosResponse = await server.get('/api/comment/getComment', {headers})
             console.log(`서버 들어옴+${response.data}`)
+            return response.data
         } catch( error ){
             return error;
         }

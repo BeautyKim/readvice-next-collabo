@@ -8,6 +8,7 @@ export interface CommentType {
     reg_date?: string;
     auto_recode?: string;
 }
+
 export interface CommentState {
     type: string;
     payload: {

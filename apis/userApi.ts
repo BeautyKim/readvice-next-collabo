@@ -52,7 +52,8 @@ export const logOutApi = async() => {
 // 로그인 유저 정보
 export const userInfoApi = async () => {
     try{
-        await server.get(`/api/users/profiles`)
+        const response : AxiosResponse = await server.get(`/api/users/getUser`, { headers })
+        return response.data
     } catch(err) {
         console.log(err)
         return err}

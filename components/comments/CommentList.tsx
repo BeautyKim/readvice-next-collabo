@@ -1,15 +1,20 @@
-import { CommentBook } from "./CommentBook"
+import { commentApi } from "@/apis/commentApi"
+import { CommentType } from "@/types/comments"
+import { useEffect, useState } from "react"
 
-const CommentList: React.FC = (props) => {
-    const { comments }: any = props
+export const CommentList: React.FC = () => {
+    const [ comments, setComments ] = useState([])
+    useEffect(() => {
+        commentApi.fetch().then((res) => {
+            console.log(res.data)
+            setComments(res.data)
+        })
+    }, [])
     return(
         <>
-        <ul>
-            {comments.map((comment:any) => (<CommentBook key={comment.image} comment={comment}/>
-            ))}
-        </ul>
-
+        <h2>Comments</h2>
+        {comments && comments.map((comment: CommentType) => (
+            <span key={comment.id}>{comment.comment}</span>))}
         </>
     )
 }
-export default CommentList

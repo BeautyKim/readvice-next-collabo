@@ -18,6 +18,7 @@ export function HomeClock(){
             <div className="time">
                 {time.toLocaleTimeString("en-US", { hour: "numeric", minute: "numeric", second: "numeric" })}
             </div>
+            
             <style jsx>{`
                 div {
                     text-align: right;
