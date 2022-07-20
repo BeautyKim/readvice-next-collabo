@@ -1,6 +1,6 @@
 import { call, delay, put, takeLatest } from 'redux-saga/effects'
-import { dataBookApi } from "@/apis/bookApi"
-import { bookActions } from "@/modules/books"
+import { dataBookApi } from "@/modules/apis/book"
+import { bookActions } from "@/modules/slices/bookSlice"
 import { AxiosResponse } from "axios"
 
 export function* fetchBook(){

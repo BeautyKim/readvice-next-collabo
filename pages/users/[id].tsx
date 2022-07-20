@@ -1,12 +1,12 @@
-import { userInfoApi } from "@/apis/userApi"
+import { user } from "@/modules/apis"
 import { Profile } from "@/components"
-import { UserType } from "@/types/users"
+import { User } from "@/modules/types"
 import { GetStaticProps } from "next"
 import { useRouter } from "next/router"
 import { useEffect, useState } from "react"
 
 interface Props {
-    profile: UserType[]
+    profile: User[]
 }
 
 const ProfilePage = ({profile}: Props) => {

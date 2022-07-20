@@ -1,10 +1,8 @@
 import '@/styles/globals.css'
 import Layout from '@/components/common/Layout'
-import type { AppContext, AppProps } from 'next/app'
+import type { AppProps } from 'next/app'
 import { wrapper } from "@/modules/store";
-import { userInfoApi } from "@/apis/userApi";
-import axios from "axios";
-import { END } from "redux-saga";
+import { user } from "@/modules/apis";
 
 function MyApp({ Component, pageProps }: AppProps) {
 

@@ -1,6 +1,12 @@
-import { UserState, UserType } from '@/types/users'
+import { User } from 'modules/types'
 import { createSlice, PayloadAction} from '@reduxjs/toolkit'
 
+export interface UserState{
+    data: User[]
+    status: 'idle' | 'loading' | 'failed'
+    isLoggined: boolean
+    error: any
+  }
 
 const initialState: UserState = {
     data: [],
@@ -15,12 +21,12 @@ export const userSlice = createSlice({
     initialState,
     reducers:{
         // 회원가입
-        joinRequest(state: UserState, action: PayloadAction<UserType>){
+        joinRequest(state: UserState, action: PayloadAction<User>){
             state.status = 'loading';
             state.error = null;
             alert(`진행 2: 리듀서 내부 ${action.payload}`)
         },
-        joinSuccess(state: UserState, action: PayloadAction<UserType>){
+        joinSuccess(state: UserState, action: PayloadAction<User>){
             state.status = 'idle'
             state.data = [...state.data, action.payload]
             alert(`진행 : 회원가입 데이터 ${state.data}`)
@@ -31,11 +37,11 @@ export const userSlice = createSlice({
         },
 
         // 로그인
-        loginRequest(state, action: PayloadAction<UserType>){
+        loginRequest(state, action: PayloadAction<User>){
             state.status = 'loading';
             alert('진행 2: 리듀서 내부 ')
         },
-        loginSuccess(state, action: PayloadAction<UserType>){
+        loginSuccess(state, action: PayloadAction<User>){
             state.status = 'idle'
             state.data = state.data.concat(action.payload)
             state.isLoggined = true
@@ -54,7 +60,7 @@ export const userSlice = createSlice({
         },
         logoutSuccess(state: UserState ){
             state.status = 'idle'
-            state.data = null;
+            //state.data = null;
             window.location.href = '/loginHome'
         },
         logoutFailure(state: UserState, action: PayloadAction<{ error: any }>) {

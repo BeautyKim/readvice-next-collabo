@@ -1,4 +1,4 @@
-import { dataBookApi } from "@/apis/bookApi";
+import { dataBookApi } from "@/modules/apis/book";
 import { SEO } from "@/components";
 import Link from "next/link";
 import { useEffect, useState } from "react";

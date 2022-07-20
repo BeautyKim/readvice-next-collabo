@@ -1,10 +1,10 @@
 
 import { Chatbot, Footer, Header, SearchBar } from '@/components';
-import { LayoutProps } from '@/types/common';
+import { Layout } from '@/modules/types';
 import Head from 'next/head';
 
 
-const Layout = ({ children } : LayoutProps) => {
+const Layout = ({ children } : Layout) => {
   return (
     <>
       <Head>
@@ -12,7 +12,7 @@ const Layout = ({ children } : LayoutProps) => {
         <title>Readvice</title>
       </Head>
       <div>
-        <Header userId={undefined} />
+        <Header/>
         <SearchBar />
         <main>
           {children}

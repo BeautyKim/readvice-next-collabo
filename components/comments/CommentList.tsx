@@ -1,11 +1,11 @@
-import { commentApi } from "@/apis/commentApi"
-import { CommentType } from "@/types/comments"
+import { comment } from "@/modules/apis/comment"
+import { Comment } from "@/modules/types"
 import { useEffect, useState } from "react"
 
 export const CommentList: React.FC = () => {
     const [ comments, setComments ] = useState([])
     useEffect(() => {
-        commentApi.fetch().then((res) => {
+        comment.fetch().then((res) => {
             console.log(res.data)
             setComments(res.data)
         })
@@ -13,7 +13,7 @@ export const CommentList: React.FC = () => {
     return(
         <>
         <h2>Comments</h2>
-        {comments && comments.map((comment: CommentType) => (
+        {comments && comments.map((comment: Comment) => (
             <span key={comment.id}>{comment.comment}</span>))}
         </>
     )

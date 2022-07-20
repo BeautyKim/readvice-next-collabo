@@ -1,4 +1,3 @@
-import { googleLoginApi } from "@/apis/googleLoginApi";
 import { useScript } from "@/hooks/useScript";
 import jwtDecode from "jwt-decode"; // yarn add jwt-decode
 

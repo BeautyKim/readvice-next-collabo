@@ -1,7 +1,7 @@
-import { LayoutProps } from "@/types/common"
+import { Layout } from "@/modules/types"
 import { Footer } from "../common/Footer"
 
-const LoginHomeLayout = ({ children }: LayoutProps) => {
+const LoginHomeLayout = ({ children }: Layout) => {
     return(
         <>
             {children}

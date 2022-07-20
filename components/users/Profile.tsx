@@ -1,5 +1,5 @@
 import { SEO } from "@/components";
-import { UserType } from "@/types/users";
+import { UserType } from "@/modules/types/users";
 
 interface UserInfoType {
     userInfo: UserType

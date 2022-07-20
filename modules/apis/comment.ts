@@ -1,4 +1,4 @@
-import { CommentType } from "@/types/comments";
+import { Comment } from "@/modules/types";
 import { AxiosResponse } from "axios";
 import { server } from ".";
 
@@ -7,20 +7,10 @@ const headers = {
     Authorization: "JWT fefege...",
 }
 
-// export const addCommentApi = async (
-//     payload:{ comment: string }) => {
-//     try{
-//         const response: AxiosResponse<CommentType[]> =
-//         await server.post('/api/comment/addComment', payload, { headers })
-//         return response.data
-//         } catch(err){
-//             return err;
-//         }
-// }
-export const commentApi = {
+export const comment = {
     add: async ( payload:{ comment: string }) => {
         try{
-            const response: AxiosResponse<CommentType[]> =
+            const response: AxiosResponse<Comment[]> =
             await server.post('/comment/addComment', payload, { headers })
             console.log(`서버 들어옴+${response.data}`)
         } catch( error ){
@@ -29,7 +19,7 @@ export const commentApi = {
     },
     delete: async ( commentId: string) => {
         try{
-            const response: AxiosResponse<CommentType[]> =
+            const response: AxiosResponse<Comment[]> =
             await server.delete(`/comment/${commentId}`)
             console.log(`서버 들어옴+${response.data}`)
         } catch( error ){
@@ -45,6 +35,4 @@ export const commentApi = {
             return error;
         }
     },
-    
-
 }

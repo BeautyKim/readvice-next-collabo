@@ -1,14 +1,9 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
+import { Book } from "@/modules/types"
 
 
-export interface BookType {
-    isbn13: number,
-    bookname: string,
-    authors: string,
-    bookImageURL: string,
-}
 export interface BookState{
-    data: BookType[]
+    data: Book[]
     status: 'idle' | 'loading' | 'failed'
 }
 

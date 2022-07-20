@@ -1,9 +1,9 @@
-import { CommentType } from "@/types/comments";
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { Comment } from "@/modules/types";
+import { createSlice } from "@reduxjs/toolkit";
 
 
 interface CommentState {
-	data: CommentType[]
+	data: Comment[]
     status: 'idle' | 'loading' | 'failed'
     error: null
 }

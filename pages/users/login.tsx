@@ -1,12 +1,12 @@
 import Login from "@/components/users/Login"
-import { loginRequest } from "@/modules/users"
-import { LoginInput } from "@/types/users"
+import { loginRequest } from "@/modules/slices"
+import { User } from "@/modules/types"
 import { NextPage } from "next"
 import { useState } from "react"
 import { useDispatch } from "react-redux"
 
 const LoginPage: NextPage = () => { 
-  const [ userLogin, setUserLogin ] = useState<LoginInput>({
+  const [ userLogin, setUserLogin ] = useState<User>({
     email:'', password: ''
   })
   const dispatch = useDispatch()

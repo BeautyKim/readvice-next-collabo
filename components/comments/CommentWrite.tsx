@@ -1,10 +1,14 @@
-import { CommentType } from '@/types/comments'
+import { Comment } from '@/modules/types'
 import React, { useState } from 'react'
 
 type Props = {
   // date: string
   onChange : (e: React.FormEvent<HTMLInputElement> | any ) => void
   onSubmit : (e: React.FormEvent<HTMLFormElement> ) => void
+}
+export interface addCommentProps {
+  handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  handleSubmit: (e: React.FormEvent<HTMLFormElement>) => void;
 }
 
 export const CommentWrite: React.FC<Props> = ({onSubmit, onChange}) => {

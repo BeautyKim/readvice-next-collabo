@@ -4,7 +4,8 @@ const headers = {
     "Content-Type" : "application/json",
     Authorization: "JWT fefege...",
   }
-export const googleLoginApi = async ( handleCredentialResponse: {}, userInfo: any ) => {
+export const googleOauthApi = {
+  loigin: async(handleCredentialResponse: {}, userInfo: any ) => {
     try{
       console.log(`정보 1: ${JSON.stringify({handleCredentialResponse, userInfo})}`)
       console.log(`토큰 타입: `+ typeof(handleCredentialResponse))
@@ -18,4 +19,9 @@ export const googleLoginApi = async ( handleCredentialResponse: {}, userInfo: an
     } catch(err){
       return err;
     }
+  },
+  logout: async()=> {
+
   }
+
+}

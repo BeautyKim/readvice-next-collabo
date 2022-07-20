@@ -1,13 +1,13 @@
-import rootSaga from '@/sagas';
+import rootSaga from '@/modules/sagas';
 import {AnyAction, CombinedState, configureStore, combineReducers} from '@reduxjs/toolkit'
 import {createWrapper, HYDRATE} from 'next-redux-wrapper'
 import logger from 'redux-logger';
 import createSagaMiddleware from 'redux-saga'
 import { TypedUseSelectorHook, useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
-import userReducer from './users'
-import bookReducer from './books'
-import commentReducer from './comments'
+import userReducer from './slices/userSlice'
+import bookReducer from './slices/bookSlice'
+import commentReducer from './slices/commentSlice'
 
 const isDev = process.env.NODE_ENV ==='development'
 const sagaMiddleware = createSagaMiddleware()

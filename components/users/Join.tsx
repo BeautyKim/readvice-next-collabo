@@ -1,13 +1,13 @@
 import React, { useState } from "react"
 import { useDispatch } from "react-redux"
-import { userAction } from '@/modules/users'
+import { userAction } from '@/modules/slices/userSlice'
 import LoginHomeLayout from "../loginHome/FormLayout"
 import Link from "next/link"
 import { SEO } from "../common/SEO"
-import { UserType } from "@/types/users"
+import { User } from "@/modules/types"
 
 const Join: React.FC = () => {
-    const [user, setUser] =useState<UserType>({
+    const [user, setUser] =useState<User>({
         email:'', password:'', username:'', birth:'', gender:''
     }) 
     const dispatch = useDispatch()

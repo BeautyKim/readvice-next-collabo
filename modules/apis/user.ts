@@ -1,4 +1,4 @@
-import { UserType } from "@/types/users";
+import { User } from "@/modules/types";
 import {AxiosResponse} from "axios";
 import { server } from ".";
 
@@ -12,24 +12,21 @@ interface AuthData {
 }
 
 // 회원가입
-export const joinApi = async (
-    payload: {email: string, password: string, username: string, birth: string, gender: string}) => {
+export const user = {
+    join: async (payload: {email: string, password: string, username: string, birth: string, gender: string}) => {
         try{
-            const response: AxiosResponse<any, UserType[]> =
+            const response: AxiosResponse<any, User[]> =
             await server.post('/users/join', payload, { headers })
             if(response.data.message == "SUCCESS") { console.log('회원가입 성공') }
             return response.data
         }catch(err){
             return err;
         }
-}
-
-// 로그인
-export const loginApi = async (
-    payload: {email: string, password: string}) => {
+    },
+    login: async (payload: {email: string, password: string}) => {
         try{
             console.log(`로그인 정보 ${JSON.stringify(payload)}`)
-            const response : AxiosResponse<any, UserType[]> =
+            const response : AxiosResponse<any, User[]> =
             await server.post('/users/login', payload, { headers })
             console.log(`진행5 : 응답 성공 + ${JSON.stringify(response.data)}`)
 
@@ -37,24 +34,23 @@ export const loginApi = async (
         }catch(err){
             return err;
         }
-    
-}
-// 로그아웃
-export const logOutApi = async() => {
-    try{
-        const response : AxiosResponse<AuthData> =
+    },
+    logout: async() => {
+        try{
             await server.post('/users/logout', { headers })
-    } catch(err){
-        console.log(err)
-        return err;
+            console.log('로그아웃 성공')
+        } catch(err){
+            console.log(err)
+            return err;
+        }
+    },
+    userInfo: async () => {
+        try{
+            const response : AxiosResponse = await server.get(`/users/getUser`, { headers })
+            return response.data
+        } catch(err) {
+            console.log(err)
+            return err}
     }
-}
-// 로그인 유저 정보
-export const userInfoApi = async () => {
-    try{
-        const response : AxiosResponse = await server.get(`/users/getUser`, { headers })
-        return response.data
-    } catch(err) {
-        console.log(err)
-        return err}
+
 }
