@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import { useDispatch } from "react-redux"
-import { userActions } from '@/modules/users'
+import { userAction } from '@/modules/users'
 import LoginHomeLayout from "../loginHome/FormLayout"
 import Link from "next/link"
 import { SEO } from "../common/SEO"
@@ -25,7 +25,7 @@ const Join: React.FC = () => {
         <form onSubmit={
             e=> {
                 e.preventDefault()
-                dispatch(userActions.joinRequest(user))
+                dispatch(userAction.joinRequest(user))
                 setUser({ email:'', password:'', username:'', birth:'', gender:'' })
             }
         }>
@@ -39,6 +39,7 @@ const Join: React.FC = () => {
                     </div>
                 <div className="space-y-4">
                     <input
+                        required
                         type="email"
                         placeholder="name@example.com"
                         id="email"
@@ -46,6 +47,7 @@ const Join: React.FC = () => {
                         onChange={handleChange}
                         className="block w-full px-4 py-3 text-sm border rounded-lg outline-none"/>
                     <input
+                        required
                         type="Password"
                         placeholder="비밀번호"
                         id="password"
@@ -55,12 +57,14 @@ const Join: React.FC = () => {
                         onChange={handleChange}
                         className="block w-full px-4 py-3 text-sm border rounded-lg outline-none"/>
                     <input
+                        required
                         type="Password"
                         placeholder="비밀번호 재확인"
                         id="cpassword"
                         name="cpassword"
                         className="block w-full px-4 py-3 text-sm border rounded-lg outline-none"/>
                     <input
+                        required
                         type="text"
                         id="username"
                         name="username"
@@ -68,6 +72,7 @@ const Join: React.FC = () => {
                         onChange={handleChange}
                         className="block w-full px-4 py-3 text-sm border rounded-lg outline-none"/>
                     <input
+                        required
                         type="text"
                         id="birth"
                         name="birth"

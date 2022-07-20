@@ -7,5 +7,4 @@ const BookListPage: NextPage = () => {
     <BookList />
   )
 }
-
 export default BookListPage

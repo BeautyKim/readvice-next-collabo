@@ -12,7 +12,7 @@ interface AuthData {
 }
 
 // 회원가입
-export const userJoinApi = async (
+export const joinApi = async (
     payload: {email: string, password: string, username: string, birth: string, gender: string}) => {
         try{
             const response: AxiosResponse<any, UserType[]> =
@@ -25,12 +25,14 @@ export const userJoinApi = async (
 }
 
 // 로그인
-export const userLoginApi = async (
+export const loginApi = async (
     payload: {email: string, password: string}) => {
         try{
+            console.log(`로그인 정보 ${JSON.stringify(payload)}`)
             const response : AxiosResponse<any, UserType[]> =
             await server.post('/api/users/login', payload, { headers })
-            alert(`진행5 : 응답 성공 + ${JSON.stringify(response.data)}`)
+            console.log(`진행5 : 응답 성공 + ${JSON.stringify(response.data)}`)
+
             return response.data
         }catch(err){
             return err;
@@ -38,31 +40,20 @@ export const userLoginApi = async (
     
 }
 // 로그아웃
-export const userLogOutApi = async() => {
+export const logOutApi = async() => {
     try{
         const response : AxiosResponse<AuthData> =
-            await server.get('/api/users/logout', { headers })
+            await server.post('/api/users/logout', { headers })
     } catch(err){
         console.log(err)
         return err;
     }
 }
-
+// 로그인 유저 정보
 export const userInfoApi = async () => {
     try{
-        await server.get<UserType>('/api/users/getUser')
+        await server.get(`/api/users/profiles`)
     } catch(err) {
         console.log(err)
         return err}
-}
-
-
-// 회원리스트
-export const fetchUserApi = async() => {
-    try{
-        await server.get<UserType[]>('/api/users/list')
-    } catch (err){
-        console.log(err)
-        return err
-    }
 }

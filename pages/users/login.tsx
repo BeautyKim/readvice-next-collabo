@@ -1,12 +1,12 @@
 import Login from "@/components/users/Login"
 import { loginRequest } from "@/modules/users"
-import { UserType } from "@/types/users"
+import { LoginInput } from "@/types/users"
 import { NextPage } from "next"
-import { memo, useState } from "react"
+import { useState } from "react"
 import { useDispatch } from "react-redux"
 
-const LoginPage: NextPage = memo(() => { 
-  const [ userLogin, setUserLogin ] = useState<UserType>({
+const LoginPage: NextPage = () => { 
+  const [ userLogin, setUserLogin ] = useState<LoginInput>({
     email:'', password: ''
   })
   const dispatch = useDispatch()
@@ -24,12 +24,5 @@ const LoginPage: NextPage = memo(() => {
   return (
       <Login handleChange={loginHandleChange} handleSubmit={loginHandleSubmit}/>
   )
-})
-
-LoginPage.getInitialProps = async (ctx) => {
-  const pathname =ctx.pathname
-
-  return { pathname }
 }
-
 export default LoginPage

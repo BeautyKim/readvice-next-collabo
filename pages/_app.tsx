@@ -1,9 +1,10 @@
-import "tailwindcss/tailwind.css";
-import Layout from '@/components/common/Layout'
 import '@/styles/globals.css'
+import Layout from '@/components/common/Layout'
 import type { AppContext, AppProps } from 'next/app'
 import { wrapper } from "@/modules/store";
 import { userInfoApi } from "@/apis/userApi";
+import axios from "axios";
+import { END } from "redux-saga";
 
 function MyApp({ Component, pageProps }: AppProps) {
 
@@ -16,19 +17,14 @@ function MyApp({ Component, pageProps }: AppProps) {
       </Layout>
   )       
 }
-// MyApp.getInitialProps = async ( context: AppContext ) => {
-//   const appInitialProps:any = await MyApp.getInitialProps(context);
-//   const { store } = context.ctx;
-//   const { isLogged } = store.getState().user;
-//   try {
-//     if ( !isLogged && cookieObject..access_token) {
-//       axios.defaults.headers.cookie = cookieObject.access_token;
-//       const { data } = await userInfoApi()
-//   } catch (err) {
-//     console.log(err);
+// export const getServerSideProps = wrapper.getServerSideProps((store) => async ({ req }) => {
+//   const cookie = req ? req.headers.cookie : '';
+//   axios.defaults.headers.Cookie = cookie;
+//   if (req && cookie ) {
+//     axios.defaults.headers.Cookie = cookie;
 //   }
-//   return { ...appInitialProps }
-// }
-
+//   store.dispatch(END);
+//   await store.sagaTask.toPromise();
+// })
 
 export default wrapper.withRedux(MyApp)

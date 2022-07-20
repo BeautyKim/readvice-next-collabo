@@ -1,7 +1,11 @@
 import { SEO } from "@/components";
+import { UserType } from "@/types/users";
 
-export const Profile: React.FC = ({}) => {
+interface UserInfoType {
+    userInfo: UserType
+}
 
+export const Profile: React.FC<UserInfoType> = ({userInfo}) => {
     return (
         <>
             <SEO title="내정보" />
@@ -10,19 +14,15 @@ export const Profile: React.FC = ({}) => {
                     <div>
                         <img src="/svg/김오십.svg" className="block h-24 mx-auto rounded-full sm:mx-0 sm:shrink-0"/>
                         <h1 className="mb-4 text-3xl font-bold text-center cursor-pointer">
-                            김오십
-                            {/* {userId.username} */}
+                            {userInfo.username}
                         </h1>
-                        <p className="text-center">SNS계정 연결하기</p>
                         <div className="flex justify-center space-x-4">
-                            <img src="/social-icons/google.png" className="block h-5" />
-                            <img src="/social-icons/github.svg" className="block h-5" />
                         </div>
                     </div>
                     <div className="mt-5 space-y-6">
                         <div className="flex justify-start space-x-6">
                             <h3>이메일</h3>
-                            <p>fifty@gmail.com</p>
+                            <p>{userInfo.email}</p>
                         </div>
                         
                         <div className="flex justify-start space-x-6">

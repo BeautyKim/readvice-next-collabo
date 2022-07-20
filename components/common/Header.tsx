@@ -68,10 +68,7 @@ export const Header = (props: { id: string | number | boolean | ReactElement<any
     const navMyPage = [
         { label: '읽은책', path: '/books/readingBooks' },
         { label: '찜한책', path: '/books/likeBooks' },
-        { label: '한줄평', path: '/comments/commentList' },
-        { label: '한줄평 수정', path: '/comments/commentModify' },
-        { label: '한줄평 삭제', path: '/comments/commentRemove' },
-        { label: '한줄평 작성', path: '/comments/commentWrite' },
+        { label: '한줄평', path: '/comments/comments' },
     ]
     return(
         <div>
@@ -86,12 +83,11 @@ export const Header = (props: { id: string | number | boolean | ReactElement<any
                             <Link href="/users/join"><a>Signup</a></Link>
                         </li>
                         <li>
-                            <Link href="/books/bookList"><a>BookList 테스트</a></Link>
                         </li>
                         <li className="dropdown"> <Link href="#" className="dropbtn"><a>My Page</a></Link>
                             <ul className="dropdown-content">
-                                <Link href="/users/[id]" as={`/users/${props.id}`}><a>회원정보</a></Link>
-                                <Link href="/users/userList"><a>회원리스트(관리자용)</a></Link>
+                                {/* <Link href="/users/[id]" as={`/users/`}><a>회원정보</a></Link> */}
+                                <Link href="/users/editProfile"><a>회원정보</a></Link>
                                 {navMyPage.map(nav => (
                                     <Link href={nav.path} key={nav.label}><a>{nav.label}</a></Link>
                                 ))}

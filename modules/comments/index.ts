@@ -17,7 +17,12 @@ const commentSlice = createSlice({
 	initialState,
     reducers: {
     	addComment(state, action){
+            state.status = 'loading'
             state.data.push(action.payload);
+        },
+        addCommentFailure(state, {payload: error}){
+            state.status = 'failed'
+            state.data.push(error)
         },
         editComment(state, action){
             const { id, text } = action.payload;
@@ -34,6 +39,6 @@ const commentSlice = createSlice({
 })
 
 const {reducer, actions} = commentSlice
-export const { addComment, editComment, removeComment } = commentSlice.actions;
+export const { addComment, addCommentFailure, editComment, removeComment } = commentSlice.actions;
 export const commentAction = actions
 export default reducer

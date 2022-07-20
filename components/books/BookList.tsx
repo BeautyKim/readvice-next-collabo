@@ -4,8 +4,6 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 
 
-
-
  const BookList:React.FC = () => {
   const [ books, setBooks ] = useState([])
   useEffect(() => {

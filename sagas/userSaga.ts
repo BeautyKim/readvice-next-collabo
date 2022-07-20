@@ -1,55 +1,53 @@
 import { call, delay, put, takeEvery, takeLatest } from 'redux-saga/effects'
-import { joinSuccess, loginFailure, loginSuccess, userActions } from '@/modules/users';
-import { LoginType, UserJoinType, UserType } from '@/types/users';
-import { fetchUserApi, userJoinApi, userLoginApi } from '@/apis/userApi';
+import { joinSuccess, loginFailure, loginSuccess, logoutFailure, logoutSuccess, userAction } from '@/modules/users';
+import { JoinType, LoginInput,  UserType } from '@/types/users';
+import { joinApi, loginApi } from '@/apis/userApi';
 import { AxiosResponse } from 'axios';
 
 
-function* join(user: UserJoinType){
+function* join(user: JoinType){
     try{
-        alert(' 진행 3: saga내부 join 성공  '+ JSON.stringify(user))
-        const response: any = userJoinApi(user.payload)
+        console.log(' 진행 3: saga내부 join 성공  '+ JSON.stringify(user))
+        const response: any = joinApi(user.payload)
         yield put(joinSuccess(response.payload))
         window.location.href = '/'
     }catch(error){
-         alert('진행 3: saga내부 join 실패  ') 
-         yield put(userActions.joinFailure(error))
+         console.log('진행 3: saga내부 join 실패  ') 
+         yield put(userAction.joinFailure(error))
     }
 }
 
-function* login(user: LoginType){
+function* login(action: {payload: LoginInput}){
     try{
-        const response: AxiosResponse<any, UserType[]> = yield call(userLoginApi)
-        yield put(loginSuccess(response))
-        console.log('login 성공~^^' + JSON.stringify(user.payload))
+        const response: AxiosResponse<UserType> = yield call(loginApi, action.payload)
+        yield put(loginSuccess(response.data))
+        console.log('login 성공~^^' + JSON.stringify(response.data))
         window.location.href = '/loginHome'
     }catch(error){
-        alert('진행 3: saga내부 join 실패  ') 
+        console.log('진행 3: saga내부 join 실패  ') 
         yield put(loginFailure(error))
    }
 }
-// function* logOut(user: UserLoginType){
-//     try{
-//         alert('로그아웃 성공')
-//     }catch(error){
-//         yield put(userActions)
-//     }
-// }
-
-
-export function* fetchUser(){
-    const { fetchSuccess, fetchFailure } = userActions
+function* logOut(){
     try{
-        const response:AxiosResponse = yield call(fetchUserApi)
-        yield put(fetchSuccess(response.data))
+        yield delay(1000)
+        yield put(logoutSuccess)
+        console.log('로그아웃 성공')
+        window.location.href = '/'
     }catch(error){
-        yield put(fetchFailure(error))
+        yield put(logoutFailure)
+        console.log('로그아웃 실패')
     }
 }
 
+
+
 export function* watchJoin(){
-    yield takeEvery(userActions.joinRequest, join)
+    yield takeEvery(userAction.joinRequest, join)
 }
 export function* watchLogin(){
-    yield takeLatest(userActions.loginRequest, login)
+    yield takeLatest(userAction.loginRequest, login)
+}
+export function* watchLogOut(){
+    yield takeLatest(userAction.logoutRequest, logOut)
 }
