@@ -1,33 +1,33 @@
-import { SubmitHandler, useForm} from "react-hook-form"
+import React, { useState } from "react"
+import { useDispatch } from "react-redux"
+import { userAction } from '@/modules/slices/userSlice'
 import LoginHomeLayout from "../loginHome/FormLayout"
 import Link from "next/link"
 import { SEO } from "../common/SEO"
 import { User } from "@/modules/types"
-import { useRef } from "react"
-import tw from "tailwind-styled-components"
-import { useDispatch } from "react-redux"
-import { userAction } from "@/modules/slices"
 
-
-// react-hook-form 사용한 회원가입 로직
+// 기존의 useState Hook 사용 회원가입 로직
 const Join: React.FC = () => {
+    const [user, setUser] =useState<User>({
+        email:'', password:'', username:'', birth:'', gender:''
+    }) 
     const dispatch = useDispatch()
-    const { register, handleSubmit, watch, formState: { errors }  } = useForm<User>()
-    const onSubmit: SubmitHandler<User> = data => {
-        dispatch(userAction.joinRequest(data))
-        console.log(`리액트에 입력된 회원정보 : ${data}`)};
-    
-    const passwordRef = useRef<string | null>(null)
-    passwordRef.current = watch("password")
-    
-    const P = tw.p`
-    text-red
-    `
-    
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) =>{
+        e.preventDefault()
+        const{name, value} = e.target;
+        setUser({...user, [name]: value})
+    }
+
   return (
     <LoginHomeLayout>
         <SEO title="회원가입" />
-        <form onSubmit={handleSubmit(onSubmit)}>
+        <form onSubmit={
+            e=> {
+                e.preventDefault()
+                dispatch(userAction.joinRequest(user))
+                setUser({ email:'', password:'', username:'', birth:'', gender:'' })
+            }
+        }>
             <div className="flex items-center justify-center min-h-screen">
                 <div className="z-20 px-12 py-12 bg-white shadow-xl rounded-2xl">
                     <div>
@@ -38,105 +38,69 @@ const Join: React.FC = () => {
                     </div>
                 <div className="space-y-4">
                     <input
-                        {...register("email", { 
-                            required: true,
-                            maxLength: 30,
-                            pattern: {
-                                value: /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/,
-                                message: "이메일 형식에 맞게 입력해주세요"
-                            }
-                        })}
+                        required
                         type="email"
                         placeholder="name@example.com"
                         id="email"
                         name="email"
+                        onChange={handleChange}
                         className="block w-full px-4 py-3 text-sm border rounded-lg outline-none"/>
-                    {errors.email && <P>{errors.email.message}</P>}
                     <input
-                        {...register("password", { 
-                            required: true, 
-                            minLength: {
-                                value: 8,
-                                message: "8자 이상 입력해주세요"
-                            },
-                            pattern: {
-                                value: /^(?=.*\d)(?=.*[a-zA-ZS]).{8,}/,
-                                message: "영문, 숫자를 혼용하여 입력해주세요"
-                            }
-                        })}
-                        type="password"
+                        required
+                        type="Password"
                         placeholder="비밀번호"
                         id="password"
                         name="password"
+                        maxLength={30}
+                        minLength={8}
+                        onChange={handleChange}
                         className="block w-full px-4 py-3 text-sm border rounded-lg outline-none"/>
-                    {errors.password && <P>{errors.password.message}</P>}
                     <input
-                        {...register("cpassword", { 
-                            required: true,
-                            validate: (value) => value === passwordRef.current,
-                         })}
-                        type="password"
+                        required
+                        type="Password"
                         placeholder="비밀번호 재확인"
                         id="cpassword"
                         name="cpassword"
                         className="block w-full px-4 py-3 text-sm border rounded-lg outline-none"/>
-                    {errors.cpassword && <P>비밀번호가 일치하지 않습니다</P>}
                     <input
-                        {...register("username", { 
-                            required: true, 
-                            maxLength: {
-                                value: 20,
-                                message: "20자 이하로 입력해주세요"
-                            }
-                        })}
+                        required
                         type="text"
                         id="username"
                         name="username"
                         placeholder="사용자 이름"
+                        onChange={handleChange}
                         className="block w-full px-4 py-3 text-sm border rounded-lg outline-none"/>
-                    {errors.username && <P>{errors.username.message}</P>}
                     <input
-                        {...register("birth", { 
-                            required: true, 
-                            maxLength: {
-                                value: 8,
-                                message: "생년월일 8자리까지 입력해주세요"
-                            },
-                            minLength:{
-                                value: 8,
-                                message:"생년월일 8자리까지 입력해주세요"  
-                            },
-                            pattern: {
-                                value: /^[0-9]+$/,
-                                message:"숫자만 입력해주세요"
-                            }
-                        })}
+                        required
                         type="text"
                         id="birth"
                         name="birth"
                         placeholder="생년월일 8자리(ex: 19991212)"
+                        pattern="[0-9]+"
+                        maxLength={8}
+                        onChange={handleChange}
                         className="block w-full px-4 py-3 text-sm border rounded-lg outline-none peer"/>
-                        {errors.birth && <P>{errors.birth.message}</P>}
+                    <span className="hidden peer-invalid:block peer-invalid:text-red">
+                        숫자만 입력해주세요
+                    </span>
                 </div>
                 <div>
                     <div className="form-check form-check-inline">
-                        <input
-                            {...register("gender")} 
-                            type="radio" 
+                        <input type="radio" 
                             name="gender" 
                             id="male" 
                             value="male"
+                            onChange={handleChange}
                             className="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-600 dark:focus:bg-blue-600 dark:bg-gray-700 dark:border-gray-600" />
                         <label className="inline-block text-gray-800 form-check-label" 
                             htmlFor="male">남성</label>
                     </div>
                     <div className="form-check form-check-inline">
-                        <input
-                            {...register("gender")}
-                            type="radio" 
+                        <input type="radio" 
                             name="gender" 
                             id="female"
                             value="female"
+                            onChange={handleChange}
                             className="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-600 dark:focus:bg-blue-600 dark:bg-gray-700 dark:border-gray-600" />
                         <label className="inline-block text-gray-800 form-check-label"
                             htmlFor="female">여성</label>
@@ -151,7 +115,15 @@ const Join: React.FC = () => {
                             type="submit">Sign Up</button>
                     </div>
                 </div>
-            </div>
+                <hr className="my-4"/>
+                <h2 className="mb-3 text-center fs-5 fw-bold">or</h2>
+                <button className="py-2 mb-2 w-100 btn btn-outline-dark rounded-3" type="submit">
+                    Sign up with GitHub
+                </button>
+                <button className="py-2 mb-2 w-100 btn btn-outline-primary rounded-3" type="submit">
+                    Sign up with Google
+                </button>
+                </div>
             </div>
         </form>
     </LoginHomeLayout>

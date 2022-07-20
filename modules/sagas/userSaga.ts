@@ -10,7 +10,7 @@ export function* watchJoin(){
             const response: any = call(user.join, action.payload)
             console.log(' 진행 3: saga내부 join 성공  '+ JSON.stringify(action.payload))
             put(joinSuccess(response.payload))
-            window.location.href = '/'
+            // window.location.href = '/'
         }catch(error){
              console.log('진행 3: saga내부 join 실패  ') 
             put(userAction.joinFailure(error))
@@ -23,7 +23,7 @@ export function* watchLogin(){
             const response: any = call(user.login, action.payload)
             put(loginSuccess(response.data))
             console.log('login 성공~^^' + JSON.stringify(response.data))
-            window.location.href = '/loginHome'
+            // window.location.href = '/loginHome'
         }catch(error){
             console.log('진행 3: saga내부 join 실패  ') 
             put(loginFailure(error))

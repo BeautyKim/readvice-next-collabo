@@ -13,11 +13,11 @@ interface AuthData {
 
 // 회원가입
 export const user = {
-    join: async (payload: {email: string, password: string, username: string, birth: string, gender: string}) => {
+    join: async (payload: User) => {
         try{
-            const response: AxiosResponse<any, User[]> =
+            const response =
             await server.post('/users/join', payload, { headers })
-            if(response.data.message == "SUCCESS") { console.log('회원가입 성공') }
+            console.log(`진행5 : 회원가입 성공 + ${JSON.stringify(response.data)}`)
             return response.data
         }catch(err){
             return err;
@@ -28,7 +28,7 @@ export const user = {
             console.log(`로그인 정보 ${JSON.stringify(payload)}`)
             const response : AxiosResponse<any, User[]> =
             await server.post('/users/login', payload, { headers })
-            console.log(`진행5 : 응답 성공 + ${JSON.stringify(response.data)}`)
+            console.log(`진행5 : 로그인 성공 + ${JSON.stringify(response.data)}`)
 
             return response.data
         }catch(err){

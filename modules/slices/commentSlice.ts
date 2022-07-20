@@ -2,7 +2,7 @@ import { Comment } from "@/modules/types";
 import { createSlice } from "@reduxjs/toolkit";
 
 
-interface CommentState {
+type CommentState = {
 	data: Comment[]
     status: 'idle' | 'loading' | 'failed'
     error: null

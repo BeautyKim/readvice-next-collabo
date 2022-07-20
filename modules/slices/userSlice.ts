@@ -1,7 +1,7 @@
 import { User } from 'modules/types'
 import { createSlice, PayloadAction} from '@reduxjs/toolkit'
 
-export interface UserState{
+type UserState = {
     data: User[]
     status: 'idle' | 'loading' | 'failed'
     isLoggined: boolean
@@ -21,7 +21,7 @@ export const userSlice = createSlice({
     initialState,
     reducers:{
         // 회원가입
-        joinRequest(state: UserState, action: PayloadAction<User>){
+        joinRequest(state, action: PayloadAction<User>){
             state.status = 'loading';
             state.error = null;
             alert(`진행 2: 리듀서 내부 ${action.payload}`)

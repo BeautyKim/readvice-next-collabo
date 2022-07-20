@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import { Book } from "@/modules/types"
 
 
-export interface BookState{
+type BookState = {
     data: Book[]
     status: 'idle' | 'loading' | 'failed'
 }
