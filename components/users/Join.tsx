@@ -16,8 +16,6 @@ const Join: React.FC = () => {
         const{name, value} = e.target;
         setUser({...user, [name]: value})
     }
-    const checkPasswordHandler = () => {
-    }
 
   return (
     <LoginHomeLayout>

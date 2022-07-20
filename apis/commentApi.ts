@@ -21,7 +21,7 @@ export const commentApi = {
     add: async ( payload:{ comment: string }) => {
         try{
             const response: AxiosResponse<CommentType[]> =
-            await server.post('/api/comment/addComment', payload, { headers })
+            await server.post('/comment/addComment', payload, { headers })
             console.log(`서버 들어옴+${response.data}`)
         } catch( error ){
             return error;
@@ -30,7 +30,7 @@ export const commentApi = {
     delete: async ( commentId: string) => {
         try{
             const response: AxiosResponse<CommentType[]> =
-            await server.delete(`/api/comment/${commentId}`)
+            await server.delete(`/comment/${commentId}`)
             console.log(`서버 들어옴+${response.data}`)
         } catch( error ){
             return error;
@@ -38,7 +38,7 @@ export const commentApi = {
     },
     fetch: async () => {
         try{
-            const response: AxiosResponse = await server.get('/api/comment/getComment', {headers})
+            const response: AxiosResponse = await server.get('/comment/getComment', {headers})
             console.log(`서버 들어옴+${response.data}`)
             return response.data
         } catch( error ){

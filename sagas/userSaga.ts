@@ -10,7 +10,7 @@ function* join(user: JoinType){
         console.log(' 진행 3: saga내부 join 성공  '+ JSON.stringify(user))
         const response: any = joinApi(user.payload)
         yield put(joinSuccess(response.payload))
-        window.location.href = '/'
+        window.location.href = '/loginHome'
     }catch(error){
          console.log('진행 3: saga내부 join 실패  ') 
          yield put(userAction.joinFailure(error))

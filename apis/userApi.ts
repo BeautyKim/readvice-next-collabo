@@ -16,7 +16,7 @@ export const joinApi = async (
     payload: {email: string, password: string, username: string, birth: string, gender: string}) => {
         try{
             const response: AxiosResponse<any, UserType[]> =
-            await server.post('/api/users/join', payload, { headers })
+            await server.post('/users/join', payload, { headers })
             if(response.data.message == "SUCCESS") { console.log('회원가입 성공') }
             return response.data
         }catch(err){
@@ -30,7 +30,7 @@ export const loginApi = async (
         try{
             console.log(`로그인 정보 ${JSON.stringify(payload)}`)
             const response : AxiosResponse<any, UserType[]> =
-            await server.post('/api/users/login', payload, { headers })
+            await server.post('/users/login', payload, { headers })
             console.log(`진행5 : 응답 성공 + ${JSON.stringify(response.data)}`)
 
             return response.data
@@ -43,7 +43,7 @@ export const loginApi = async (
 export const logOutApi = async() => {
     try{
         const response : AxiosResponse<AuthData> =
-            await server.post('/api/users/logout', { headers })
+            await server.post('/users/logout', { headers })
     } catch(err){
         console.log(err)
         return err;
@@ -52,7 +52,7 @@ export const logOutApi = async() => {
 // 로그인 유저 정보
 export const userInfoApi = async () => {
     try{
-        const response : AxiosResponse = await server.get(`/api/users/getUser`, { headers })
+        const response : AxiosResponse = await server.get(`/users/getUser`, { headers })
         return response.data
     } catch(err) {
         console.log(err)

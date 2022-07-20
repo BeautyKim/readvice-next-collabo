@@ -9,7 +9,8 @@ const headers = {
 
 export const dataBookApi = async() =>{
     try {
-        await axios.get(`${process.env.NEXT_PUBLIC_DATALIBRARY_URL}/api/loanItemSrch?authKey=${DATALIBRARY_API_KEY}&startDt=2022-07-10&endDt=2022-07-12&format=json`);
+        const response = await axios.get(`${process.env.NEXT_PUBLIC_DATALIBRARY_URL}/api/loanItemSrch?authKey=${DATALIBRARY_API_KEY}&startDt=2022-07-10&endDt=2022-07-12&format=json`);
+        console.log(response.data)
     } catch(err) {
         return err
     }
