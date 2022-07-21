@@ -15,7 +15,7 @@ interface AuthData {
 export const user = {
     join: async (payload: User) => {
         try{
-            const response =
+            const response: any =
             await server.post('/users/join', payload, { headers })
             console.log(`진행5 : 회원가입 성공 + ${JSON.stringify(response.data)}`)
             return response.data

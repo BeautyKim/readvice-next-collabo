@@ -1,13 +1,13 @@
 import { call, delay, put, take, takeLatest } from 'redux-saga/effects'
-import { joinSuccess, loginFailure, loginSuccess, logoutFailure, logoutSuccess, userAction } from '@/modules/slices';
+import { joinRequest, joinSuccess, loginFailure, loginSuccess, logoutFailure, logoutSuccess, userAction } from '@/modules/slices';
 import { User } from '@/modules/types';
 import { user } from '@/modules/apis';
 
 
 export function* watchJoin(){
-    yield takeLatest(userAction.joinRequest, (action: {payload: User}) => {
+    yield takeLatest(joinRequest, (action: {payload: User}) => {
         try{
-            const response: any = call(user.join, action.payload)
+            const response: any = user.join(action.payload)
             console.log(' 진행 3: saga내부 join 성공  '+ JSON.stringify(action.payload))
             put(joinSuccess(response.payload))
             // window.location.href = '/'

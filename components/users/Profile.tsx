@@ -1,8 +1,8 @@
 import { SEO } from "@/components";
-import { UserType } from "@/modules/types/users";
+import { User } from "@/modules/types";
 
 interface UserInfoType {
-    userInfo: UserType
+    userInfo: User
 }
 
 export const Profile: React.FC<UserInfoType> = ({userInfo}) => {
