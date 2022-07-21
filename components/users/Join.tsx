@@ -65,7 +65,7 @@ const Join: React.FC = () => {
                             }
                         })}
                         type="password"
-                        placeholder="비밀번호"
+                        placeholder="비밀번호(영문, 숫자 8자리 이상)"
                         id="password"
                         name="password"
                         className="block w-full px-4 py-3 text-sm border rounded-lg outline-none"/>

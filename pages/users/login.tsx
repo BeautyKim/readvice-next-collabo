@@ -25,4 +25,10 @@ const LoginPage: NextPage = () => {
       <Login handleChange={loginHandleChange} handleSubmit={loginHandleSubmit}/>
   )
 }
+LoginPage.getInitialProps = async (ctx) => {
+  const pathname =ctx.pathname
+
+  return { pathname }
+}
+
 export default LoginPage
