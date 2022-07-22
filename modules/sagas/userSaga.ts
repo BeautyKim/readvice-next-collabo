@@ -1,5 +1,5 @@
 import { call, delay, put, take, takeLatest } from 'redux-saga/effects'
-import { joinRequest, joinSuccess, loginFailure, loginRequest, loginSuccess, logoutFailure, logoutSuccess, userAction } from '@/modules/slices';
+import { joinRequest, joinSuccess, loginFailure, loginRequest, loginSuccess, logoutFailure, logoutRequest, logoutSuccess, userAction } from '@/modules/slices';
 import { User } from '@/modules/types';
 import { user } from '@/modules/apis';
 
@@ -33,11 +33,11 @@ export function* watchLogin(){
     )
 }
 export function* watchLogOut(){
-    yield takeLatest(userAction.logoutRequest, () => {
+    yield takeLatest(logoutRequest, () => {
         try{
             delay(1000)
-            put(logoutSuccess)
-            console.log('로그아웃 성공')
+            put(logoutSuccess())
+            console.log(`로그아웃 성공`)
             window.location.href = '/'
         }catch(error){
             put(logoutFailure)

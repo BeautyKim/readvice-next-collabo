@@ -1,8 +1,37 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ReactElement, JSXElementConstructor, ReactFragment, ReactPortal } from "react";
 import css from "styled-jsx/css";
+import { Logout } from "../users/Logout";
 
+export const Header = () => {
+    return(
+        <div>
+            <header>
+                <Link href="/"><Image src="/images/readviceLogo.svg" alt="readviceLogo" width={100} height={100}/></Link>
+                <nav>
+                    <ul>
+                        <li className="dropdown">
+                            <Link href="/users/login"><a>Login</a></Link>
+                        </li>
+                        <li>
+                            <Link href="/users/join"><a>Signup</a></Link>
+                        </li>
+                        <li>
+                            <Logout />
+                        </li>
+                        <li className="dropdown"> <Link href="#" className="dropbtn"><a>My Page</a></Link>
+                            <ul className="dropdown-content">
+                                <Link href="/users/editProfile"><a>회원정보</a></Link>
+                                <Link href="/myLibrary/myLibrary"><a>내 서재</a></Link>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </header>
+            <style jsx>{style}</style>
+        </div>
+    )
+}
 const style = css`
     header {
         position: sticky;
@@ -62,36 +91,3 @@ const style = css`
             align-items: center;
     }
 `
-
-export const Header = () => {
-    return(
-        <div>
-            <header>
-                <Link href="/"><Image src="/images/readviceLogo.svg" alt="readviceLogo" width={100} height={100}/></Link>
-                <nav>
-                    <ul>
-                        <li className="dropdown">
-                            <Link href="/users/login"><a>Login</a></Link>
-                        </li>
-                        <li>
-                            <Link href="/users/join"><a>Signup</a></Link>
-                        </li>
-                        <li>
-                        </li>
-                        <li className="dropdown"> <Link href="#" className="dropbtn"><a>My Page</a></Link>
-                            <ul className="dropdown-content">
-                                {/* <Link href="/users/[id]" as={`/users/`}><a>회원정보</a></Link> */}
-                                <Link href="/users/editProfile"><a>회원정보</a></Link>
-                                <Link href="/myLibrary/myLibrary"><a>내 서재</a></Link>
-                                {/* {navMyPage.map(nav => (
-                                    <Link href={nav.path} key={nav.label}><a>{nav.label}</a></Link>
-                                ))} */}
-                            </ul>
-                        </li>
-                    </ul>
-                </nav>
-            </header>
-            <style jsx>{style}</style>
-        </div>
-    )
-}
