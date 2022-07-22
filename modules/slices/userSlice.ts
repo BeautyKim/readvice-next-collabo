@@ -24,12 +24,12 @@ export const userSlice = createSlice({
         joinRequest(state, action: PayloadAction<User>){
             state.status = 'loading';
             state.error = null;
-            alert(`진행 2: 리듀서 내부 ${action.payload}`)
+            console.log(`진행 2: 리듀서 내부 ${action.payload}`)
         },
         joinSuccess(state: UserState, action: PayloadAction<User>){
             state.status = 'idle'
             state.data = [...state.data, action.payload]
-            alert(`진행 : 회원가입 데이터 ${state.data}`)
+            console.log(`진행 : 회원가입 데이터 ${state.data}`)
         },
         joinFailure(state: UserState, {payload}){
             state.status = 'failed'
@@ -39,13 +39,13 @@ export const userSlice = createSlice({
         // 로그인
         loginRequest(state, action: PayloadAction<User>){
             state.status = 'loading';
-            alert('진행 2: 리듀서 내부 ')
+            console.log(`진행 2: 리듀서 내부 ${state}`)
         },
         loginSuccess(state, action: PayloadAction<User>){
             state.status = 'idle'
             state.data = state.data.concat(action.payload)
             state.isLoggined = true
-            alert(`진행 : 로그인 데이터 ${state.data}`)
+            console.log(`진행 : 로그인 데이터 ${state.data}`)
         },
         loginFailure(state, {payload: error}){
             state.status = 'failed'
@@ -60,7 +60,6 @@ export const userSlice = createSlice({
         },
         logoutSuccess(state: UserState ){
             state.status = 'idle'
-            //state.data = null;
             window.location.href = '/loginHome'
         },
         logoutFailure(state: UserState, action: PayloadAction<{ error: any }>) {

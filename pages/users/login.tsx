@@ -6,9 +6,7 @@ import { useState } from "react"
 import { useDispatch } from "react-redux"
 
 const LoginPage: NextPage = () => { 
-  const [ userLogin, setUserLogin ] = useState<User>({
-    email:'', password: ''
-  })
+  const [ userLogin, setUserLogin ] = useState<User>({email:'', password: ''})
   const dispatch = useDispatch()
 
   const loginHandleChange = (e: React.ChangeEvent<HTMLInputElement> ) =>{

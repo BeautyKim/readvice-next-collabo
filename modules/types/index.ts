@@ -22,7 +22,7 @@ export interface User {
   username?: string, 
   birth?: string, 
   gender?: string, 
-  token?: any, 
+  token?: string, 
   roles?: any
 }
 

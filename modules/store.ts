@@ -1,10 +1,9 @@
 import rootSaga from '@/modules/sagas';
 import {AnyAction, CombinedState, configureStore, combineReducers} from '@reduxjs/toolkit'
-import {createWrapper, HYDRATE} from 'next-redux-wrapper'
+import {createWrapper, HYDRATE, MakeStore} from 'next-redux-wrapper'
 import logger from 'redux-logger';
 import createSagaMiddleware from 'redux-saga'
 import { TypedUseSelectorHook, useSelector } from 'react-redux';
-import { useDispatch } from 'react-redux';
 import userReducer from './slices/userSlice'
 import bookReducer from './slices/bookSlice'
 import commentReducer from './slices/commentSlice'
@@ -12,46 +11,60 @@ import commentReducer from './slices/commentSlice'
 const isDev = process.env.NODE_ENV ==='development'
 const sagaMiddleware = createSagaMiddleware()
 
-const combineReducer = combineReducers({
+const combinedReducer = combineReducers({
     user: userReducer,
     book: bookReducer,
     comment: commentReducer,
 })
-
 const rootReducer = (
-        state: ReturnType<typeof combineReducer>,
-        action: AnyAction
-) => {
-    if(action.payload === HYDRATE) {
+	state: ReturnType<typeof combinedReducer>,
+    action: AnyAction
+)  => {
+    if(action.payload === HYDRATE) { 
         return{
             ...state,
-            ...action.payload
+            ...action.payload 
         }
     } else {
-    return combineReducer(state, action)
+    return combinedReducer(state,action)
     }
 }
+// const makeStore = () =>{
+//     const store = 
+//     configureStore({
+//         reducer:{ rootReducer },
+//         middleware: (getDefaultMiddleware) =>
+//         getDefaultMiddleware({serializableCheck: false})
+//             .prepend(sagaMiddleware)
+//             .concat(logger),
+//         devTools : isDev
+//     });
+    
+//     sagaMiddleware.run(rootSaga)
+//     return store
+// }
+
+// const store = rootReducer; 
 
 const makeStore = () =>{
-    const store = configureStore({
+    const store = 
+    configureStore({
         reducer:{ rootReducer },
         middleware: (getDefaultMiddleware) =>
         getDefaultMiddleware({serializableCheck: false})
-        .prepend(sagaMiddleware)
-        .concat(logger),
-        devTools :isDev
+            .prepend(sagaMiddleware)
+            .concat(logger),
+        devTools : isDev
     });
+    
     sagaMiddleware.run(rootSaga)
     return store
 }
 
-const store = rootReducer;
+const store = rootReducer; 
 
-export type RootState = ReturnType<typeof store.getState>;
-export type AppState = ReturnType<typeof store.getState>;
+export type AppState = ReturnType<typeof rootReducer>;
 export type AppDispatch = typeof store.dispatch;
-export const useAppDispatch: () => AppDispatch = useDispatch
 export const useAppSelector: TypedUseSelectorHook<AppState> = useSelector;
-export const wrapper = createWrapper(makeStore, {debug: isDev})
-
+export const wrapper = createWrapper(makeStore)
 export default store;
