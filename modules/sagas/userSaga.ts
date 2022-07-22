@@ -38,7 +38,6 @@ export function* watchLogOut(){
             delay(1000)
             put(logoutSuccess())
             console.log(`로그아웃 성공`)
-            window.location.href = '/'
         }catch(error){
             put(logoutFailure)
             console.log('로그아웃 실패')
