@@ -4,7 +4,7 @@ export const MyNav: React.FC = () => {
     const navMyPage = [
         { label: '읽은책', path: '/books/readingBooks' },
         { label: '찜한책', path: '/books/likeBooks' },
-        { label: '한줄평', path: '/comments/comments' },
+        { label: '한줄평', path: '/comments/commentsList' },
     ]
   return (
     <nav>

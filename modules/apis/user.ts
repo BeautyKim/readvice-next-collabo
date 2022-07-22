@@ -17,7 +17,7 @@ export const user = {
         try{
             const response: any =
             await server.post('/users/join', payload, { headers })
-            console.log(`진행5 : 회원가입 성공 + ${JSON.stringify(response.data)}`)
+            console.log(`진행5 : 회원가입 성공 `+ (response.data))
             return response.data
         }catch(err){
             return err;

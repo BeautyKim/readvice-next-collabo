@@ -1,15 +1,18 @@
 import axios from "axios"
+import { NextPage } from "next"
 import { useEffect, useState } from "react"
-import { useDispatch } from "react-redux"
 
-const test = () => {
+const headers = {
+  'Content-Type' : 'application/json',
+}
+
+const Test: NextPage = () => {
     const [ time, setTime ] = useState('')
-
+    const sendData = { sendData :"next에서 보내는 post"}
     const testApi = {
         receive: async() => {
             try {
                 const url = await axios.get('http://127.0.0.1:8000')
-                console.log(JSON.stringify(url))
                 return url.data
               } catch (err) {
                 console.log(err)
@@ -18,16 +21,16 @@ const test = () => {
         },
         send: async() => {
             try {
-                const url = await axios.post('http://127.0.0.1:8000', {
-                    params: { message: 'next에서 보내는 post'}
-                })
-                console.log(JSON.stringify(url))
+                const sendUrl = await axios.post('http://127.0.0.1:8000', {sendData}, {headers})
+                console.log(sendUrl.data)
+                return sendUrl.data
               } catch (err) {
                 console.log(err)
                 return err;
               }
         }
     }
+    
     useEffect(() => {
         testApi.send().then((res) => {
             console.log(res)
@@ -38,7 +41,7 @@ const test = () => {
     useEffect(() => {
       promise.then((res) => {
         setTime(res.message)
-        console.log(res)
+        console.log(JSON.stringify(res))
       })
     })
   
@@ -48,4 +51,4 @@ const test = () => {
       </>
       )
   }
-export default test
+export default Test

@@ -18,7 +18,6 @@ export * from "./myLibrary/ReadingBooks"
 // 한줄평
 export * from "./comments/CommentList"
 export * from "./comments/CommentDelete"
-export * from "./comments/CommentBook"
 export * from "./comments/CommentItem"
 export * from "./comments/CommentWrite"
 // 로그인 홈
