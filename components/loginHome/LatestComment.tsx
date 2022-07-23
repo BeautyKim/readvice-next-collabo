@@ -1,4 +1,4 @@
-import CommentList from "../comments/CommentList"
+import { CommentList } from "../comments/CommentList"
 
 const LatestComment: React.FC = () => {
   return (

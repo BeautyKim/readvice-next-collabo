@@ -1,5 +1,5 @@
 import { User } from "@/modules/types";
-import {AxiosError, AxiosResponse} from "axios";
+import {AxiosResponse} from "axios";
 import { accessClient, client } from ".";
 
 interface AuthData {
@@ -24,12 +24,6 @@ export const user = {
             console.log(`로그인 정보 ${JSON.stringify(payload)}`)
             const response : AxiosResponse<any, User[]> =
             await accessClient.post('/users/login', payload)
-            const loginSuccessUser = response.data.token
-            if(loginSuccessUser === null && AxiosError || loginSuccessUser.value === 'FAILURE'){
-                alert('아이디 및 비밀번호를 확인해주세요.')
-            }else {
-                localStorage.setItem("loginSuccessUser", loginSuccessUser)
-                alert('로그인 성공')}
             console.log(`진행5 : 로그인 성공 + ${JSON.stringify(response.data)}`)
             return response.data
         }catch(err){
@@ -38,9 +32,8 @@ export const user = {
     },
     logout: async() => {
         try{
-            const response: AxiosResponse<any, User> = await accessClient.post('/users/logout')
-            console.log(`로그아웃 성공 ${JSON.stringify(response)}`)
-            return localStorage.clear()
+            await client.post('/users/logout')
+            console.log('로그아웃 성공')
         } catch(err){
             console.log(err)
             return err;
@@ -54,4 +47,5 @@ export const user = {
             console.log(err)
             return err}
     }
+
 }

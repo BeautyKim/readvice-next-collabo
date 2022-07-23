@@ -1,4 +1,3 @@
-import css from "styled-jsx/css";
 import { SEO } from "@/components";
 
 export function Introduce() {

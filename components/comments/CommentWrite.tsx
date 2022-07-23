@@ -1,5 +1,3 @@
-import { Comment } from '@/modules/types'
-import React, { useState } from 'react'
 
 type Props = {
   // date: string

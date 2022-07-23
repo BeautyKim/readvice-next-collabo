@@ -1,37 +1,10 @@
-import Image from "next/image"
 import Link from "next/link"
 import tw from "tailwind-styled-components"
 
-
 const Product = () => {
     
-    const RightDiv = tw.div`
-        flex
-        flex-col
-        items-start
-        space-y-5
-        md:w-1/2
-    `
-    const LeftDiv = tw.div`
-        flex
-        flex-col
-        items-start
-        space-y-5
-        md:w-1/2
-        text-right
-    `
-    const H1 = tw.h1`
-        max-w-md
-        text-xl
-        font-bold
-        md:text-4xl
-    `
-    const P = tw.p`
-        text-md
-        md:text-lg
-    `
     return(
-        <section className="h-full m-44 space-y-3 columns-1">
+        <section className="h-full space-y-3 m-44 columns-1">
             <article className="text-center">
                 <h1 className="text-3xl font-black leading-8 tracking-tight text-gray-900 md:text-4xl sm:text-4">Your read advice</h1>
                 <P>나만을 위한 사서 리드바이스</P>
@@ -83,3 +56,29 @@ const Product = () => {
     )
 }
 export default Product
+
+const RightDiv = tw.div`
+    flex
+    flex-col
+    items-start
+    space-y-5
+    md:w-1/2
+`
+const LeftDiv = tw.div`
+    flex
+    flex-col
+    items-start
+    space-y-5
+    md:w-1/2
+    text-right
+`
+const H1 = tw.h1`
+    max-w-md
+    text-xl
+    font-bold
+    md:text-4xl
+`
+const P = tw.p`
+    text-md
+    md:text-lg
+`

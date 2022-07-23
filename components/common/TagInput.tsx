@@ -1,4 +1,4 @@
-import { TagType } from '@/modules/types/comments'
+import { TagType } from '@/modules/types'
 import React, { useState } from 'react'
 
 function TagInput({ tagList, addTag, removeTag} : TagType) {

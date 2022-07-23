@@ -23,8 +23,7 @@ export function* watchLogin(){
             const response: any = user.login(action.payload)
             put(loginSuccess(response.payload))
             console.log('진행 3: saga내부 login 성공' + JSON.stringify(response))
-            console.log(JSON.stringify(response.data.token))
-            // window.location.href = '/loginHome'
+            window.location.href = '/loginHome'
         }catch(error){
             console.log('진행 3: saga내부 login 실패  ') 
             put(loginFailure(error))

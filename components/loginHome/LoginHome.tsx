@@ -1,8 +1,12 @@
 import Link from "next/link"
-import { SEO, HomeClock, HomeWeather } from "@/components"
-import HomeWeatherPage from "@/pages/loginHome/homeItem/homeWeather"
+import { SEO, HomeClock } from "@/components"
 
-export function LoginHome(){
+const LoginHome: React.FC = () => {
+    // const [ userName, setUserName ] = useState('')
+    // useEffect(() => {
+        
+    // }, [])
+    
     return(
         <div className="container">
             <SEO title="Home"/>
@@ -10,10 +14,10 @@ export function LoginHome(){
                 <article className="mainBook">
                     <div className="dayItem">
                         <div className="weather">
-                            <HomeWeatherPage />
+                            <h1>날씨</h1>
                         </div>
                         <div className="mainTime">
-                                <HomeClock />
+                                {/* <HomeClock /> */}
                         </div>
                     </div>
                     <div className="todayBook">
@@ -84,3 +88,4 @@ export function LoginHome(){
         </div>
     )
 }
+export default LoginHome
