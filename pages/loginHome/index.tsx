@@ -1,10 +1,26 @@
 import LoginHome from "@/components/loginHome/LoginHome";
-import { NextPage } from "next";
+import axios from "axios";
+import { GetStaticProps, NextPage } from "next";
 
-const LoginHomePage: NextPage = () => {
+
+
+interface Props{
+  book: string
+}
+
+
+const LoginHomePage: NextPage<Props> = ({docs}: any) => {
+  
+  // console.log("JSON.stringify= "+JSON.stringify(docs))
+  // console.log(">>>>>>"+typeof(docs))
+  // console.log(">>>>>>"+JSON.stringify(docs))
   return (
     <>
       <LoginHome /> 
+      {/* <ul>{docs.map((book: any) => 
+      <li key={book.doc.isbn13}>{JSON.stringify(book.doc.isbn13)}</li>
+      )}
+      </ul> */}
     </>
 
   )
@@ -12,16 +28,23 @@ const LoginHomePage: NextPage = () => {
 
 // export const getStaticProps: GetStaticProps = async (context) => {
 //   const book = await axios.get('http://data4library.kr/api/loanItemSrch?authKey=5a8cce5bfe03a4458af71f7db9bf5f805bede2aec4d26911ff35fd076aab2941&startDt=2022-07-10&endDt=2022-07-12&format=json')
-//   const getBookData = JSON.stringify(book.data)
+//   .then((res) => res.data)
+  
+//     // console.log( ">>>>>>>>>>>>>"+JSON.stringify(book))
 
-//   // console.log(`api 성공 ${getBookData}`)
-//   console.log(typeof(getBookData))
-    
 //     return{ 
 //       props: {
-//         data: getBookData.length,
-//       }
+//         docs: [{
+//           doc: {
+//             ranking: book,
+//             bookname: book,
+//             authors: book,
+//             isbn13: book,
+//             bookImageURL: book,
+//           }
+//         }]
 //     }
+// }
 // }
 
 export default LoginHomePage

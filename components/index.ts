@@ -5,7 +5,7 @@ export * from "./common/Layout"
 export * from "./common/TagInput"
 export * from "./common/Introduce"
 export * from "./common/Product"
-export * from "./common/SearchBar"
+export * from "./search/SearchBar"
 // 챗봇
 export * from "./chatbots/Chatbot"
 // 책
@@ -23,7 +23,6 @@ export * from "./comments/CommentWrite"
 // 로그인 홈
 export * from "./loginHome/LoginHome"
 export * from "./loginHome/Item/HomeClock"
-export * from "./loginHome/Item/HomeWeather"
 // 회원
 export * from "./users/Profile"
 export * from "./users/Join"

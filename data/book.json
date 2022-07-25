@@ -1,0 +1,38 @@
+[
+    {
+            "isbn": 9788936434267,
+            "author": "손원평",
+            "book_title": "아몬드",
+            "book_info": "문학 > 한국문학 > 소설",
+            "book_img": "http://image.aladin.co.kr/product/16839/4/cover/k492534773_1.jpg"
+        },
+        {
+            "isbn": 9791165343729,
+            "author": "이미예",
+            "book_title": "달러구트 꿈  백화점",
+            "book_info": "문학 > 한국문학 > 소설",
+            "book_img": "https://image.aladin.co.kr/product/27587/47/cover/k962733015_1.jpg"
+        },
+        {
+            "isbn": 9788949123493,
+            "author": "유은실",
+            "book_title": "순례 주택 :유은실 소설",
+            "book_info": "문학 > 한국문학 > 소설",
+            "book_img": "https://image.aladin.co.kr/product/26674/56/cover/8949123495_1.jpg"
+        },
+        {
+            "isbn": 9791164131686,
+            "author": "유난희",
+            "book_title": "흔한남매",
+            "book_info": "문학 > 한국문학 > 한국문학",
+            "book_img": "https://image.aladin.co.kr/product/22327/46/cover/k782636924_1.jpg"
+        },
+        {
+            "isbn": 9791191056556,
+            "author": "매트 헤이그 지음 ;노진선 옮김",
+            "book_title": "미드나잇 라이브러리",
+            "book_info": "문학 > 영미문학 > 소설",
+            "book_img": "https://image.aladin.co.kr/product/26987/37/cover/k962730610_1.jpg"
+        }
+]
+ 

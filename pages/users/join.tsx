@@ -2,11 +2,11 @@ import Join from "@/components/users/Join"
 import { NextPage } from "next"
 import { memo } from "react"
 
-const JoinPage: NextPage = memo(() => {
+const JoinPage: NextPage = () => {
   return (
       <Join />
   )
-})
+}
 JoinPage.getInitialProps = async (ctx) => {
   const pathname =ctx.pathname
 

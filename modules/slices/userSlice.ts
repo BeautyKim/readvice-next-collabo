@@ -60,7 +60,7 @@ export const userSlice = createSlice({
         },
         logoutSuccess(state: UserState ){
             state.status = 'idle'
-            window.location.href = '/loginHome'
+            window.location.href = '/'
         },
         logoutFailure(state: UserState, action: PayloadAction<{ error: any }>) {
             state.status = 'failed';

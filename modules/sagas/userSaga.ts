@@ -34,6 +34,7 @@ export function* watchLogin(){
 export function* watchLogOut(){
     yield takeLatest(logoutRequest, () => {
         try{
+            const response = user.logout()
             delay(1000)
             put(logoutSuccess())
             console.log(`로그아웃 성공`)

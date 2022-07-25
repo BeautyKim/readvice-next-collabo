@@ -9,12 +9,7 @@ interface LoginProps {
     handleSubmit : (e : React.FormEvent<HTMLFormElement>) => void;
 }
 
-const LoginSpan = tw.span`
-    block
-    text-sm
-    font-medium
-    text-slate-700
-`
+
 
 export default function Login({handleChange, handleSubmit} : LoginProps){
     return (
@@ -77,3 +72,9 @@ export default function Login({handleChange, handleSubmit} : LoginProps){
         </LoginHomeLayout>
     )
 }
+const LoginSpan = tw.span`
+    block
+    text-sm
+    font-medium
+    text-slate-700
+`

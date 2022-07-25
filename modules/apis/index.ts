@@ -21,4 +21,5 @@ export * from './book';
 export * from './comment';
 export * from './user';
 export * from './googleOauthApi';
+export * from './search';
 

@@ -13,7 +13,7 @@ export const user = {
         try{
             const response: any =
             await client.post('/users/join', payload)
-            console.log(`진행5 : 회원가입 성공 `+ (response.data))
+            console.log(`진행5 : 회원가입 성공 `+ (JSON.stringify(response)))
             return response.data
         }catch(err){
             return err;

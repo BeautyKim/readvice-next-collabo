@@ -49,7 +49,11 @@ const Product = () => {
             <article className="text-center">
                 <h1>지금 바로 Readvice 이용하기</h1>
                 <div className="font-black leading-8 tracking-tight text-gray-900 md:text-4xl sm:text-4">
-                    <Link href="/users/signup"><button className="px-4 py-1 text-sm font-semibold text-purple-600 border border-purple-200 rounded-full hover:text-white hover:bg-purple-600 hover:border-transparent focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-offset-2">회원가입</button></Link>
+                    <Link href="/users/join"><a>
+                        <button
+                            className="w-64 py-3 text-xl text-white bg-purple-400 rounded-2xl" 
+                            type="submit">회원가입</button></a>
+                    </Link>
                 </div>
             </article>
         </section>

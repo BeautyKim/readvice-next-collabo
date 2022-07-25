@@ -2,7 +2,6 @@ import '@/styles/globals.css'
 import Layout from '@/components/common/Layout'
 import type { AppProps } from 'next/app'
 import { wrapper } from "@/modules/store";
-import { user } from "@/modules/apis";
 
 function MyApp({ Component, pageProps }: AppProps) {
 
@@ -14,6 +13,14 @@ function MyApp({ Component, pageProps }: AppProps) {
         <Component {...pageProps} />
       </Layout>
   )       
+  // return (pageProps && pageProps.pathname) === '/users/login' || 
+  //   (pageProps && pageProps.pathname) === '/users/join' ? (
+  //     <Component {...pageProps} />
+  //   ) : (
+  //     <Layout>
+  //       <Component {...pageProps} />
+  //     </Layout>
+  // )       
 }
 // export const getServerSideProps = wrapper.getServerSideProps((store) => async ({ req }) => {
 //   const cookie = req ? req.headers.cookie : '';

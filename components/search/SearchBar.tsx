@@ -1,16 +1,31 @@
 //@ts-check
-import { BsSearch, BsFillCameraFill } from "react-icons/bs";
+import { searchApi } from "@/modules/apis";
+import { useRouter } from "next/router";
+import { useRef } from "react";
+import { BsSearch } from "react-icons/bs";
 
 
 export function SearchBar(){
-
+    const router = useRouter()
+    const searchInputRef = useRef(null)
+    // const search = (e: any) => {
+    //     e.preventDefault()
+    //     const term = searchInputRef.current.value
+    //     if (!term.trim()) return;
+    //     router.push(`/search?term=${term.trim()}&searchType=`);
+    // }
+    const searchSubmit = (e: any) => {
+        e.preventDefault()
+        const randomTerm = searchApi()
+        if (!randomTerm) return
+        router.push(`/search?term=${randomTerm}&searchType=`)
+    }
+    
     return(
         <div className="allsearchBar">
-        <form action="/books/search">
-            <input type="search" className="searchBar" placeholder="책 제목 또는 저자명을 입력해주세요."/>
+        <form onSubmit={searchSubmit}>
+            <input type="search" ref={searchInputRef} className="searchBar" placeholder="책 제목 또는 저자명을 입력해주세요." />
             <button type="submit" className="searchQuerySubmit"><BsSearch size={20}/></button>
-            <label className="searchQueryCamera" form="chooseFile" ><BsFillCameraFill size={20}/></label>
-            <input type="file" className="file" id="chooseFile" />
         </form>
             <style jsx>{`
                 .file {

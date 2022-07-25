@@ -20,10 +20,6 @@ const Join: React.FC = () => {
     const passwordRef = useRef<string | null>(null)
     passwordRef.current = watch("password")
     
-    const P = tw.p`
-    text-red
-    `
-    
   return (
     <LoginHomeLayout>
         <SEO title="회원가입" />
@@ -158,3 +154,7 @@ const Join: React.FC = () => {
   );
 }
 export default Join
+
+const P = tw.p`
+    text-red
+`
