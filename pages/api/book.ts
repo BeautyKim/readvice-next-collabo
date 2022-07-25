@@ -1,5 +1,6 @@
 import axios from 'axios'
 import type { NextApiRequest, NextApiResponse } from 'next'
+import data from "@/data/book.json"
 
 type Data = {
   name: string

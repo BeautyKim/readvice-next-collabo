@@ -7,13 +7,13 @@ const headers = {
     Authorization: "JWT fefege...",
 }
 
-export const comment = {
+export const commentWrite = {
     add: async ( payload:{ comment: string }) => {
         try{
             const response: AxiosResponse<Comment[]> =
-            await client.post('/comment/addComment', payload, { headers })
+            await client.post('/comments/write', payload, { headers })
             console.log(`서버 들어옴+${response.data}`)
-            return response
+            return response.data
         } catch( error ){
             return error;
         }
@@ -21,7 +21,7 @@ export const comment = {
     delete: async ( commentId: string) => {
         try{
             const response: AxiosResponse<Comment[]> =
-            await client.delete(`/comment/${commentId}`)
+            await client.delete(`/comments/write`)
             console.log(`서버 들어옴+${JSON.stringify(response)}`)
             return response
         } catch( error ){
@@ -31,17 +31,8 @@ export const comment = {
     edit: async () => {
         try{
             const response: AxiosResponse<Comment[]> =
-            await client.put(`/comment/editComment`)
+            await client.put(`/comments/write`)
             console.log(`서버 들어옴+${JSON.stringify(response)}`)
-            return response.data
-        } catch( error ){
-            return error;
-        }
-    },
-    fetch: async () => {
-        try{
-            const response: AxiosResponse = await client.get('/comment/fetchComment', {headers})
-            console.log(`서버 들어옴+${response.data}`)
             return response.data
         } catch( error ){
             return error;
@@ -49,7 +40,7 @@ export const comment = {
     },
     get: async () => {
         try{
-            const response: AxiosResponse = await client.get('/comment/fetchComment', {headers})
+            const response: AxiosResponse = await client.get('/comments/write', {headers})
             console.log(`서버 들어옴+${response.data}`)
             return response.data
         } catch( error ){

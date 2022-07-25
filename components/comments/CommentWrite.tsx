@@ -10,15 +10,8 @@ export interface addCommentProps {
 }
 
 export const CommentWrite: React.FC<Props> = ({onSubmit, onChange}) => {
-  // const commentDate = new Date(date).toLocaleDateString('en-US', {
-  //   day: 'numeric',
-  //   month: 'long'
-  // })
   return (
     <>
-      {/* <time>
-        {commentDate}
-      </time> */}
       <form onSubmit={onSubmit} >
         <input type='text' name='comment' placeholder='한줄평 입력' onChange={onChange}
           className="px-3 py-2 mr-4 border rounded shadow appearance-none text-grey-darker w-50" />
