@@ -11,7 +11,7 @@ export function Introduce() {
                     <h1 className="mb-4 text-2xl font-medium tracking-widest text-gray-900 title-font">
                         TEAM READVICE</h1>
                     <p className="mx-auto text-base leading-relaxed lg:w-2/3">
-                        도서검색, 인공지능 등 프로젝트 설명</p>
+                        이미지 검색, GAN, 챗봇 등의 기술을 사용해 AI 사서를 만들었습니다.</p>
                 </div>
                 <div className="flex flex-wrap -m-4">
                     <IntroduceItem 
@@ -20,8 +20,8 @@ export function Introduce() {
                         LinkHref1={"https://github.com/BeautyKim"} 
                         LinkHref2={"https://ahreumi.notion.site/BeautyKim-c88127b740744819a333f91f3ba49eb2"} 
                         Role={"Front-end Developer"} 
-                        Role2={"화면 담당"} 
-                        Skill={"사용기술:"} 
+                        Role2={"PO, 화면"} 
+                        Skill={"사용언어 및 기술: TypeScript, Next.js, React.js"} 
                         Email={"이메일: shadowbubobubo@gmail.com"} />
                     <IntroduceItem 
                         ImgSrc={"https://avatars.githubusercontent.com/u/97998591?v=4"} 
@@ -29,27 +29,27 @@ export function Introduce() {
                         LinkHref1={"https://github.com/nohhongju"} 
                         LinkHref2={"/"} 
                         Role={"AI Developer"} 
-                        Role2={"매의 눈 담당"} 
-                        Skill={"사용기술:"} 
-                        Email={"이메일:"} />
+                        Role2={"챗봇(자연어 처리), Django 웹 서버 구축"} 
+                        Skill={"사용언어 및 기술: Python"} 
+                        Email={"이메일: ghdwn49@gmail.com"} />
                     <IntroduceItem 
                         ImgSrc={"https://avatars.githubusercontent.com/u/97998455?v=4"} 
                         Name={"Min-seo Choi"}
                         LinkHref1={"https://github.com/meanseo"} 
                         LinkHref2={"/"} 
                         Role={"AI Developer"} 
-                        Role2={"요정 담당"} 
-                        Skill={"사용기술:"} 
-                        Email={"이메일:"} />
+                        Role2={"GAN 활용 자연어 생성(독서기록장), Django 웹 서버 구축"} 
+                        Skill={"사용언어 및 기술: GAN, Python"} 
+                        Email={"이메일: chlalstjok97@gmail.com"} />
                     <IntroduceItem 
                         ImgSrc={"https://avatars.githubusercontent.com/u/97998284?v=4"} 
                         Name={"Ha-jin Hee"}
                         LinkHref1={"https://github.com/hajinhee"} 
                         LinkHref2={"/"} 
                         Role={"AI Developer"} 
-                        Role2={"기둥 담당"} 
-                        Skill={"사용기술:"} 
-                        Email={"이메일:"} />
+                        Role2={"이미지 인식 및 텍스트 추출, Django 웹 서버 구축"} 
+                        Skill={"사용기술: Python"} 
+                        Email={"이메일: hajinheee@gmail.com"} />
                 </div>
             </div>
         </section>

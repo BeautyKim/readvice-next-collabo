@@ -40,6 +40,30 @@ const IntroduceItem = ({Name, ImgSrc, LinkHref1, LinkHref2, Role, Role2, Skill, 
                     </Link>
                 </span>
             </div>
+            <style jsx>{`
+                h2::before {  
+                    transform: scaleX(0);
+                    transform-origin: bottom right;
+                }
+                h2:hover::before {
+                    transform: scaleX(1);
+                    transform-origin: bottom left;
+                }
+                h2::before {
+                    content: " ";
+                    display: block;
+                    position: absolute;
+                    top: 0; right: 0; bottom: 0; left: 0;
+                    inset: 0 0 0 0;
+                    background: hsl(200 100% 80%);
+                    z-index: -1;
+                    transition: transform .3s ease;
+                }
+                @media (orientation: landscape) {
+                h2 {
+                    grid-auto-flow: column;
+                }}
+            `}</style>
         </Item>
     </Box>
   )

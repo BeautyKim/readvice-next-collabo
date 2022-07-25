@@ -2,27 +2,22 @@ import Link from "next/link"
 import tw from "tailwind-styled-components"
 
 const Product = () => {
-    
     return(
-        <section className="h-full space-y-3 m-44 columns-1">
-            <article className="text-center">
-                <h1 className="text-3xl font-black leading-8 tracking-tight text-gray-900 md:text-4xl sm:text-4">Your read advice</h1>
-                <P>나만을 위한 사서 리드바이스</P>
+        <section className="h-full m-20 space-y-3 columns-1">
+            <article className="mx-10 text-center my-44">
+                <h1 className="text-4xl font-black leading-10 tracking-tight text-gray-900 md:text-5xl">Your read advice</h1>
+                <h2 className="p-4 text-md md:text-lg">나만을 위한 사서 리드바이스</h2>
             </article>
-            <article className="container flex flex-col items-center px-6 pt-24 pb-32 mx-auto md:flex-row md:space-x-22">
+            <article className="container flex flex-col items-center px-6 pt-32 pb-32 mx-auto md:flex-row md:space-x-22">
                 <LeftDiv>
-                    <H1>
-                        읽고 싶은 책을 검색하면
-                    </H1>
-                    <P>
-                        지금 당장 내 주변에서 대출 할 수 있는 <br/>도서관과 구매 가능한 온.오프라인 서점을 볼 수 있어요
-                    </P>
+                    <H1>읽고 싶은 책을 검색하면</H1>
+                    <P>지금 당장 내 주변에서 대출 할 수 있는 <br/>도서관과 구매 가능한 온.오프라인 서점을 볼 수 있어요</P>
                 </LeftDiv>
                 <div className="md:w-1/2">
                     <img src="/images/bookWoman.svg" className="mb-10" alt="책읽는여자"/>
                 </div>
             </article>
-            <article className="container flex flex-col items-center px-6 pt-24 pb-32 mx-auto md:flex-row md:space-x-16">
+            <article className="container flex flex-col items-center px-4 pt-32 pb-32 mx-auto md:flex-row md:space-x-16">
                 <div className="md:w-1/2">
                     <img src="/images/bookMan4.svg" className="mb-10" alt="책읽는남자"/>
                 </div>
@@ -41,6 +36,9 @@ const Product = () => {
                 </div>
             </article>
             <article className="container flex flex-col items-center px-6 pt-24 pb-32 mx-auto md:flex-row md:space-x-16">
+                <div className="md:w-1/2">
+                    <img src="/images/bookWoman4.svg" className="mb-10" alt="책읽는여자"/>
+                </div>
                 <RightDiv>
                     <H1>챗봇 최고야</H1>
                     <P>챗봇에 관한 설명~~~~~~</P>

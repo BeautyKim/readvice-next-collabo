@@ -9,7 +9,7 @@ const Home: NextPage = () => {
 
   return (
     <>
-      <SearchBar />
+      
       <Product />
 
     </>
