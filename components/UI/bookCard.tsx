@@ -15,14 +15,14 @@ const BookCard = ({ src ,alt, title, author, href}: Props) => {
     <div className="p-4 md:w-1/4">
         <ImgBox>
             <Img src={src} alt={alt}/>
-            <div className="p-6">
+            <div className="p-3">
                 <AuthorName>{author}</AuthorName>
                 <BookName>{title}</BookName>
-                <p className="leading-relaxed mb-3">Photo booth fam kinfolk cold-pressed
+                <p className="mb-3 leading-relaxed">Photo booth fam kinfolk cold-pressed
                     sriracha leggings jianbing microdosing tousled waistcoat.</p>
-                <div className="flex items-center flex-wrap ">
+                <div className="flex flex-wrap items-center ">
                     <Link href={href}>
-                        <a className="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0">한줄평</a>
+                        <a className="inline-flex items-center text-indigo-500 md:mb-2 lg:mb-0">한줄평</a>
                     </Link>
                 </div>
             </div>
@@ -41,6 +41,7 @@ const ImgBox = tw.div`
     border-opacity-60 
     rounded-lg 
     overflow-hidden
+    bg-white
 `
 const Img = tw.img`
     lg:h-48

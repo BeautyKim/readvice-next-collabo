@@ -1,9 +1,11 @@
-import { ReadingBooks } from "@/components"
+import { MyNav, ReadingBooks } from "@/components"
 import { NextPage } from "next"
 
 const ReadingBooksPage: NextPage = () => {
   return (
-    <ReadingBooks />
+    <>
+      <ReadingBooks />
+    </>
   )
 }
 

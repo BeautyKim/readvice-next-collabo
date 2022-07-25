@@ -1,12 +1,12 @@
-import {SEO} from "@/components";
 import booksData from "@/data/book.json"
 import tw from "tailwind-styled-components";
+import { SEO } from "../common/SEO";
 import BookCard from "../UI/bookCard";
 
 export function ReadingBooks() {
     return (
-        <> 
-        <SEO title = "읽은 책" />
+        <>
+        <SEO title ="읽은 책" />
         <Box>
             <Container className="container px-5 py-24 mx-auto">
                 <div className="flex flex-wrap -m-4">

@@ -31,7 +31,7 @@ const CommentDetail: NextPage = () => {
   useEffect(() => {
     const bookId = bookData.find(element => element.isbn)
     console.log(JSON.stringify(bookId))
-    setBook(bookId)
+    // setBook()
 
   }, [id])
   console.log(">>>>>>>>>>>"+(JSON.stringify(book)))
