@@ -3,6 +3,7 @@ import { analyzeNextSteps } from "./analyzeNextSteps";
 import Chats from "./Chats";
 import Image from "next/image"
 import ChatbotModal from "./ChatbotModal";
+import Button from "../ui/Button";
 
 interface ResponseBotObject {
   purpose: string;

@@ -1,5 +1,5 @@
 import bookData from "@/data/book.json"
-import SearchCard from "../UI/SearchCard"
+import SearchCard from "../ui/SearchCard"
 
 const SearchResult  = () => {
 
