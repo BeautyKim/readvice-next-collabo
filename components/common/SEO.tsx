@@ -1,7 +1,7 @@
 import Head from "next/head";
 
 type TitleProps = {
-  title: string
+  title: string | string[] | undefined
 }
 
 export const SEO = ({ title }: TitleProps ) => {

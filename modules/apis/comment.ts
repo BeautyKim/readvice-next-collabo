@@ -8,21 +8,21 @@ const headers = {
 }
 
 export const commentWrite = {
-    add: async ( payload:{ comment: string }) => {
+    add: async ( payload: Comment ) => {
         try{
             const response: AxiosResponse<Comment[]> =
-            await client.post('/comments/write', payload, { headers })
-            console.log(`서버 들어옴+${response.data}`)
+            await client.post('/comments/write', payload)
+            console.log(`한줄평 입력 성공+${JSON.stringify(response.data)}`)
             return response.data
         } catch( error ){
             return error;
         }
     },
-    delete: async ( commentId: string) => {
+    delete: async ( comment: string) => {
         try{
             const response: AxiosResponse<Comment[]> =
             await client.delete(`/comments/write`)
-            console.log(`서버 들어옴+${JSON.stringify(response)}`)
+            console.log(`한줄평 삭제 성공+${JSON.stringify(response)}`)
             return response
         } catch( error ){
             return error;
@@ -32,7 +32,7 @@ export const commentWrite = {
         try{
             const response: AxiosResponse<Comment[]> =
             await client.put(`/comments/write`)
-            console.log(`서버 들어옴+${JSON.stringify(response)}`)
+            console.log(`한줄평 수정 성공+${JSON.stringify(response)}`)
             return response.data
         } catch( error ){
             return error;
@@ -41,7 +41,7 @@ export const commentWrite = {
     get: async () => {
         try{
             const response: AxiosResponse = await client.get('/comments/write', {headers})
-            console.log(`서버 들어옴+${response.data}`)
+            console.log(`한줄평 가져오기 성공+${response.data}`)
             return response.data
         } catch( error ){
             return error;

@@ -1,7 +1,22 @@
+import bookData from "@/data/book.json"
+import SearchCard from "../UI/SearchCard"
 
 const SearchResult  = () => {
+
   return (
-    <div>SearchResult </div>
+  <>
+    <div>
+      {bookData.map(book => 
+        <SearchCard 
+          key={book.isbn}
+          BookName={book.book_title}
+          BookInfo={book.book_info}
+          author={book.author}
+          BookImg={book.book_img} 
+          BookHref={`/books/${book.book_title}`} />
+        )}
+    </div>
+  </>
   )
 }
 

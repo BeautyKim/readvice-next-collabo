@@ -26,7 +26,9 @@ const IntroduceItem = ({Name, ImgSrc, LinkHref1, LinkHref2, Role, Role2, Skill, 
             <div className="flex-grow sm:pl-8">
                 <h2 className="text-lg font-medium text-gray-900 title-font">{Name}</h2>
                 <h3 className="mb-3 text-gray-500">{Role}</h3>
-                <p className="mb-4">{Role2}<br/>{Skill}<br/>{Email}</p>
+                <p className="mb-4">{Role2}<br/>사용기술<br/>{Skill}<br/>
+                <a href={`mailto:${Email}`}>{Email}</a>
+                </p>
                 <span className="inline-flex">
                     <Link href={LinkHref1}>
                         <a className="text-gray-500">
@@ -40,30 +42,6 @@ const IntroduceItem = ({Name, ImgSrc, LinkHref1, LinkHref2, Role, Role2, Skill, 
                     </Link>
                 </span>
             </div>
-            <style jsx>{`
-                h2::before {  
-                    transform: scaleX(0);
-                    transform-origin: bottom right;
-                }
-                h2:hover::before {
-                    transform: scaleX(1);
-                    transform-origin: bottom left;
-                }
-                h2::before {
-                    content: " ";
-                    display: block;
-                    position: absolute;
-                    top: 0; right: 0; bottom: 0; left: 0;
-                    inset: 0 0 0 0;
-                    background: hsl(200 100% 80%);
-                    z-index: -1;
-                    transition: transform .3s ease;
-                }
-                @media (orientation: landscape) {
-                h2 {
-                    grid-auto-flow: column;
-                }}
-            `}</style>
         </Item>
     </Box>
   )

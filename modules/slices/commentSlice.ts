@@ -1,5 +1,5 @@
 import { Comment } from "@/modules/types";
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 
 type CommentState = {
@@ -17,23 +17,26 @@ const commentSlice = createSlice({
     name: 'commentSlice',
 	initialState,
     reducers: {
-    	addComment(state, action){
+        addCommentRequest(state: CommentState, action: PayloadAction<Comment>){
             state.status = 'loading'
-            state.data.push(action.payload);
         },
-        addCommentFailure(state, {payload: error}){
+        addCommentSuccess(state: CommentState, action: PayloadAction<Comment>){
+            state.status = 'idle'
+            state.data = [...state.data, action.payload]
+        },
+        addCommentFailure(state: CommentState, {payload: error}){
             state.status = 'failed'
             state.data.push(error)
         },
         editComment(state, action){
             const { id, text } = action.payload;
-            state.data = state.data.map(comment => comment.id === id
+            state.data = state.data.map(comment => comment === id
                 ? { ...comment,
                     text} : comment);
         },
         removeComment(state, action){
             const id = action.payload
-            state.data = state.data.filter( comment => comment.id !== id)
+            state.data = state.data.filter( comment => comment !== id)
         },
         fetchCommentRequest(state){
             console.log(`한줄평 불러오기`)
@@ -54,7 +57,7 @@ const commentSlice = createSlice({
 })
 
 const {reducer, actions} = commentSlice
-export const { addComment, addCommentFailure, editComment,
+export const { addCommentRequest, addCommentSuccess, addCommentFailure, editComment,
     fetchCommentRequest, fetchCommentSuccess, fetchCommentFailure } = commentSlice.actions;
 export const commentAction = actions
 export default reducer

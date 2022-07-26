@@ -12,15 +12,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       <Layout>
         <Component {...pageProps} />
       </Layout>
-  )       
-  // return (pageProps && pageProps.pathname) === '/users/login' || 
-  //   (pageProps && pageProps.pathname) === '/users/join' ? (
-  //     <Component {...pageProps} />
-  //   ) : (
-  //     <Layout>
-  //       <Component {...pageProps} />
-  //     </Layout>
-  // )       
+  )            
 }
 // export const getServerSideProps = wrapper.getServerSideProps((store) => async ({ req }) => {
 //   const cookie = req ? req.headers.cookie : '';

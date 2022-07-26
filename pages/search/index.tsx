@@ -1,11 +1,9 @@
-import { useRouter } from "next/router"
-import { useEffect, useRef } from "react"
+import SearchResult from "@/components/search/SearchResult "
 
 const SearchDetailPage = () => {
     
-
   return (
-    <div>index</div>
+    <SearchResult />
   )
 }
 

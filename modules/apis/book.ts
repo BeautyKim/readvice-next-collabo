@@ -1,4 +1,5 @@
 import axios, { AxiosResponse } from "axios";
+import { client } from ".";
 
 export const DATALIBRARY_API_KEY = process.env.NEXT_PUBLIC_DATALIBRARY_API_KEY
 
@@ -11,11 +12,14 @@ export const dataBookApi = async() =>{
         return err
     }
 }
-export const dummyBook = async() => {
-    try{
-        const response = await axios.get('data/book.json')
-        return response.data
-    }catch(err){
-        return err
+
+export const book = {
+    list: async () => {
+        try {
+            const response = await client.get('/books/api_book')
+            return response.data()
+        }catch (err) {
+            return err
+        }
     }
 }

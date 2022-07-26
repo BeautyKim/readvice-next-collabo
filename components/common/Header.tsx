@@ -1,9 +1,12 @@
+import { User } from "@/modules/types";
 import Image from "next/image";
 import Link from "next/link";
 import css from "styled-jsx/css";
 import { Logout } from "../users/Logout";
 
-export const Header = () => {
+
+export const Header = ({email}: User) => {
+    
     return(
         <div>
             <header>
@@ -21,7 +24,7 @@ export const Header = () => {
                         </li>
                         <li className="dropdown"> <Link href="#" className="dropbtn"><a>My Page</a></Link>
                             <ul className="dropdown-content">
-                                <Link href="/users/editProfile"><a>회원정보</a></Link>
+                                <Link href={`/users/${email}`}><a>회원정보</a></Link>
                                 <Link href="/myLibrary/myLibrary"><a>내 서재</a></Link>
                             </ul>
                         </li>

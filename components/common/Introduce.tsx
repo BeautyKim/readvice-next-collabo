@@ -21,8 +21,8 @@ export function Introduce() {
                         LinkHref2={"https://ahreumi.notion.site/BeautyKim-c88127b740744819a333f91f3ba49eb2"} 
                         Role={"Front-end Developer"} 
                         Role2={"PO, 화면"} 
-                        Skill={"사용언어 및 기술: TypeScript, Next.js, React.js"} 
-                        Email={"이메일: shadowbubobubo@gmail.com"} />
+                        Skill={"TypeScript, Next.js, React.js, Tailwindcss"} 
+                        Email={"shadowbubobubo@gmail.com"} />
                     <IntroduceItem 
                         ImgSrc={"https://avatars.githubusercontent.com/u/97998591?v=4"} 
                         Name={"Hong-ju Noh"}
@@ -30,8 +30,8 @@ export function Introduce() {
                         LinkHref2={"/"} 
                         Role={"AI Developer"} 
                         Role2={"챗봇(자연어 처리), Django 웹 서버 구축"} 
-                        Skill={"사용언어 및 기술: Python"} 
-                        Email={"이메일: ghdwn49@gmail.com"} />
+                        Skill={"Python"} 
+                        Email={"ghdwn49@gmail.com"} />
                     <IntroduceItem 
                         ImgSrc={"https://avatars.githubusercontent.com/u/97998455?v=4"} 
                         Name={"Min-seo Choi"}
@@ -39,8 +39,8 @@ export function Introduce() {
                         LinkHref2={"/"} 
                         Role={"AI Developer"} 
                         Role2={"GAN 활용 자연어 생성(독서기록장), Django 웹 서버 구축"} 
-                        Skill={"사용언어 및 기술: GAN, Python"} 
-                        Email={"이메일: chlalstjok97@gmail.com"} />
+                        Skill={"GAN, Python"} 
+                        Email={"chlalstjok97@gmail.com"} />
                     <IntroduceItem 
                         ImgSrc={"https://avatars.githubusercontent.com/u/97998284?v=4"} 
                         Name={"Ha-jin Hee"}
@@ -48,8 +48,8 @@ export function Introduce() {
                         LinkHref2={"/"} 
                         Role={"AI Developer"} 
                         Role2={"이미지 인식 및 텍스트 추출, Django 웹 서버 구축"} 
-                        Skill={"사용기술: Python"} 
-                        Email={"이메일: hajinheee@gmail.com"} />
+                        Skill={"Python"} 
+                        Email={"hajinheee@gmail.com"} />
                 </div>
             </div>
         </section>

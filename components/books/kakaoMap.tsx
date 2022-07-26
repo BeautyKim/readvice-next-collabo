@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import {Map, MapMarker} from "react-kakao-maps-sdk"
 
-export interface IPrev{
+interface Props{
   center: {lat: number; lng: number}
   errMsg?: null | string
   isLoading: boolean
@@ -18,7 +18,7 @@ export default function KakaoMap(){
       latlng: { lat: 35.10998668, lng: 128.9213699524 },
     }
   ]
-  const [ state, setState ] = useState<IPrev>({
+  const [ state, setState ] = useState<Props>({
     center: {
       lat: 33.450701,
       lng: 126.570667,

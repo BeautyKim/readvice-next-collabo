@@ -1,5 +1,5 @@
 
-import { Chatbot, Footer, Header, SearchBar } from '@/components';
+import { Footer, Header, SearchBar } from '@/components';
 import { Layout } from '@/modules/types';
 import Head from 'next/head';
 
@@ -12,12 +12,11 @@ const Layout = ({ children } : Layout) => {
         <title>Readvice</title>
       </Head>
       <div>
-        <Header/>
+        <Header email={''} password={''}/>
         <SearchBar />
         <main>
           {children}
         </main>
-        <Chatbot />
         <Footer />
       </div>
     </>

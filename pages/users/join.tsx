@@ -1,6 +1,5 @@
 import Join from "@/components/users/Join"
 import { NextPage } from "next"
-import { memo } from "react"
 
 const JoinPage: NextPage = () => {
   return (

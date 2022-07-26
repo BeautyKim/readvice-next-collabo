@@ -4,6 +4,7 @@ import { useEffect, useState } from "react"
 
 export const CommentList: React.FC = () => {    
     const [ comments, setComments ] = useState([])
+    
     useEffect(() => {
         commentWrite.get().then((res) => {
             setComments(res.data)
@@ -13,7 +14,7 @@ export const CommentList: React.FC = () => {
         <>
         <h2>Comments</h2>
         {comments && comments.map((comment: Comment) => (
-            <span key={comment.id}>{comment.comment}</span>))}
+            <span key={comment.isbn}>{comment.comment}</span>))}
         </>
     )
 }

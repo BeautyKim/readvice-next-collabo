@@ -1,7 +1,12 @@
 import Link from "next/link"
 import { SEO, HomeClock } from "@/components"
+import { User } from "@/modules/types"
 
-const LoginHome: React.FC = () => {
+type Props = {
+    userName: string | undefined
+}
+
+const LoginHome = ({userName} : Props) => {
     // const [ userName, setUserName ] = useState('')
     // useEffect(() => {
         
@@ -21,7 +26,7 @@ const LoginHome: React.FC = () => {
                         </div>
                     </div>
                     <div className="todayBook">
-                        <h2>노홍주님을 위한 오늘의 책</h2>
+                        <h2>{userName}님을 위한 오늘의 책</h2>
                         <img src="http://image.yes24.com/goods/108887930/XL" alt="추천책" style={{width: 300}}/>
                     </div>
                 </article>

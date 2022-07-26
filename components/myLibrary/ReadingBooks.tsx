@@ -1,7 +1,7 @@
 import booksData from "@/data/book.json"
 import tw from "tailwind-styled-components";
 import { SEO } from "../common/SEO";
-import BookCard from "../UI/bookCard";
+import BookCard from "../UI/BookCard";
 
 export function ReadingBooks() {
     return (
@@ -17,7 +17,7 @@ export function ReadingBooks() {
                         alt={book.book_title} 
                         title={book.book_title} 
                         author={book.author} 
-                        href={`/comments/${book.isbn}`} />
+                        href={`/comments/${book.book_title}`} />
                     )}
                 </div>
             </Container>

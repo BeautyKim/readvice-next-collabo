@@ -10,15 +10,12 @@ export * from "./search/SearchBar"
 export * from "./chatbots/Chatbot"
 // 책
 export * from "./books/BookList"
-export * from "./books/SearchDetail"
 export * from "./books/SearchRecheck"
 export * from "./books/kakaoMap"
 export * from "./myLibrary/LikeBooks"
 export * from "./myLibrary/ReadingBooks"
 // 한줄평
 export * from "./comments/CommentList"
-export * from "./comments/CommentDelete"
-export * from "./comments/CommentItem"
 export * from "./comments/CommentWrite"
 // 로그인 홈
 export * from "./loginHome/LoginHome"

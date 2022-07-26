@@ -1,28 +1,28 @@
-import { user } from "@/modules/apis"
 import { Profile } from "@/components"
 import { User } from "@/modules/types"
-import { GetStaticProps } from "next"
 import { useRouter } from "next/router"
-import { useEffect, useState } from "react"
+import { useState } from "react"
 
 interface Props {
     profile: User[]
 }
 
-const ProfilePage = ({profile}: Props) => {
+const ProfilePage = () => {
 
     const router = useRouter()
-    const { query: { id } } = router
+    const { id } = router.query
 
     const [ user, setUser ] = useState({})
     // useEffect(() => {
     //     userInfoApi() => {}
     // })
+    const UserInfo = () => {
+
+    }
 
     return(
         <>
-            {id}
-
+            {/* <Profile userInfo={id} /> */}
         </>
     )
 }

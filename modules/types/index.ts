@@ -27,12 +27,12 @@ export interface User {
 }
 
 export interface Comment {
-  id?: string;
-  email?: string;
-  isbn?: number;
-  comment: string;
-  reg_date?: string;
+  comment_id?: string;
+  comment?: string;
+  reg_date?: number;
   auto_recode?: string;
+  email?: string;
+  isbn?: string;
 }
 
 

@@ -41,7 +41,7 @@ export const user = {
     },
     userInfo: async () => {
         try{
-            const response : AxiosResponse = await client.get(`/users/getUser`)
+            const response : AxiosResponse = await client.get(`/users/join`)
             return response.data
         } catch(err) {
             console.log(err)
