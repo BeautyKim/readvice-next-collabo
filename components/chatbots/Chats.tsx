@@ -46,7 +46,7 @@ const Chats: React.FC<Props> = props => {
             setMessages(temp2);
         }, 1000);
         }
-    }, [props.sendUserResponse, props.botResponse]);
+    }, [props.sendUserResponse, props.botResponse, messages]);
 
     // enable autoscroll after each message
     useEffect(() => {

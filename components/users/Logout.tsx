@@ -8,7 +8,7 @@ export const Logout:React.FC = () => {
   const handleClick = useCallback(() => {
     dispatch(logoutRequest)
     console.log(JSON.stringify(dispatch))
-  }, [])
+  }, [dispatch])
   return (
     <button onClick={handleClick}>Logout</button>
   )

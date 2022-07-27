@@ -1,22 +1,39 @@
 import { SEO } from "@/components";
+import MyLibraryLayout from "./MyLibraryLayout";
+import BookCard from "../ui/BookCard";
+import tw from "tailwind-styled-components";
+import booksData from "@/data/book.json"
 
 export function LikeBooks() {
     return (
-      <div>
+      <MyLibraryLayout>
         <SEO title="찜한 책" />
-        <form>
-            <h1>내 서재 관리</h1>
-            <div>
-                <img src='http://image.kyobobook.co.kr/images/book/large/754/l9791191043754.jpg' />
-                <img src='http://image.kyobobook.co.kr/images/book/large/620/l9791162245620.jpg' />
-                <img src='http://image.kyobobook.co.kr/images/book/large/067/l9791157688067.jpg' />
-                <img src='http://image.kyobobook.co.kr/images/book/large/010/l9788963724010.jpg' />
-                <label htmlFor="icon-button-file">
-                    <input accept="image/*" id="icon-button-file" type="file"/>
-                </label>
-            </div>
-        </form>
-        </div>
+        <Box>
+            <Container className="container px-5 py-24 mx-auto">
+                <div className="flex flex-wrap -m-4">
+                {booksData.map(book =>
+                    <BookCard 
+                        key={book.isbn} 
+                        src={book.book_img} 
+                        alt={book.book_title} 
+                        title={book.book_title} 
+                        author={book.author} 
+                        href={`/comments/${book.book_title}`} />
+                    )}
+                </div>
+            </Container>
+            </Box>
+        </MyLibraryLayout>
     );
 
 }
+const Box = tw.div`
+    text-gray-600
+    body-font
+`
+const Container = tw.div`
+    container
+    px-5
+    py-24
+    mx-auto
+`

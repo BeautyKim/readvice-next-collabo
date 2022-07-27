@@ -2,7 +2,10 @@ import { SEO } from "@/components";
 import { User } from "@/modules/types";
 
 interface UserInfoType {
-    userInfo: User
+    userInfo: {
+        username: string | string[] | undefined
+        email: string | string[] | undefined
+    }
 }
 
 export const Profile: React.FC<UserInfoType> = ({userInfo}) => {
@@ -12,7 +15,7 @@ export const Profile: React.FC<UserInfoType> = ({userInfo}) => {
             <form className="flex items-center justify-center min-h-screen">
                 <div className="z-20 px-12 py-12 bg-white shadow-xl rounded-2xl">
                     <div>
-                        <img src="/svg/김오십.svg" className="block h-24 mx-auto rounded-full sm:mx-0 sm:shrink-0"/>
+                        <img src="/svg/김오십.svg" className="block h-24 mx-auto rounded-full sm:mx-0 sm:shrink-0" alt="유저사진"/>
                         <h1 className="mb-4 text-3xl font-bold text-center cursor-pointer">
                             {userInfo.username}
                         </h1>

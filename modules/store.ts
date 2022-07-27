@@ -64,7 +64,7 @@ const makeStore = () =>{
 const store = rootReducer; 
 
 export type AppState = ReturnType<typeof rootReducer>;
-export type AppDispatch = typeof store.dispatch;
+export type AppDispatch = ReturnType<typeof store>["dispatch"];
 export const useAppSelector: TypedUseSelectorHook<AppState> = useSelector;
 export const wrapper = createWrapper(makeStore)
 export default store;

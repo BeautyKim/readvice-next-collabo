@@ -37,15 +37,15 @@ const Product = () => {
             </article>
             <article className="container flex flex-col items-center px-6 pt-24 pb-32 mx-auto md:flex-row md:space-x-16">
                 <div className="md:w-1/2">
-                    <img src="/images/bookWoman4.svg" className="mb-10" alt="책읽는여자"/>
+                    <img src="/images/bookWoman6.svg" className="mb-10" alt="책읽는여자"/>
                 </div>
                 <RightDiv>
-                    <H1>챗봇 최고야</H1>
-                    <P>챗봇에 관한 설명~~~~~~</P>
+                    <H1>나만의 사서 리드봇</H1>
+                    <P>챗봇 리드봇 대화를 즐겨보세요~ <br/> 당신에게 필요한 책을 추천해줘요.</P>
                 </RightDiv>
             </article>
-            <article className="text-center">
-                <h1>지금 바로 Readvice 이용하기</h1>
+            <article className="text-center font-bold">
+                <h1 className="mb-3">지금 바로 Readvice 이용하기</h1>
                 <div className="font-black leading-8 tracking-tight text-gray-900 md:text-4xl sm:text-4">
                     <Link href="/users/join"><a>
                         <button

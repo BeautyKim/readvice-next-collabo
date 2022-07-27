@@ -16,8 +16,8 @@ export interface Book {
 }
 
 export interface User {
-  email: string, 
-  password: string,
+  email?: string, 
+  password?: string,
   cpassword?: string, 
   username?: string, 
   birth?: string, 

@@ -5,7 +5,7 @@ import css from "styled-jsx/css";
 import { Logout } from "../users/Logout";
 
 
-export const Header = ({email}: User) => {
+export const Header = ({username}: User) => {
     
     return(
         <div>
@@ -24,7 +24,7 @@ export const Header = ({email}: User) => {
                         </li>
                         <li className="dropdown"> <Link href="#" className="dropbtn"><a>My Page</a></Link>
                             <ul className="dropdown-content">
-                                <Link href={`/users/${email}`}><a>회원정보</a></Link>
+                                <Link href={`/users/${username}`}><a>회원정보</a></Link>
                                 <Link href="/myLibrary/myLibrary"><a>내 서재</a></Link>
                             </ul>
                         </li>

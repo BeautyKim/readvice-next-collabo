@@ -1,16 +1,11 @@
 import Link from "next/link"
-import { SEO, HomeClock } from "@/components"
-import { User } from "@/modules/types"
+import { SEO } from "@/components"
 
 type Props = {
     userName: string | undefined
 }
 
 const LoginHome = ({userName} : Props) => {
-    // const [ userName, setUserName ] = useState('')
-    // useEffect(() => {
-        
-    // }, [])
     
     return(
         <div className="container">
@@ -22,7 +17,7 @@ const LoginHome = ({userName} : Props) => {
                             <h1>날씨</h1>
                         </div>
                         <div className="mainTime">
-                                {/* <HomeClock /> */}
+                            {/* <HomeClock /> */}
                         </div>
                     </div>
                     <div className="todayBook">

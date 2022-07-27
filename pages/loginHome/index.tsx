@@ -1,5 +1,4 @@
 import LoginHome from "@/components/loginHome/LoginHome";
-import { user } from "@/modules/apis";
 import { NextPage } from "next";
 import { useEffect, useState } from "react";
 

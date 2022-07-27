@@ -1,7 +1,8 @@
+import { LikeBooks } from "@/components"
 
 const LikeBooksPage = () => {
   return (
-    <div>likeBooks</div>
+    <LikeBooks />
   )
 }
 

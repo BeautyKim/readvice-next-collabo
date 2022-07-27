@@ -1,28 +1,22 @@
 import { Profile } from "@/components"
 import { User } from "@/modules/types"
 import { useRouter } from "next/router"
-import { useState } from "react"
+import { userInfo } from "os"
+import { useEffect, useState } from "react"
 
 interface Props {
     profile: User[]
 }
 
 const ProfilePage = () => {
-
     const router = useRouter()
     const { id } = router.query
-
-    const [ user, setUser ] = useState({})
-    // useEffect(() => {
-    //     userInfoApi() => {}
-    // })
-    const UserInfo = () => {
-
-    }
-
     return(
         <>
-            {/* <Profile userInfo={id} /> */}
+            <Profile userInfo={{
+                username: id,
+                email: ""
+            }}/>
         </>
     )
 }
@@ -39,4 +33,8 @@ const ProfilePage = () => {
 //     }
 // }
 export default ProfilePage
+
+function userInfoApi() {
+    throw new Error("Function not implemented.")
+}
 

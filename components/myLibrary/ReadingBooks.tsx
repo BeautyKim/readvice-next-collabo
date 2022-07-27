@@ -2,10 +2,11 @@ import booksData from "@/data/book.json"
 import tw from "tailwind-styled-components";
 import { SEO } from "../common/SEO";
 import BookCard from "../ui/BookCard";
+import MyLibraryLayout from "./MyLibraryLayout";
 
 export function ReadingBooks() {
     return (
-        <>
+        <MyLibraryLayout>
         <SEO title ="읽은 책" />
         <Box>
             <Container className="container px-5 py-24 mx-auto">
@@ -22,7 +23,7 @@ export function ReadingBooks() {
                 </div>
             </Container>
             </Box>
-        </>
+        </MyLibraryLayout>
     );
 }
 

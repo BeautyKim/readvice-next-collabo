@@ -2,9 +2,11 @@
 import { Footer, Header, SearchBar } from '@/components';
 import { Layout } from '@/modules/types';
 import Head from 'next/head';
+import ChatbotModal from '../chatbots/ChatbotModal';
 
 
 const Layout = ({ children } : Layout) => {
+
   return (
     <>
       <Head>
@@ -12,11 +14,12 @@ const Layout = ({ children } : Layout) => {
         <title>Readvice</title>
       </Head>
       <div>
-        <Header email={''} password={''}/>
+        <Header/>
         <SearchBar />
         <main>
           {children}
         </main>
+        <ChatbotModal />
         <Footer />
       </div>
     </>

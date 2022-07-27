@@ -9,7 +9,9 @@ export const MyNav: React.FC = () => {
     <nav>
         <ul>
             {navMyPage.map(nav => (
-                                <Link href={nav.path} key={nav.label} className=""><a>{nav.label}</a></Link>
+                                <Link href={nav.path} key={nav.label} className="
+                                  
+                                "><a>{nav.label}</a></Link>
                             ))}
         </ul>
     </nav>

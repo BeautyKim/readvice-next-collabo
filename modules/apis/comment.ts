@@ -12,7 +12,6 @@ export const commentWrite = {
         try{
             const response: AxiosResponse<Comment[]> =
             await client.post('/comments/write', payload)
-            console.log(`한줄평 입력 성공+${JSON.stringify(response.data)}`)
             return response.data
         } catch( error ){
             return error;
@@ -22,7 +21,6 @@ export const commentWrite = {
         try{
             const response: AxiosResponse<Comment[]> =
             await client.delete(`/comments/write`)
-            console.log(`한줄평 삭제 성공+${JSON.stringify(response)}`)
             return response
         } catch( error ){
             return error;
@@ -32,7 +30,6 @@ export const commentWrite = {
         try{
             const response: AxiosResponse<Comment[]> =
             await client.put(`/comments/write`)
-            console.log(`한줄평 수정 성공+${JSON.stringify(response)}`)
             return response.data
         } catch( error ){
             return error;

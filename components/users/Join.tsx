@@ -7,6 +7,7 @@ import { useRef } from "react"
 import tw from "tailwind-styled-components"
 import { useDispatch } from "react-redux"
 import { joinRequest } from "@/modules/slices"
+import { current } from "@reduxjs/toolkit"
 
 
 // react-hook-form 사용한 회원가입 로직
@@ -17,7 +18,7 @@ const Join: React.FC = () => {
         dispatch(joinRequest(data))
         console.log(`리액트에 입력된 회원정보 : ${data}`)};
     
-    const passwordRef = useRef<string | null>(null)
+    const passwordRef = useRef<string | null | undefined>(null)
     passwordRef.current = watch("password")
     
   return (
