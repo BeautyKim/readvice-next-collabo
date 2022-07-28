@@ -35,7 +35,7 @@ export * from "./users/Join"
 export * from "./users/Login"
 export * from "./users/GoogleLogin"
 export * from "./users/Login"
-// UI
+// UI 폴더
 export * from "./ui/BookCard"
 export * from "./ui/Button"
 export * from "./ui/SearchCard"
