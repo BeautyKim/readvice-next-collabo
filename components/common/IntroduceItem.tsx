@@ -4,6 +4,7 @@ import tw from "tailwind-styled-components"
 import Image from 'next/image'
 
 
+
 type Props = {
     Name: string
     ImgSrc: string
