@@ -1,12 +1,16 @@
+import { SEO } from "@/components";
 import Product from "@/components/common/Product";
 import { NextPage } from "next";
+import Head from "next/head";
 
 
 
 const Home: NextPage = () => {
   return (
     <>
-      <title>Readvice</title>
+      <Head>
+        <title>Readvice</title>
+      </Head>
       <Product />
     </>
     )

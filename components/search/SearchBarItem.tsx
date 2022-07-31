@@ -21,24 +21,14 @@ export const SearchBar: React.FC = () => {
     }
     
     return(
-        <div className="allsearchBar">
+        <>
             <form onSubmit={searchSubmit}>
-                <input type="search" ref={searchInputRef} className="searchBar" placeholder="책 제목 검색" />
+                <input type="search" ref={searchInputRef} className="searchBar" placeholder="책 제목 검색" readOnly/>
                 <button type="submit" className="searchQuerySubmit"><BsSearch size={20}/></button>
             </form>
             <style jsx>{`
-                .file {
-                    display: none;
-                }
-                .allsearchBar {
-                    margin:auto;
-                    text-align:center;
-                }
-                    
                 form {
-                    margin:auto;
                     display: inline-block;
-                    width: 100%;
                     display: flex;
                     flex-direction: row;
                     align-items: center;
@@ -46,7 +36,7 @@ export const SearchBar: React.FC = () => {
                 .searchBar {
                     width: 100%;
                     height: 2.8rem;
-                    background: #f5f5f5;
+                    background: #ffffff;
                     outline: none;
                     border: none;
                     border-radius: 1.625rem;
@@ -56,26 +46,13 @@ export const SearchBar: React.FC = () => {
                 .searchQuerySubmit{
                     width: 4rem;
                     height: 2.8rem;
-                    margin-left: -5rem;
-                    background: none;
-                    border: none;
-                    outline: none;
-                }
-                .searchQueryCamera{
-                    margin-top: 20px;
-                    width: 3rem;
-                    height: 2.8rem;
                     margin-left: -2rem;
                     background: none;
                     border: none;
                     outline: none;
-                    cursor: pointer;
                 }
-                .searchQuerySubmit:hover, .searchQueryCamera:hover {
-                    cursor: pointer;
-                }
-
             `}</style>
-        </div>
+        </>
     )
 }
+// #f8f2f2
