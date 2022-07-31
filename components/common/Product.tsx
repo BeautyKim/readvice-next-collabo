@@ -4,26 +4,32 @@ import tw from "tailwind-styled-components"
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
-const Product = () => {
+const Product: React.FC = () => {
     useEffect(() => {
         AOS.init();
       })
     return(
         <section className="h-full m-20 space-y-3 columns-1">
-            <article className="mx-10 text-center my-44"
+            <article className="snap-mandatory mx-10 text-center my-44 snap-y">
+                <h1 className="snap-always snap-start text-4xl leading-10 tracking-tight text-gray-900 md:text-5xl font-bold"
                     data-aos="fade-down"
-                    data-aos-offset="300"
-                    data-aos-easing="easeincirc"
-                    data-aos-duration="1500">
-                <h1 className="text-4xl leading-10 tracking-tight text-gray-900 md:text-5xl font-bold"
-                    >Your read advice</h1>
-                <h2 className="p-4 text-md md:text-lg">나만을 위한 사서 리드바이스</h2>
+                    data-aos-delay="100"
+                    data-aos-easing="ease-in-circ"
+                    data-aos-duration="2500"
+                >Your read advice</h1>
+                <h2 className="p-4 text-md md:text-lg"
+                    data-aos="fade-zoom-in"
+                    data-aos-delay="1500"
+                    data-aos-easing="ease-in-circ"
+                    data-aos-duration="1500"
+                    >나만을 위한 사서 리드바이스</h2>
             </article>
-            <article className="container flex flex-col items-center px-6 pt-32 pb-32 mx-auto md:flex-row md:space-x-22">
+            <article className="snap-y snap-mandatory container flex flex-col items-center px-6 pt-32 pb-32 mx-auto md:flex-row md:space-x-22">
                 <LeftDiv data-aos="fade-right"
-                        data-aos-offset="300"
+                        data-aos-offset="200"
                         data-aos-easing="ease-in-sine"
-                        data-aos-duration="1000">
+                        data-aos-duration="1000"
+                        >
                     <H1>읽고 싶은 책을 검색하면</H1>
                     <P>지금 당장 내 주변에서 대출 할 수 있는 <br/>도서관과 구매 가능한 온.오프라인 서점을 볼 수 있어요</P>
                 </LeftDiv>
@@ -31,19 +37,19 @@ const Product = () => {
                     <img src="/images/bookWoman.svg" className="mb-10" alt="책읽는여자"/>
                 </div>
             </article>
-            <article className="container flex flex-col items-center px-4 pt-32 pb-32 mx-auto md:flex-row md:space-x-16">
+            <article className="snap-y snap-mandatory container flex flex-col items-center px-4 pt-32 pb-32 mx-auto md:flex-row md:space-x-16">
                 <div className="md:w-1/2">
                     <img src="/images/bookMan4.svg" className="mb-10" alt="책읽는남자"/>
                 </div>
                 <RightDiv data-aos="fade-left"
-                        data-aos-offset="300"
+                        data-aos-offset="200"
                         data-aos-easing="ease-in-sine"
                         data-aos-duration="1000">
                     <H1>나의 서재를 찍어서<br/>내 취향에 맞는 도서를 추천 받자</H1>
                     <P>직접 입력할 필요없이 사진 한 장이면 취향에 맞는 도서를 추천 해줘요</P>
                 </RightDiv>
             </article>
-            <article className="container flex flex-col items-center px-6 pt-24 pb-32 mx-auto md:flex-row md:space-x-16">
+            <article className="snap-y snap-mandatory container flex flex-col items-center px-6 pt-24 pb-32 mx-auto md:flex-row md:space-x-16">
                 <LeftDiv data-aos="fade-right"
                         data-aos-offset="300"
                         data-aos-easing="ease-in-sine"
@@ -55,7 +61,7 @@ const Product = () => {
                     <img src="/images/bookWoman4.svg" className="mb-10" alt="책읽는여자"/>
                 </div>
             </article>
-            <article className="container flex flex-col items-center px-6 pt-24 pb-32 mx-auto md:flex-row md:space-x-16">
+            <article className="snap-y snap-mandatory container flex flex-col items-center px-6 pt-24 pb-32 mx-auto md:flex-row md:space-x-16">
                 <div className="md:w-1/2">
                     <img src="/images/bookWoman6.svg" className="mb-10" alt="책읽는여자"/>
                 </div>
@@ -83,6 +89,8 @@ const Product = () => {
 export default Product
 
 const RightDiv = tw.div`
+    snap-always
+    snap-center 
     flex
     flex-col
     items-start
@@ -90,6 +98,8 @@ const RightDiv = tw.div`
     md:w-1/2
 `
 const LeftDiv = tw.div`
+    snap-always
+    snap-center
     flex
     flex-col
     items-start

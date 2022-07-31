@@ -5,6 +5,7 @@
 @layer base{
     html,
     body {
+      scroll-behavior: smooth;
       background-image:url(/images/blob.svg),url(/images/back2_1.svg);
       background-size: 300px, 500px;
       background-attachment: fixed;

@@ -1,7 +1,8 @@
 import { SEO } from "@/components";
+import React from "react";
 import IntroduceItem from "./IntroduceItem";
 
-export function Introduce() {
+const Introduce: React.FC = () => {
     return (
     <>
         <section className="text-gray-600 body-font">
@@ -24,15 +25,6 @@ export function Introduce() {
                         Skill={"TypeScript, Next.js, React.js, Tailwindcss"} 
                         Email={"shadowbubobubo@gmail.com"} />
                     <IntroduceItem 
-                        ImgSrc={"https://avatars.githubusercontent.com/u/97998591?v=4"} 
-                        Name={"Hong-ju Noh"}
-                        LinkHref1={"https://github.com/nohhongju"} 
-                        LinkHref2={"/"} 
-                        Role={"AI Developer"} 
-                        Role2={"챗봇(자연어 처리), Django 웹 서버 구축"} 
-                        Skill={"Python"} 
-                        Email={"ghdwn49@gmail.com"} />
-                    <IntroduceItem 
                         ImgSrc={"https://avatars.githubusercontent.com/u/97998455?v=4"} 
                         Name={"Min-seo Choi"}
                         LinkHref1={"https://github.com/meanseo"} 
@@ -42,8 +34,17 @@ export function Introduce() {
                         Skill={"GAN, Python"} 
                         Email={"chlalstjok97@gmail.com"} />
                     <IntroduceItem 
+                        ImgSrc={"https://avatars.githubusercontent.com/u/97998591?v=4"} 
+                        Name={"Hong-ju Noh"}
+                        LinkHref1={"https://github.com/nohhongju"} 
+                        LinkHref2={"/"} 
+                        Role={"AI Developer"} 
+                        Role2={"챗봇(자연어 처리), Django 웹 서버 구축"} 
+                        Skill={"Python"} 
+                        Email={"ghdwn49@gmail.com"} />
+                    <IntroduceItem 
                         ImgSrc={"https://avatars.githubusercontent.com/u/97998284?v=4"} 
-                        Name={"Ha-jin Hee"}
+                        Name={"Jin-hee Ha"}
                         LinkHref1={"https://github.com/hajinhee"} 
                         LinkHref2={"/"} 
                         Role={"AI Developer"} 

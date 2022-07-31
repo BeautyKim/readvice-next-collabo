@@ -1,7 +1,7 @@
 import { TagType } from '@/modules/types'
 import React, { useState } from 'react'
 
-function TagInput({ tagList, addTag, removeTag} : TagType) {
+const TagInput = ({ tagList, addTag, removeTag} : TagType) => {
     const [tag, setTag] = useState("")
     const handleChangeTag = (e: { target: { value: React.SetStateAction<string> } }) => {
         setTag(e.target.value)

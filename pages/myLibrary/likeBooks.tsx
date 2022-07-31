@@ -1,6 +1,7 @@
 import { LikeBooks } from "@/components"
+import { NextPage } from "next"
 
-const LikeBooksPage = () => {
+const LikeBooksPage: NextPage = () => {
   return (
     <LikeBooks />
   )

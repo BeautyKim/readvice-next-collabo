@@ -4,8 +4,7 @@ import { useRouter } from "next/router";
 import { useRef } from "react";
 import { BsSearch } from "react-icons/bs";
 
-
-export function SearchBar(){
+export const SearchBar: React.FC = () => {
     const router = useRouter()
     const searchInputRef = useRef(null)
     // const search = (e: any) => {
@@ -23,10 +22,10 @@ export function SearchBar(){
     
     return(
         <div className="allsearchBar">
-        <form onSubmit={searchSubmit}>
-            <input type="search" ref={searchInputRef} className="searchBar" placeholder="책 제목 또는 저자명을 입력해주세요." />
-            <button type="submit" className="searchQuerySubmit"><BsSearch size={20}/></button>
-        </form>
+            <form onSubmit={searchSubmit}>
+                <input type="search" ref={searchInputRef} className="searchBar" placeholder="책 제목 검색" />
+                <button type="submit" className="searchQuerySubmit"><BsSearch size={20}/></button>
+            </form>
             <style jsx>{`
                 .file {
                     display: none;
@@ -39,7 +38,7 @@ export function SearchBar(){
                 form {
                     margin:auto;
                     display: inline-block;
-                    width: 60%;
+                    width: 100%;
                     display: flex;
                     flex-direction: row;
                     align-items: center;

@@ -1,7 +1,7 @@
 import '@/styles/globals.css'
-import Layout from '@/components/common/Layout'
 import type { AppProps } from 'next/app'
 import { wrapper } from "@/modules/store";
+import Layout from '@/components/common/Layout';
 
 function MyApp({ Component, pageProps }: AppProps) {
 

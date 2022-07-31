@@ -4,7 +4,7 @@ interface Props {
   userResponse: string;
   botResponse: {
     purpose: string;
-    message: string;
+    message?: string;
     options?: string[];
     sender: string;
   };
@@ -14,7 +14,7 @@ interface Props {
 
 interface MessagesInfo {
   purpose?: string;
-  message: string;
+  message?: string;
   options?: string[];
   sender: string;
 }

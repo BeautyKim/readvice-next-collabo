@@ -1,4 +1,4 @@
-import { Introduce } from "@/components";
+import Introduce from "@/components/common/Introduce";
 import { NextPage } from "next";
 
 

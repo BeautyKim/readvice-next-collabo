@@ -4,7 +4,7 @@ type TitleProps = {
   title: string | string[] | undefined
 }
 
-export const SEO = ({ title }: TitleProps ) => {
+export const SEO: React.FC<TitleProps> = ({ title }: TitleProps ) => {
   return (
     <Head>
         <title>{title} | Readvice</title>

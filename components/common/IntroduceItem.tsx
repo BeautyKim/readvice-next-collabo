@@ -2,6 +2,7 @@ import Link from "next/link"
 import React from "react"
 import tw from "tailwind-styled-components"
 import Image from 'next/image'
+import css from "styled-jsx/css"
 
 
 
@@ -16,7 +17,7 @@ type Props = {
     Email: string
 }
 
-const IntroduceItem = ({Name, ImgSrc, LinkHref1, LinkHref2, Role, Role2, Skill, Email}: Props) => {
+const IntroduceItem: React.FC<Props> = ({Name, ImgSrc, LinkHref1, LinkHref2, Role, Role2, Skill, Email}: Props) => {
   return (
     <Box>
         <Item>
@@ -25,7 +26,7 @@ const IntroduceItem = ({Name, ImgSrc, LinkHref1, LinkHref2, Role, Role2, Skill, 
                 style={{width: "200px", height: "200px"}}
                 src={ImgSrc}/>
             <div className="flex-grow sm:pl-8">
-                <h2 className="text-lg font-medium text-gray-900 hover:animate-bounce title-font">{Name}</h2>
+                <h2 className="text-lg font-medium text-gray-900 hover:animate-bounce title-font" id="name">{Name}</h2>
                 <h3 className="mb-3 text-gray-500">{Role}</h3>
                 <p className="mb-4">{Role2}<br/>사용기술<br/>{Skill}<br/>
                 <a href={`mailto:${Email}`}>{Email}</a>

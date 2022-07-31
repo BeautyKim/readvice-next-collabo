@@ -11,7 +11,7 @@ interface LoginProps {
 
 
 
-export default function Login({handleChange, handleSubmit} : LoginProps){
+const Login: React.FC<LoginProps> = ({handleChange, handleSubmit} : LoginProps) => {
     return (
         <LoginHomeLayout>
             <SEO title="로그인"/>
@@ -72,6 +72,8 @@ export default function Login({handleChange, handleSubmit} : LoginProps){
         </LoginHomeLayout>
     )
 }
+export default Login
+
 const LoginSpan = tw.span`
     block
     text-sm

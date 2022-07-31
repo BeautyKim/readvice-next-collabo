@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-export const Footer = () => {
+export const Footer: React.FC = () => {
     return(
         <footer>
             <div className="flex flex-col items-center mt-16">

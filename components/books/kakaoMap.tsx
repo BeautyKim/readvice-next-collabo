@@ -7,7 +7,7 @@ interface Props{
   isLoading: boolean
 }
 
-export default function KakaoMap(){
+export const KakaoMap = () => {
   const positions = [
     {
       title: "꿈마루작은도서관",
