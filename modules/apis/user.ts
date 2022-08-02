@@ -41,7 +41,8 @@ export const user = {
             return response.data
         } catch(err) {
             console.log(err)
-            return err}
+            return err
+        }
     }
 
 }

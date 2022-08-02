@@ -22,7 +22,7 @@ const ChatbotModal = () => {
             <div className="w-auto max-w-6xl mx-auto my-6">
               <div className="relative flex flex-col w-full bg-white border-0 rounded-lg shadow-lg outline-none focus:outline-none">
                 {/*header*/}
-                <div className="flex items-start justify-between p-5 border-b border-solid rounded-t border-slate-200">
+                <div className="flex items-start justify-content p-3 border-b border-solid rounded-t border-slate-200">
                   <h3 className="text-3xl font-semibold">
                     리드봇
                   </h3>

@@ -10,7 +10,6 @@ interface LoginProps {
 }
 
 
-
 const Login: React.FC<LoginProps> = ({handleChange, handleSubmit} : LoginProps) => {
     return (
         <LoginHomeLayout>
@@ -55,9 +54,6 @@ const Login: React.FC<LoginProps> = ({handleChange, handleSubmit} : LoginProps) 
                                 <div className="text-center">
                                     <GoogleLogin />
                                 </div>
-                            <button className="py-2 mb-2 w-100 btn btn-outline-primary rounded-3" type="submit">
-                                Login with Google
-                            </button>
                             <hr className="my-4"/>
                             <Link href="#">
                                 <a className="inline-block text-sm font-bold text-blue-500 align-baseline hover:text-blue-800">Forgot Password?</a></Link>

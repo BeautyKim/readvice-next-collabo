@@ -14,6 +14,29 @@ export interface Book {
   category?: string;
   price?: number;
 }
+export interface Search {
+  searchState?: boolean
+  query: string
+  title?: string
+  author?: string
+  publisher?: string
+  page?: number
+  isDetail?: boolean
+}
+export interface KakaoBook {
+  documents: [{
+    authors?: string[]
+    contents?: string
+    datetime?: string
+    isbn?: number
+    publisher?: string
+    sale_price?: number
+    title: string
+    translators?: string[]
+    url?: string
+  }]
+}
+
 
 export interface User {
   email?: string, 

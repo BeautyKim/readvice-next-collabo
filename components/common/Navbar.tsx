@@ -4,7 +4,8 @@ import { MenuIcon, XIcon } from '@heroicons/react/outline'
 import Image from "next/image";
 import Link from 'next/link'
 import { Logout } from '../users/Logout';
-import { SearchBar } from '../search/SearchBarItem';
+import { SearchBar } from '../search/SearchBar';
+import SearchModal from '../search/SearchModal';
 
   const userNavigation = [
     { name: 'Profile', href: '/users/user' },
@@ -32,7 +33,7 @@ export const Navbar: React.FC = () => {
                   </div>
                   <div className="hidden md:block">
                     <div className="flex items-center ml-4 md:ml-6">
-                  <SearchBar />
+                  <SearchModal />
                         <Link href={'/users/login'}>
                             <a><button type="button" className="p-1 font-bold text-[#404040] hover:text-gray"
                                 >Login

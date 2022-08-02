@@ -1,6 +1,6 @@
 import { SEO } from "@/components";
 import MyLibraryLayout from "./MyLibraryLayout";
-import BookCard from "../ui/BookCard";
+import BookCard from "../books/BookCard";
 import tw from "tailwind-styled-components";
 import booksData from "@/data/book.json"
 

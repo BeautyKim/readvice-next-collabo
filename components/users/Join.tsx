@@ -7,7 +7,6 @@ import { useRef } from "react"
 import tw from "tailwind-styled-components"
 import { useDispatch } from "react-redux"
 import { joinRequest } from "@/modules/slices"
-import { current } from "@reduxjs/toolkit"
 
 
 // react-hook-form 사용한 회원가입 로직

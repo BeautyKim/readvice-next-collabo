@@ -1,18 +1,15 @@
-import axios from "axios"
+import { kakaoBook } from "."
+import { Search } from "../types"
 
-const REST_API_KEY = process.env.NEXT_PUBLIC_KAKAOMAP_REST_API_KEY
 
-export const searchApi = async() => {
-    try {
-        const response = await axios.get('https://dapi.kakao.com/v3/search/book?target=title', {
-            headers: {
-                "Authorization": `KakaoAK ${REST_API_KEY}`,
-                "Content-Type": "application/json",
-            }
-        })
-        return response.data
-
-    }catch(error) {
-        return error
+export const search = {
+    kakao: async (searchProps: Search) => {
+        const { query } = searchProps
+        try {
+            const response = await kakaoBook.get(`/v3/search/book?query=${query}?target=title`)
+            return response.data
+        } catch (err) {
+            return err
+        }
     }
 }

@@ -8,7 +8,7 @@ export * from "./common/Introduce"
 export * from "./common/Product"
 export * from "./common/IntroduceItem"
 // 검색
-export * from "./search/SearchBarItem"
+export * from "./search/SearchBar"
 // 챗봇
 export * from "./chatbots/analyzeNextSteps"
 export * from "./chatbots/Chatbot"
@@ -36,6 +36,6 @@ export * from "./users/Login"
 export * from "./users/GoogleLogin"
 export * from "./users/Login"
 // UI 폴더
-export * from "./ui/BookCard"
+export * from "./books/BookCard"
 export * from "./ui/Button"
-export * from "./ui/SearchCard"
+export * from "./search/SearchCard"

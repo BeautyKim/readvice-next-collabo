@@ -1,9 +1,13 @@
-import SearchResult from "@/components/search/SearchResult "
+import { SearchDetailCard } from "@/components/search/SearchDetailCard"
 
 const SearchDetailPage = () => {
     
   return (
-    <SearchResult />
+    <SearchDetailCard 
+      href={""}
+      BookName={""} 
+      author={['']} 
+      src={""} />
   )
 }
 

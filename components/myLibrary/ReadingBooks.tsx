@@ -1,7 +1,7 @@
 import booksData from "@/data/book.json"
 import tw from "tailwind-styled-components";
 import { SEO } from "../common/SEO";
-import BookCard from "../ui/BookCard";
+import BookCard from "../books/BookCard";
 import MyLibraryLayout from "./MyLibraryLayout";
 
 export function ReadingBooks() {

@@ -4,7 +4,7 @@ type Props = {
     BookHref: string,
     BookName: string,
     BookInfo: string,
-    author: string,
+    author?: string[],
     BookImg: string
 }
 
@@ -16,7 +16,7 @@ const SearchCard = ({BookHref, BookName, BookInfo, author, BookImg}: Props) => {
                 <Link href={BookHref}><a>
                     <div className="lg:w-4/5 mx-auto flex flex-wrap">
                         <img alt="ecommerce" 
-                            className="h-full lg:w-48 md:w-36 object-cover object-center rounded"
+                            className="h-full md:w-20 object-cover object-center rounded"
                             src={BookImg} />
                         <div className="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
                             <h2 className="text-sm title-font text-gray-500 tracking-widest">{author}</h2>

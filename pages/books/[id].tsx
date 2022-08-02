@@ -5,7 +5,11 @@ const BookPage: NextPage = () => {
     const router = useRouter()
 
     console.log(router.query.book)
-  return<h1>book detail page</h1>
+  return(
+    <>
+      <h1>book detail page</h1>
+    </>
+  )
 }
 
 export default BookPage
