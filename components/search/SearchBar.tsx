@@ -1,12 +1,9 @@
+import { onProps } from "@/modules/types";
 import { BsSearch } from "react-icons/bs"
 import css from "styled-jsx/css";
 
-type SearchBarProps = {
-    onSubmit: (e : React.FormEvent<HTMLFormElement>) => void
-    onChange: (e : React.ChangeEvent<HTMLInputElement> ) => void
-}
 
-export const SearchBar: React.FC<SearchBarProps> = ({onSubmit, onChange}: SearchBarProps) => {
+export const SearchBar: React.FC<onProps> = ({onSubmit, onChange}: onProps) => {
   return (
     <>
         <form onSubmit={onSubmit}>

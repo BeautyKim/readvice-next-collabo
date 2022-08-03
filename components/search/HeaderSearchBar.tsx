@@ -19,7 +19,7 @@ export const HeaderSearchBar: React.FC = () => {
     //                 res => setData(res.data.documents))
     //             },[jinheeSend])
     useEffect(() => {
-        kakaoBook.get(`/v3/search/book?sort=accuracy&size=15&query=${searchInput}&target=title`).then(
+        kakaoBook.get(`/v3/search/book?sort=accuracy&size=5&query=${searchInput}&target=title`).then(
                     res => setData(res.data.documents))
                 },[searchInput])
 

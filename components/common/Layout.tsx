@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Footer, Header, SearchBar } from '@/components';
+import { Footer, Header } from '@/components';
 import { Layout } from '@/modules/types';
 import Head from 'next/head';
 import ChatbotModal from '../chatbots/ChatbotModal';

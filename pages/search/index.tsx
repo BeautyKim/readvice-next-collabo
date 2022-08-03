@@ -21,7 +21,7 @@ const SearchDetailPage = () => {
 
   return (
     <>
-      <SearchBar onSubmit={searchSubmit} onChange={searchChange} value={jinheeSend || searchInput} />
+      <SearchBar onSubmit={searchSubmit} onChange={searchChange} />
       <div>{data.map((book) => 
           <SearchCard 
             key={book.isbn}

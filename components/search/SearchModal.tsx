@@ -52,11 +52,6 @@ const SearchModal: React.FC = () => {
                         <HeaderSearchBar />
                         <ImageDrop />
                     </Dialog.Title>
-                    {/* 검색결과 화면 */}
-                    <div className="mt-2">
-                        검색결과 나오거나 이미지 드랍존 예정
-                        {/* <SearchResult /> */}
-                    </div>
                     {/* 검색창 끄기 */}
                     <div className="mt-4">
                         <button
