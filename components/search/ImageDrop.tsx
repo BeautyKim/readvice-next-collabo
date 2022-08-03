@@ -47,8 +47,11 @@ export const ImageDrop: React.FC = () => {
         <Imagelist files={files} />
       </DropZone>
       <div>
-        <button onClick={onClick}>임시로 이미지 보내는 버튼<br/>
-        추후 검색창 onSubmit과 합칠 예정</button>
+        <button 
+        type="button"
+        className="inline-flex justify-center rounded-md border border-transparent bg-blue-100 px-4 py-2 text-sm font-medium text-blue-900 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+        onClick={onClick}>이미지 버튼</button>
+        <p>추후 검색창 onSubmit과 합칠 예정</p>
       </div>
     </div>
   )
