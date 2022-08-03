@@ -8,7 +8,7 @@ export * from "./common/Introduce"
 export * from "./common/Product"
 export * from "./common/IntroduceItem"
 // 검색
-export * from "./search/SearchBar"
+export * from "./search/HeaderSearchBar"
 // 챗봇
 export * from "./chatbots/analyzeNextSteps"
 export * from "./chatbots/Chatbot"

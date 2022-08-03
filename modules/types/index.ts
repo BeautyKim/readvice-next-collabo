@@ -24,7 +24,6 @@ export interface Search {
   isDetail?: boolean
 }
 export interface KakaoBook {
-  documents: [{
     authors?: string[]
     contents?: string
     datetime?: string
@@ -34,7 +33,6 @@ export interface KakaoBook {
     title: string
     translators?: string[]
     url?: string
-  }]
 }
 
 

@@ -1,53 +1,23 @@
-/* eslint-disable react-hooks/rules-of-hooks */
-import { kakaoBook } from "@/modules/apis";
-import React, { useEffect, useState } from "react";
-import { BsSearch } from "react-icons/bs";
-import { useDispatch } from "react-redux";
+import { BsSearch } from "react-icons/bs"
 import css from "styled-jsx/css";
-import { SearchDetailCard } from "./SearchDetailCard";
 
-
-export const SearchBar: React.FC = () => {
-    // const [ jinheeSend, setJinheeSend ] = useState('')
-    const [ searchInput, setSearchInput ] = useState('')
-    const [ data, setData ] = useState([{
-        authors: [''], contents:'책정보', title: '책이름', thumbnail: '이미지URL', isbn: 0, 
-    }])
-    const dispatch = useDispatch()
-
-    useEffect(() => {
-        kakaoBook.get(`/v3/search/book?sort=accuracy&size=15&query=${searchInput}&target=title`).then(
-                    res => setData(res.data.documents))
-                },[searchInput])
-
-    const searchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        const value = e.target.value
-        setSearchInput(value)
-    }
-    const searchSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-        e.preventDefault()
-        console.log('검색어: '+ searchInput)
-        console.log(data)
-    }
-                
-    return(
-        <>
-            <form onSubmit={searchSubmit}>
-                <input type="search" value={searchInput} className="searchBar" placeholder="책 제목 검색" onChange={searchChange}/>
-                <button type="submit" className="searchQuerySubmit"><BsSearch size={20}/></button>
-            </form>
-            <ul>{data.map((book) => 
-                <SearchDetailCard
-                    key={book.isbn}
-                    href={book.title} 
-                    BookName={book.title}
-                    author={book.authors} 
-                    src={book.thumbnail} />)}</ul>
-
-            <style jsx>{style}</style>
-        </>
-    )
+type SearchBarProps = {
+    onSubmit: (e : React.FormEvent<HTMLFormElement>) => void
+    onChange: (e : React.ChangeEvent<HTMLInputElement> ) => void
 }
+
+export const SearchBar: React.FC<SearchBarProps> = ({onSubmit, onChange}: SearchBarProps) => {
+  return (
+    <>
+        <form onSubmit={onSubmit}>
+            <input type="search" className="searchBar" placeholder="책 제목 검색" onChange={onChange}/>
+            <button type="submit" className="searchQuerySubmit"><BsSearch size={20}/></button>
+        </form>
+        <style jsx>{style}</style>
+    </>
+  )
+}
+
 const style = css`
     form {
         display: inline-block;

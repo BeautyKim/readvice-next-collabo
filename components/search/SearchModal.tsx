@@ -1,7 +1,7 @@
 import React, { Fragment, useState } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 import SearchButton from './SearchButton'
-import { SearchBar } from './SearchBar'
+import { HeaderSearchBar } from './HeaderSearchBar'
 import { ImageDrop } from './ImageDrop'
 
 
@@ -49,7 +49,7 @@ const SearchModal: React.FC = () => {
                         as="h3"
                         className="text-lg font-medium leading-6 text-gray-900"
                     >
-                        <SearchBar />
+                        <HeaderSearchBar />
                         <ImageDrop />
                     </Dialog.Title>
                     {/* 검색결과 화면 */}

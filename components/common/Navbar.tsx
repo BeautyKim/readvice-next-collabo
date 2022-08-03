@@ -4,7 +4,6 @@ import { MenuIcon, XIcon } from '@heroicons/react/outline'
 import Image from "next/image";
 import Link from 'next/link'
 import { Logout } from '../users/Logout';
-import { SearchBar } from '../search/SearchBar';
 import SearchModal from '../search/SearchModal';
 
   const userNavigation = [
@@ -81,6 +80,7 @@ export const Navbar: React.FC = () => {
                   </div>
                   <div className="flex -mr-2 md:hidden">
                     {/* Mobile menu button */}
+                    <SearchModal />
                     <Disclosure.Button className="inline-flex items-center justify-center p-2 text-gray-400 rounded-md hover:text-white hover:bg-gray focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray focus:ring-white">
                       <span className="sr-only">Open main menu</span>
                       {open ? (
@@ -89,9 +89,11 @@ export const Navbar: React.FC = () => {
                         <MenuIcon className="block w-6 h-6" aria-hidden="true" />
                       )}
                     </Disclosure.Button>
+                    
                   </div>
                 </div>
               </div>
+              {/* Mobile menu */}
               <Disclosure.Panel className="absolute inset-x-0 z-10 p-2 space-y-1 transition origin-top-right transform md:hidden">
                 <div className="pt-4 pb-3 bg-white shadow-lg rounded-3">
                   <div className="flex items-center px-5">
@@ -113,9 +115,6 @@ export const Navbar: React.FC = () => {
                             </Disclosure.Button>
                         </Link>
                     ))}
-                  </div>
-                  <div className="py-3 border border-gray">
-                    <SearchBar />
                   </div>
                   <div className="flex">
                     <Logout className='block w-full px-2 py-2 font-medium text-center rounded-md hover:text-white hover:bg-gray'/>

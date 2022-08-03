@@ -1,15 +1,15 @@
 import Link from "next/link"
 
 type Props = {
-    BookHref: string,
-    BookName: string,
-    BookInfo: string,
-    author?: string[],
-    BookImg: string
+    BookHref: string
+    title: string
+    contents: string
+    authors?: string[]
+    thumbnail: string
 }
 
 
-const SearchCard = ({BookHref, BookName, BookInfo, author, BookImg}: Props) => {
+const SearchCard = ({BookHref, title, contents, authors, thumbnail}: Props) => {
     return (
         <div className="text-gray-600 body-font overflow-hidden">
             <div className="container px-2 py-4 mx-auto">
@@ -17,17 +17,14 @@ const SearchCard = ({BookHref, BookName, BookInfo, author, BookImg}: Props) => {
                     <div className="lg:w-4/5 mx-auto flex flex-wrap">
                         <img alt="ecommerce" 
                             className="h-full md:w-20 object-cover object-center rounded"
-                            src={BookImg} />
+                            src={thumbnail} />
                         <div className="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
-                            <h2 className="text-sm title-font text-gray-500 tracking-widest">{author}</h2>
-                            <h1 className="text-gray-900 text-3xl title-font font-medium mb-1">{BookName}</h1>
-                            <p className="leading-relaxed">{BookInfo}</p>
+                            <h2 className="text-sm title-font text-gray-500 tracking-widest">{authors}</h2>
+                            <h1 className="text-gray-900 text-3xl title-font font-medium mb-1">{title}</h1>
+                            <p className="leading-relaxed">{contents}</p>
                         </div>
                     </div>
                 </a></Link>
-                <div className="relative ">
-                    <button className="h-20 absolute bottom-0 right-0 text-white bg-indigo-500 text-sm border-0 py-2 px-3 focus:outline-none hover:bg-indigo-600 rounded">찜하기</button>
-                </div>
             </div>
         </div>
         )
