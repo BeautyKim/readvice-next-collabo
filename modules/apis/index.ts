@@ -25,6 +25,15 @@ export const kakaoBook = axios.create({
         Authorization: `KakaoAK ${process.env.NEXT_PUBLIC_KAKAOMAP_REST_API_KEY}`
     }
 })
+// 이미지 업로드
+export const imageUpload = axios.create({
+    baseURL: `${SERVER}`,
+    headers: {
+        'Content-Type': 'multipart/form-data',
+        Authorization: "JWT fefege..."
+    }
+})
+
 
 
 export * from './book';

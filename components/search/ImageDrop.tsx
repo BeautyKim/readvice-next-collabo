@@ -1,3 +1,5 @@
+import { imageUpload } from '@/modules/apis'
+import axios from 'axios'
 import { on } from 'events'
 import React, { useCallback, useState } from 'react'
 import { DropZone } from './Dropzone'
@@ -14,8 +16,16 @@ export const ImageDrop: React.FC = () => {
     setFiles(files)
   }, [])
   const onClick = () => {
-    
-  }
+    const formData = new FormData();
+    alert(' formData >> '+formData)
+    formData.append('files', files[0])
+    try {
+      axios.post(`${imageUpload}/search/upload`, formData, {
+    }).then((response) => {
+      response.data})
+    }catch (error) {
+      console.log(error)}
+    }
 
   return (
     <div>
@@ -35,7 +45,10 @@ export const ImageDrop: React.FC = () => {
 
         <Imagelist files={files} />
       </DropZone>
-      <button onClick={onClick}>임시로 이미지 보내는 버튼</button>
+      <div>
+        <button onClick={onClick}>임시로 이미지 보내는 버튼<br/>
+        추후 검색창 onSubmit과 합칠 예정</button>
+      </div>
     </div>
   )
 }
