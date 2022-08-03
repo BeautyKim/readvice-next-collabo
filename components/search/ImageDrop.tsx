@@ -22,7 +22,8 @@ export const ImageDrop: React.FC = () => {
     try {
       axios.post(`${imageUpload}/search/upload`, formData, {
     }).then((response) => {
-      response.data})
+      response.data
+      console.log(response.data)})
     }catch (error) {
       console.log(error)}
     }
