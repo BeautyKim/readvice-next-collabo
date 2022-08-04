@@ -8,7 +8,7 @@ import SearchModal from '../search/SearchModal';
 
   const userNavigation = [
     { name: 'Profile', href: '/users/user' },
-    { name: 'My Library', href: '/myLibrary/myLibrary' },
+    { name: 'My Library', href: '/myLibrary' },
     { name: 'login Home', href: '/loginHome' },
   ]
 

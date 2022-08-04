@@ -17,13 +17,10 @@ export * from "./chatbots/ChatbotModal"
 // 책
 export * from "./books/kakaoMap"
 // 내서재
-export * from "./myLibrary/LikeBooks"
-export * from "./myLibrary/CommentBook"
-export * from "./myLibrary/MyLibraryLayout"
-export * from "./myLibrary/MyNav"
 export * from "./myLibrary/ReadingBooks"
 // 한줄평
 export * from "./comments/CommentWrite"
+export * from "./comments/Comment"
 // 로그인 홈
 export * from "./loginHome/LoginHome"
 export * from "./loginHome/FormLayout"

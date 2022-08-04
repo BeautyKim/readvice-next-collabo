@@ -121,7 +121,8 @@ export const DropZone = (props: React.PropsWithChildren<DropZoneProps>) => {
 
   // Render <div /> with ref and children:
   return (
-    <div ref={dropZoneRef}>
+    <div ref={dropZoneRef}
+          className="rounded border-gray outline-dashed outline-2 outline-offset-2">
       {props.children}
     </div>
   )

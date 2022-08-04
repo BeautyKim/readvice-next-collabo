@@ -1,6 +1,5 @@
-import { MyNav, ReadingBooks } from "@/components"
+import { ReadingBooks } from "@/components"
 import { NextPage } from "next"
-import { useEffect } from "react"
 
 const MyLibraryPage: NextPage = () => {
   

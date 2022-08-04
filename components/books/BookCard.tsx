@@ -36,8 +36,8 @@ export default BookCard
 
 const ImgBox = tw.div`
     h-full 
-    border-2 
-    border-gray-200 
+    border-1
+    border-gray 
     border-opacity-60 
     rounded-lg 
     overflow-hidden

@@ -2,7 +2,6 @@ import Link from "next/link"
 import React from "react"
 import tw from "tailwind-styled-components"
 import Image from 'next/image'
-import css from "styled-jsx/css"
 
 
 
