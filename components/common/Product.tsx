@@ -22,7 +22,7 @@ const Product: React.FC = () => {
                     data-aos-delay="1500"
                     data-aos-easing="ease-in-circ"
                     data-aos-duration="1500"
-                    >나만을 위한 사서 리드바이스</h2>
+                    >나만을 위한 사서 리드바이스 깃허브 AWS 연결 확인</h2>
             </article>
             <article className="snap-y snap-mandatory container flex flex-col items-center px-6 pt-32 pb-32 mx-auto md:flex-row md:space-x-22">
                 <LeftDiv data-aos="fade-right"

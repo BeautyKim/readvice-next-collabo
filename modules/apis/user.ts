@@ -1,6 +1,6 @@
 import { User } from "@/modules/types";
 import {AxiosResponse} from "axios";
-import { accessClient, client } from ".";
+import { accessClient, client } from "../controllers";
 
 interface AuthData {
     access_token?: string;

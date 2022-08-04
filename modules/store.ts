@@ -6,7 +6,6 @@ import createSagaMiddleware from 'redux-saga'
 import { TypedUseSelectorHook, useSelector } from 'react-redux';
 import userReducer from './slices/userSlice'
 import bookReducer from './slices/bookSlice'
-import commentReducer from './slices/commentSlice'
 
 const isDev = process.env.NODE_ENV ==='development'
 const sagaMiddleware = createSagaMiddleware()
@@ -14,7 +13,6 @@ const sagaMiddleware = createSagaMiddleware()
 const combinedReducer = combineReducers({
     user: userReducer,
     book: bookReducer,
-    comment: commentReducer,
 })
 const rootReducer = (
 	state: ReturnType<typeof combinedReducer>,

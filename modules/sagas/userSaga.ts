@@ -1,7 +1,7 @@
 import { call, delay, put, take, takeLatest } from 'redux-saga/effects'
 import { joinRequest, joinSuccess, loginFailure, loginRequest, loginSuccess, logoutFailure, logoutRequest, logoutSuccess, userAction } from '@/modules/slices';
 import { User } from '@/modules/types';
-import { user } from '@/modules/apis';
+import { user } from '@/modules/controllers';
 
 
 export function* watchJoin(){

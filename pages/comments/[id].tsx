@@ -41,7 +41,7 @@ const CommentDetail: NextPage = () => {
 
   return (    
     <>
-    <SEO title={id} />
+    <SEO title={`독서기록장_${id}`} />
     <section className="container justify-center max-w-screen-lg px-5 py-24 mx-auto flexitems-center">
       <div className="text-center lg:w-2/3">
         <h1 className="mb-4 text-2xl font-bold title-font sm:text-2xl">{id} 독서기록장 생성</h1>

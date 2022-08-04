@@ -1,6 +1,6 @@
 import { Comment } from "@/modules/types";
 import { AxiosResponse } from "axios";
-import { client } from ".";
+import { client } from "../controllers";
 
 const headers = {
     "Content-Type" : "application/json",

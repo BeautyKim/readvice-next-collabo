@@ -1,4 +1,4 @@
-import { client, kakaoBook } from "."
+import { client, kakaoBook } from "../controllers"
 import { Search } from "../types"
 
 

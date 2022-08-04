@@ -1,5 +1,4 @@
-import { SearchBar } from "@/components/search/SearchBar"
-import SearchCard from "@/components/search/SearchCard"
+import SearchDetailCard from "@/components/search/SearchDetailCard"
 import { useState } from "react"
 
 
@@ -10,20 +9,12 @@ const SearchDetailPage = () => {
     isbn: 0, title: '', authors: [], thumbnail: '', contents:''
   }])
 
-  const searchChange = () => {
-
-  }
-  const searchSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-
-  }
-
 
   return (
     <>
-      <SearchBar onSubmit={searchSubmit} onChange={searchChange} />
+    <h1>검색 결과창(서버에서 받은 검색어로 나온 결과 화면)</h1>
       <div>{data.map((book) => 
-          <SearchCard 
+          <SearchDetailCard 
             key={book.isbn}
             BookHref={book.title}
             title={book.title} 

@@ -1,4 +1,4 @@
-import { imageUpload } from '@/modules/apis'
+import { imageUpload } from '@/modules/controllers'
 import axios from 'axios'
 import React, { useCallback, useState } from 'react'
 import { DropZone } from './Dropzone'

@@ -1,5 +1,5 @@
 import { call, delay, put, take, takeLatest } from 'redux-saga/effects'
-import { search } from "@/modules/apis"
+import { search } from "@/modules/controllers"
 import { getSearchFailure, getSearchRequest, getSearchSuccess } from '../slices/searchSlice'
 import { KakaoBook } from '../types'
 

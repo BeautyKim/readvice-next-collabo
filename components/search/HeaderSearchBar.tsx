@@ -1,7 +1,7 @@
-import { kakaoBook } from "@/modules/apis";
+import { kakaoBook } from "@/modules/controllers";
 import React, { useEffect, useState } from "react";
 import { SearchBar } from "./SearchBar";
-import { SearchDetailCard } from "./SearchDetailCard";
+import { SearchCard } from "./SearchCard";
 
 
 export const HeaderSearchBar: React.FC = () => {
@@ -22,8 +22,7 @@ export const HeaderSearchBar: React.FC = () => {
     }
     const searchSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
-        console.log('검색어: '+ searchInput)
-        console.log(data)
+        window.location.href="/search"
     }
 
     // const searchSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -37,7 +36,7 @@ export const HeaderSearchBar: React.FC = () => {
         <>
             <SearchBar onSubmit={searchSubmit} onChange={searchChange} />
             <ul>{data.map((book) => 
-                <SearchDetailCard
+                <SearchCard
                     key={book.isbn}
                     href={book.title} 
                     BookName={book.title}

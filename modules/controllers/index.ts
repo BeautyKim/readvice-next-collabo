@@ -36,9 +36,9 @@ export const imageUpload = axios.create({
 
 
 
-export * from './book';
-export * from './comment';
-export * from './user';
-export * from './googleOauthApi';
-export * from './search';
+export * from '../apis/book';
+export * from '../apis/comment';
+export * from '../apis/user';
+export * from '../apis/googleOauthApi';
+export * from '../apis/search';
 

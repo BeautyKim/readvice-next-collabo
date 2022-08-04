@@ -1,4 +1,4 @@
-import { accessClient } from "."
+import { accessClient } from "../controllers"
 
 export const googleOauthApi = {
   loigin: async(handleCredentialResponse: {}, userInfo: any ) => {

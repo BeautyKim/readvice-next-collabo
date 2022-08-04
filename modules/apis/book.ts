@@ -1,5 +1,5 @@
 import axios, { AxiosResponse } from "axios";
-import { client } from ".";
+import { client } from "../controllers";
 
 export const DATALIBRARY_API_KEY = process.env.NEXT_PUBLIC_DATALIBRARY_API_KEY
 

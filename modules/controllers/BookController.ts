@@ -1,4 +1,4 @@
-import { kakaoBook } from "../apis";
+import { kakaoBook } from ".";
 
 export class BookController {
   constructor() {}
