@@ -34,5 +34,4 @@ export * from "./users/GoogleLogin"
 export * from "./users/Login"
 // UI 폴더
 export * from "./books/BookCard"
-export * from "./ui/Button"
 export * from "./search/SearchDetailCard"
