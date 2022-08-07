@@ -97,6 +97,7 @@ const Chats: React.FC<Props> = props => {
             }
             .message-container {
                 overflow-y: scroll;
+                height: 18rem;
                 margin-bottom: 2em;
             }
             .message-container div {

@@ -1,16 +1,25 @@
 import { SEO } from "@/components";
-import React from "react";
+import React, { useState } from "react";
 import IntroduceItem from "./IntroduceItem";
+import Lottie from 'react-lottie-player'
+import tada from '../../../public/lottie/tada.json'
 
 const Introduce: React.FC = () => {
+    const [play, setPlay] = useState(false) 
     return (
     <>
         <section className="text-gray-600 body-font">
                 <SEO title="팀소개"/>
             <div className="container px-5 py-24 mx-auto">
+                {/* <Lottie
+                    loop
+                    animationData={tada}
+                    play
+                    style={{ width: 500, height: 500}}/> */}
                 <div className="flex flex-col w-full mb-20 text-center">
                     <h1 className="mb-4 text-2xl font-medium tracking-widest text-gray-900 title-font">
                         TEAM READVICE</h1>
+
                     <p className="mx-auto text-base leading-relaxed lg:w-2/3">
                         이미지 검색, GAN, 챗봇 등의 기술을 사용해 AI 사서를 만들었습니다.</p>
                 </div>
