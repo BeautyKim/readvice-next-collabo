@@ -4,6 +4,8 @@ import { useRouter } from "next/router"
 import { CommentWrite, Comment, SEO } from "@/components"
 import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
+import { error } from "console"
+import { commentData } from "@/data/comment"
 
 
 const CommentDetail: NextPage = () => {
@@ -14,16 +16,15 @@ const CommentDetail: NextPage = () => {
   const [ text, setText ] = useState('')
   const dummy = "민서가 보내준 독서기록장 클릭해서 복사하기"
   
-  const addCommentSubmit = () => {
-    
+  const addCommentSubmit = (e: { preventDefault: () => void }) => {
+    e.preventDefault()
+    const data = Math.floor(Math.random() * commentData.length)
+    setText(commentData[data])
   }
   const addCommentChange = () => {
     
   }
 
-  useEffect(() => {
-      setText(dummy)
-  })
   const commentCopy = async (text: string) => {
       try {
         await navigator.clipboard.writeText(text)

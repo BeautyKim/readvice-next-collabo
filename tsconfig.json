@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "target": "es6",
-    "baseUrl": ".",
+    "baseUrl": "./src",
     "paths": {
       "@/*": [
         "*"
@@ -30,7 +30,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-, "components/common/InquiryList.tsx", "components/users/Join.tsx", "components/chatbots/config.js"  ],
+, "src/components/common/InquiryList.tsx", "src/components/users/Join.tsx", "src/components/chatbots/config.js"  ],
   "exclude": [
     "node_modules",
     "**/*.spec.ts"

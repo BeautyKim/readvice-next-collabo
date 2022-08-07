@@ -10,8 +10,8 @@ const Product: React.FC = () => {
       })
     return(
         <section className="h-full m-20 space-y-3 columns-1">
-            <article className="snap-mandatory mx-10 text-center my-44 snap-y">
-                <h1 className="snap-always snap-start text-4xl leading-10 tracking-tight text-gray-900 md:text-5xl font-bold"
+            <article className="mx-10 text-center snap-mandatory my-44 snap-y">
+                <h1 className="text-4xl font-bold leading-10 tracking-tight text-gray-900 snap-always snap-start md:text-5xl"
                     data-aos="fade-down"
                     data-aos-delay="100"
                     data-aos-easing="ease-in-circ"
@@ -24,7 +24,7 @@ const Product: React.FC = () => {
                     data-aos-duration="1500"
                     >나만을 위한 사서 리드바이스 깃허브 AWS 연결 확인</h2>
             </article>
-            <article className="snap-y snap-mandatory container flex flex-col items-center px-6 pt-32 pb-32 mx-auto md:flex-row md:space-x-22">
+            <article className="container flex flex-col items-center px-6 pt-32 pb-32 mx-auto snap-y snap-mandatory md:flex-row md:space-x-22">
                 <LeftDiv data-aos="fade-right"
                         data-aos-offset="200"
                         data-aos-easing="ease-in-sine"
@@ -34,12 +34,12 @@ const Product: React.FC = () => {
                     <P>지금 당장 내 주변에서 대출 할 수 있는 <br/>도서관과 구매 가능한 온.오프라인 서점을 볼 수 있어요</P>
                 </LeftDiv>
                 <div className="md:w-1/2">
-                    <img src="/images/bookWoman.svg" className="mb-10" alt="책읽는여자"/>
+                    <img src={'/images/bookWoman.svg'} className="mb-10" alt="책읽는여자" />
                 </div>
             </article>
-            <article className="snap-y snap-mandatory container flex flex-col items-center px-4 pt-32 pb-32 mx-auto md:flex-row md:space-x-16">
+            <article className="container flex flex-col items-center px-4 pt-32 pb-32 mx-auto snap-y snap-mandatory md:flex-row md:space-x-16">
                 <div className="md:w-1/2">
-                    <img src="/images/bookMan4.svg" className="mb-10" alt="책읽는남자"/>
+                    <img src={'/images/bookMan4.svg'} className="mb-10" alt="책읽는남자"/>
                 </div>
                 <RightDiv data-aos="fade-left"
                         data-aos-offset="200"
@@ -49,7 +49,7 @@ const Product: React.FC = () => {
                     <P>직접 입력할 필요없이 사진 한 장이면 취향에 맞는 도서를 추천 해줘요</P>
                 </RightDiv>
             </article>
-            <article className="snap-y snap-mandatory container flex flex-col items-center px-6 pt-24 pb-32 mx-auto md:flex-row md:space-x-16">
+            <article className="container flex flex-col items-center px-6 pt-24 pb-32 mx-auto snap-y snap-mandatory md:flex-row md:space-x-16">
                 <LeftDiv data-aos="fade-right"
                         data-aos-offset="300"
                         data-aos-easing="ease-in-sine"
@@ -61,7 +61,7 @@ const Product: React.FC = () => {
                     <img src="/images/bookWoman4.svg" className="mb-10" alt="책읽는여자"/>
                 </div>
             </article>
-            <article className="snap-y snap-mandatory container flex flex-col items-center px-6 pt-24 pb-32 mx-auto md:flex-row md:space-x-16">
+            <article className="container flex flex-col items-center px-6 pt-24 pb-32 mx-auto snap-y snap-mandatory md:flex-row md:space-x-16">
                 <div className="md:w-1/2">
                     <img src="/images/bookWoman6.svg" className="mb-10" alt="책읽는여자"/>
                 </div>
@@ -73,7 +73,7 @@ const Product: React.FC = () => {
                     <P>챗봇 리드봇 대화를 즐겨보세요~ <br/> 당신에게 필요한 책을 추천해줘요.</P>
                 </RightDiv>
             </article>
-            <article className="text-center font-bold">
+            <article className="font-bold text-center">
                 <h1 className="mb-3">지금 바로 Readvice 이용하기</h1>
                 <div className="font-black leading-8 tracking-tight text-gray-900 md:text-4xl sm:text-4">
                     <Link href="/users/join"><a>
