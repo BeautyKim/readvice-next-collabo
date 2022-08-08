@@ -32,7 +32,7 @@ const SearchModal: React.FC = () => {
             </Transition.Child>
 
             <div className="fixed inset-0 overflow-y-auto">
-                <div className="flex min-h-full items-center justify-center p-4 text-center">
+                <div className="flex items-center justify-center min-h-full p-4 text-center">
                 <Transition.Child
                     as={Fragment}
                     enter="ease-out duration-300"
@@ -43,7 +43,7 @@ const SearchModal: React.FC = () => {
                     leaveTo="opacity-0 scale-95"
                 >
                     {/* Dialog.Panel  width 반응형 수정 필요*/}
-                    <Dialog.Panel className="w-100 mx-10 transform overflow-hidden rounded-2xl bg-white p-8 text-left align-middle shadow-xl transition-all">
+                    <Dialog.Panel className="p-8 mx-10 overflow-hidden text-left align-middle transition-all transform bg-white shadow-xl w-100 rounded-2xl">
                     {/* 검색창 해더 */}
                     <Dialog.Title
                         as="h3"
@@ -52,16 +52,7 @@ const SearchModal: React.FC = () => {
                         <HeaderSearchBar />
                         <ImageDrop />
                     </Dialog.Title>
-                    {/* 검색창 끄기 */}
-                    <div className="mt-4">
-                        <button
-                        type="button"
-                        className="inline-flex justify-center rounded-md border border-transparent bg-blue-100 px-4 py-2 text-sm font-medium text-blue-900 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
-                        onClick={closeModal}
-                        >
-                        닫기
-                        </button>
-                    </div>
+
                     </Dialog.Panel>
                 </Transition.Child>
                 </div>

@@ -17,7 +17,7 @@ export const ImageDrop: React.FC = () => {
   }, [])
   const onClick = () => {
     const formData = new FormData();
-    alert(' formData >> '+formData)
+    window.location.href = "/search"
     formData.append('files', files[0])
     try {
       axios.post(`${imageUpload}/search/upload`, formData, {

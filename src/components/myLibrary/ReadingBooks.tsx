@@ -16,7 +16,8 @@ export function ReadingBooks() {
                         src={book.book_img} 
                         alt={book.book_title} 
                         title={book.book_title} 
-                        author={book.author} 
+                        author={book.author}
+                        info={book.book_info} 
                         href={`/comments/${book.book_title}`} />
                     )}
                 </div>

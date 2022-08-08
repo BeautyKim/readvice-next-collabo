@@ -6,11 +6,12 @@ interface Props {
     alt: string,
     title: string,
     author: string,
-    href: string
+    href: string,
+    info: string
 
 }
 
-const BookCard = ({ src ,alt, title, author, href}: Props) => {
+const BookCard = ({ src ,alt, title, author, href, info}: Props) => {
     return (
     <div className="p-4 md:w-1/4">
         <ImgBox>
@@ -18,8 +19,7 @@ const BookCard = ({ src ,alt, title, author, href}: Props) => {
             <div className="p-3">
                 <AuthorName>{author}</AuthorName>
                 <BookName>{title}</BookName>
-                <p className="mb-3 leading-relaxed">Photo booth fam kinfolk cold-pressed
-                    sriracha leggings jianbing microdosing tousled waistcoat.</p>
+                <p className="mb-3 leading-relaxed">{info}</p>
                 <div className="flex flex-wrap items-center ">
                     <Link href={href}>
                         <a className="inline-flex items-center text-indigo-500 md:mb-2 lg:mb-0">한줄평</a>

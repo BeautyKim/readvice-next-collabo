@@ -1,13 +1,17 @@
-import { onProps } from "@/modules/types";
 import { BsSearch } from "react-icons/bs"
 import css from "styled-jsx/css";
 
+interface Props{
+    onSubmit: (e : React.FormEvent<HTMLFormElement>) => void
+    onChange: (e : React.ChangeEvent<HTMLInputElement> ) => void
+    value?: string
+}
 
-export const SearchBar: React.FC<onProps> = ({onSubmit, onChange}: onProps) => {
+export const SearchBar: React.FC<Props> = ({onSubmit, onChange, value}: Props) => {
   return (
     <>
         <form onSubmit={onSubmit}>
-            <input type="search" className="searchBar" placeholder="책 제목 검색" onChange={onChange}/>
+            <input type="search" value={value} className="searchBar" placeholder="책 제목 검색" onChange={onChange}/>
             <button type="submit" className="searchQuerySubmit"><BsSearch size={20}/></button>
         </form>
         <style jsx>{style}</style>

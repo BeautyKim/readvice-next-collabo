@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from "react";
+import React, { useState } from "react";
 import { analyzeNextSteps } from "./analyzeNextSteps";
 import Chats from "./Chats";
 import Image from "next/image"
@@ -16,12 +16,13 @@ const Chatbot: React.FC = () => {
     const [ userResponse, setUserResponse ] = useState<string>("");
     // 대화 횟수
     const [ step, setStep ] = useState<number>(0);
-    
+    // 챗봇 질문 옵션
     const [botResponse, setBotResponse] = useState<ResponseBotObject>({
         purpose: "", message: "", sender: "bot" });
+    // 유저가 선택한 옵션
     const [sendUserResponse, setSendUserResponse] = useState<string>("");
 
-  // setting next step when there's response and option click
+  // 옵션 클릭
     const setNextStep = (response: string) => {
         setStep(prevState => prevState + 1);
         setSendUserResponse(response);
@@ -37,7 +38,6 @@ const Chatbot: React.FC = () => {
         }
     };
 
-    // event handlers
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setUserResponse(e.target.value);
     };

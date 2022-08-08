@@ -1,10 +1,9 @@
-import React from 'react'
-import Image from "next/image"
-import chatbot from "/images/chatbot.svg"
+import React, { useState } from 'react'
+import tw from 'tailwind-styled-components';
 import Chatbot from './Chatbot';
 
 const ChatbotModal = () => {
-  const [showModal, setShowModal] = React.useState(false);
+  const [showModal, setShowModal] = useState(false);
   return (
     <div className="relative">
       <button
@@ -30,17 +29,17 @@ const ChatbotModal = () => {
                     className="float-right p-1 ml-auto text-3xl font-semibold leading-none text-black bg-transparent border-0 outline-none opacity-5 focus:outline-none"
                     onClick={() => setShowModal(false)}
                   >
-                    <span className="block w-6 h-6 text-2xl text-black bg-transparent outline-none opacity-5 focus:outline-none">
+                    <Span>
                       ×
-                    </span>
+                    </Span>
                   </button>
                 </div>
                 {/*body*/}
-                <div className="relative flex-auto p-6 h-96">
+                <Body>
                     <Chatbot />
-                </div>
+                </Body>
                 {/*footer*/}
-                <div className="flex items-center justify-end p-6 border-t border-solid rounded-b border-slate-200">
+                <Footer>
                   <button
                     className="mr-1 text-sm font-bold text-red-500 uppercase transition-all duration-150 ease-linear outline-none background-transparent focus:outline-none"
                     type="button"
@@ -48,7 +47,7 @@ const ChatbotModal = () => {
                   >
                     대화 종료
                   </button>
-                </div>
+                </Footer>
               </div>
             </div>
           </div>
@@ -60,3 +59,33 @@ const ChatbotModal = () => {
 }
 
 export default ChatbotModal
+
+const Span = tw.span`
+  block 
+  w-6 
+  h-6 
+  text-2xl 
+  text-black 
+  bg-transparent 
+  outline-none 
+  opacity-5 
+  focus:outline-none
+`
+
+const Body = tw.div`
+  relative 
+  flex-auto 
+  p-6 
+  h-96
+`
+
+const Footer = tw.div`
+  flex
+  items-center 
+  justify-end 
+  p-6 
+  border-t 
+  border-solid 
+  rounded-b
+  border-slate-200
+`

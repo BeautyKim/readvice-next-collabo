@@ -39,7 +39,6 @@ export interface KakaoBook {
     url?: string
 }
 
-
 export interface User {
   email?: string, 
   password?: string,

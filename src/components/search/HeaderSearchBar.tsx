@@ -1,4 +1,5 @@
 import { kakaoBook } from "@/modules/controllers";
+import { searchSuccess } from "@/modules/slices/searchSlice";
 import React, { useEffect, useState } from "react";
 import { SearchBar } from "./SearchBar";
 import { SearchCard } from "./SearchCard";
@@ -22,6 +23,7 @@ export const HeaderSearchBar: React.FC = () => {
     }
     const searchSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
+        searchSuccess(searchInput)
         window.location.href="/search"
     }
 

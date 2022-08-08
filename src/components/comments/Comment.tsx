@@ -14,7 +14,7 @@ export const Comment: React.FC<Props> = ({onClick, text}: Props) => {
                 onClick={onClick}>
             {text}
         </div>
-            <button className="">공유하기</button>
+            {/* <button className="">공유하기</button> */}
     </div>
     </>
   )

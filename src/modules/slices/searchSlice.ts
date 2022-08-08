@@ -40,6 +40,15 @@ export const searchSlice = createSlice({
         sendSearchFailure(state, {payload}){
             state.status = 'failed'
             state.error = payload
+        },
+        
+        searchRequest(state, action){
+            state.status = 'loading'
+            state.data = action.payload.data
+        },
+        searchSuccess(state, action){
+            state.status = 'idle'
+            state.data = action.payload.data
         }
 
     }
@@ -47,6 +56,6 @@ export const searchSlice = createSlice({
 
 const {reducer, actions} = searchSlice
 export const { getSearchRequest, getSearchSuccess, getSearchFailure,
-            sendSearchRequest, sendSearchSuccess, sendSearchFailure} = searchSlice.actions;
-export const userAction = actions
+            sendSearchRequest, sendSearchSuccess, sendSearchFailure, searchSuccess} = searchSlice.actions;
+export const searchAction = actions
 export default reducer
