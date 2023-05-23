@@ -1,7 +1,6 @@
 import { SearchBar } from "@/components/search/SearchBar"
 import SearchDetailCard from "@/components/search/SearchDetailCard"
 import { kakaoBook } from "@/modules/controllers"
-import { useAppSelector } from "@/modules/store"
 import { useEffect, useState } from "react"
 
 
@@ -37,7 +36,8 @@ const SearchDetailPage = () => {
             BookHref={book.url}
             title={book.title} 
             contents={book.contents} 
-            thumbnail={book.thumbnail} />)}</div>
+            thumbnail={book.thumbnail} />)}
+      </div>
     </>
   )
 }

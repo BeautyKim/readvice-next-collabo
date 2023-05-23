@@ -30,8 +30,6 @@ export * from "./loginHome/Item/HomeClock"
 export * from "./users/Profile"
 export * from "./users/Join"
 export * from "./users/Login"
-export * from "./users/GoogleLogin"
-export * from "./users/Login"
 // UI 폴더
 export * from "./books/BookCard"
 export * from "./search/SearchDetailCard"

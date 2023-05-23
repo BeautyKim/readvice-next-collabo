@@ -2,7 +2,6 @@ import Link from "next/link"
 import tw from "tailwind-styled-components"
 import { SEO } from "../common/SEO"
 import LoginHomeLayout from "../loginHome/FormLayout";
-import GoogleLogin from "./GoogleLogin";
 
 interface LoginProps {
     handleChange : (e : React.ChangeEvent<HTMLInputElement> ) => void;
@@ -49,11 +48,6 @@ const Login: React.FC<LoginProps> = ({handleChange, handleSubmit} : LoginProps) 
                         
                         <div className="mt-5 text-center">
                             <button className="w-64 py-3 text-xl text-white bg-purple-400 rounded-2xl" type="submit">Login</button>
-                            <hr className="my-4"/>
-                            <h2 className="mb-3 text-center fs-5 fw-bold">or</h2>
-                                <div className="text-center">
-                                    <GoogleLogin />
-                                </div>
                             <hr className="my-4"/>
                             <Link href="#">
                                 <a className="inline-block text-sm font-bold text-blue-500 align-baseline hover:text-blue-800">Forgot Password?</a></Link>

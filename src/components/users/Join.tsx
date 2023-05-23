@@ -114,30 +114,6 @@ const Join: React.FC = () => {
                         className="block w-full px-4 py-3 text-sm border rounded-lg outline-none peer"/>
                         {errors.birth && <P>{errors.birth.message}</P>}
                 </div>
-                <div>
-                    <div className="form-check form-check-inline">
-                        <input
-                            {...register("gender")} 
-                            type="radio" 
-                            name="gender" 
-                            id="male" 
-                            value="male"
-                            className="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-600 dark:focus:bg-blue-600 dark:bg-gray-700 dark:border-gray-600" />
-                        <label className="inline-block text-gray-800 form-check-label" 
-                            htmlFor="male">남성</label>
-                    </div>
-                    <div className="form-check form-check-inline">
-                        <input
-                            {...register("gender")}
-                            type="radio" 
-                            name="gender" 
-                            id="female"
-                            value="female"
-                            className="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-600 dark:focus:bg-blue-600 dark:bg-gray-700 dark:border-gray-600" />
-                        <label className="inline-block text-gray-800 form-check-label"
-                            htmlFor="female">여성</label>
-                    </div>
-                </div>
                 <hr className="mb-3" />
                 <div className="custom-control custom-checkbox">
                     <input type="checkbox" className="custom-control-input" id="aggrement" required />
