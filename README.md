@@ -2,7 +2,6 @@
 - 팀명: 북적북적
 - Front-end : 김아름
 - AI Developer : 노홍주, 최민서, 하진희
-- [http://readvice.s3-website.ap-northeast-2.amazonaws.com/](http://readvice.s3-website.ap-northeast-2.amazonaws.com/)
 - Back-end github : https://github.com/meanseo/readvice-django-collabo.git
 
 ## 실행 방법
