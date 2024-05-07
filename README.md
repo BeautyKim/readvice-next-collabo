@@ -11,6 +11,10 @@ npm run dev
 yarn dev
 ```
 ---
+# 화면
+<center>
+  <img width="600" src="https://github.com/BeautyKim/readvice-next-collabo/assets/89237300/d8a35e31-e753-4e23-b044-f9ec98c12a5b">
+</center>
 
 ## 프로젝트 개요
 > 개인 맞춤 사서인 챗봇, 자동 독서 기록, 이미지 검색 서비스를 제공하는 개인 독서 사이트
